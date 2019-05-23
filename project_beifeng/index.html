@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<link type="text/css" rel="stylesheet" href="css/index.css"/>
+</head>
+
+<body>
+<!-- top -->
+<div class="top">
+	<div class="topGuide">
+    	<div class="wp">
+        	<p>你好,欢迎来到北风网</p>
+            <div class="topRight">
+	            <a href="" class="shopCar"><img src="images/top_gouwuche.png"/>购物车(0)</a>
+            	<ul>
+                	<li><a href="">问答</a>|</li>
+                    <li><a href="">资讯</a>|</li>
+                    <li><a href="">帮助</a>|</li>
+                    <li><a href="">论坛</a>|</li>
+                    <li><a href="">登录</a>|</li>
+                    <li><a href="">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+    	<h3><a href="" title="logo"><img src="images/logo.jpg" alt="logo"/></a></h3>
+        <ul>
+        	<li><a href="">首页</a></li>
+            <li><a href="">所有课程</a></li>
+            <li><a href="">就业课程</a></li>
+            <li><a href="">企业会员</a></li>
+            <li><a href="">讲师招聘</a></li>
+        </ul>
+        <form>
+	        <input type="button" class="btn" value="搜索"/>
+        	<input type="text" class="text" value="搜索你需要的课程"/>
+        </form>
+    </div>
+</div>
+<!-- content -->
+<div class="content">
+	<div class="banner">
+    	<a href=""><img src="images/test1200.jpg"/></a>
+        <div class="sort">
+            <ul>
+                <li><a href="">最新课程</a></li>
+                <li><a href="">就业课程</a></li>
+                <li><a href="">手机开发</a></li>
+                <li><a href="">品牌套餐</a></li>
+                <li><a href="">软件测试</a></li>
+                <li><a href="">商业智能</a></li>
+                <li><a href="">游戏开发</a></li>
+                <li><a href="">数据库</a></li>
+                <li><a href="">嵌入式</a></li>
+                <li><a href="">大数据</a></li>
+                <li><a href="">Java</a></li>
+                <li><a href="">.Net</a></li>
+                <li><a href="">Linux</a></li>
+                <li><a href="">Hadoop</a></li>
+                <li><a href="">VC++</a></li>
+                <li><a href="">PHP</a></li>
+                <li><a href="">web前端</a></li>
+                <li><a href="">云计算</a></li>
+                <li><a href="">平面设计</a></li>
+                <li><a href="">其他</a></li>
+            </ul>
+        </div>
+        <div class="icon">
+        	<span class="current">01</span>
+            <span>02</span>
+        </div>
+    </div>
+    <h3><strong>线下就业系列</strong><span>OFFLINE EMPLOYMENT SERIES</span></h3>
+    <div class="course">
+    	<dl>
+        	<dt><a href=""><img src="images/offline_img01.png"/></a></dt>
+            <dd>
+            	<a href="">PHP软件工程师就业班</a>
+                <span>开班时间1：2016-01-20</span>
+                <span>开班时间2：火热招生中。。</span>
+            </dd>
+        </dl>
+        <dl>
+        	<dt><a href=""><img src="images/offline_img02.png"/></a></dt>
+            <dd>
+            	<a href="">J2EE软件工程师就业班</a>
+                <span>开班时间1：2016-01-20</span>
+                <span>开班时间2：火热招生中。。</span>
+            </dd>
+        </dl>
+        <dl>
+        	<dt><a href=""><img src="images/offline_img03.png"/></a></dt>
+            <dd>
+            	<a href="">北风软件测试就业班</a>
+                <span>开班时间1：2016-01-20</span>
+                <span>开班时间2：火热招生中。。</span>
+            </dd>
+        </dl>
+        <dl>
+        	<dt><a href=""><img src="images/offline_img04.png"/></a></dt>
+            <dd>
+            	<a href="">Hadoop大数据线下零基础就业…</a>
+                <span>开班时间1：2016-01-20</span>
+                <span>开班时间2：火热招生中。。</span>
+            </dd>
+        </dl>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+	<h3>
+    	<strong>友情链接</strong>
+        <a href="">资源下载</a>
+        <a href="">北风网论坛</a>
+        <a href="">北风课堂</a>
+        <a href="">DIV CSS</a>
+        <a href="">Code4App</a>
+        <a href="">36大数据</a>
+        <a href="">cgjoy游戏动画论坛</a>
+        <a href="">推酷网</a>
+        <a href="">iphone游戏</a>
+        <a href="">第七城市</a>
+        <a href="">unity3d教程</a>
+        <a href="">WEB开发者</a>
+        <a href="">更多</a>
+    </h3>
+    <p>Copyright © 2008-2016 上海育创网络科技股份有限公司。备案号:沪ICP备10015848号-5</p>
+    <p>张毅 2019年5月14日 制作</p>
+    <div>
+    	<a href=""><img src="images/police.png"/></a>
+        <a href=""><img src="images/zx110.png"/></a>
+        <a href=""><img src="images/footer_logo06.gif"/></a>
+        <a href=""><img src="images/sm_124x47.png"/></a>
+        <a href=""><img src="images/cnnic.png"/></a>
+    </div>
+</div>
+<script>
+(function(){
+	var inputText=document.getElementsByClassName("text")[0];
+	var iconSpans=document.querySelectorAll(".icon>span");
+	var inputTextIsChange=false;
+	inputText.onclick=function(){
+		if(!inputTextIsChange){
+			this.value="";
+			this.style.color="#000";
+		}
+	};
+	inputText.onblur=function(){
+		if(this.value==""){
+			inputTextIsChange=false;
+			this.value="搜索你需要的课程";
+			this.style.color="#dad9d9";
+		}else{
+			inputTextIsChange=true;
+			this.style.color="#000";
+		}
+	};
+	for(var i=0;i<iconSpans.length;i++){
+		iconSpans[i].onclick=function(){
+			var currentIconSpan=document.querySelector(".current");
+			currentIconSpan.className="";
+			this.className="current";
+		};
+	}
+})();
+</script>
+</body>
+</html>
