@@ -1,0 +1,30 @@
+@charset "utf-8";
+/*样式的初始化*/
+*{ margin:0px; padding:0px;}
+img{ border:0px none; vertical-align:top;}
+li{ list-style:none;}
+em,i{ font-style:normal;}
+a{ text-decoration:none; color:#505050;}
+a:hover{ color:#ff6400;}
+input,textarea{ outline:none;}
+body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
+.clearFix{ width:950px; height:auto; margin:0px auto;}
+.clearFix:after{ content:"."; visibility:hidden; display:block; clear:both; height:0;}
+/*logo及导航部分*/
+.logo{ float:left; width:185px; height:57px; margin:18px 0px 0px 10px;}
+.logo a{ display:block; width:100%; height:45px;}
+.logo a img{ float:left;}
+.logo a span{ float:left; width:auto; height:27px; border-left:2px solid #ea5404; margin:10px 0px 0px 4px; padding-left:6px; line-height:27px; font-size:24px; color:#ea5404; font-family:"黑体";}
+.search{ float:right; width:311px; height:19px; margin-top:34px;}
+.login{ float:left; width:151px; height:19px; line-height:19px; font-size:13px;}
+.login a{ color:#ff6400; text-decoration:underline; margin:0px 6px;}
+.search_main{ float:left; width:auto; height:19px;}
+.search_text{ float:left; width:94px; height:13px; line-height:13px; border:#d7d7d7 1px solid; color:#999; font-size:13px; padding:2px;}
+.search_btn{ float:left; width:38px; height:19px; background:#f3f3f3; border:#d7d7d7 1px solid; margin-left:4px; font-size:13px; cursor:pointer; line-height:19px;}
+.nav_all{ background:url(../images/nav_bg.png) no-repeat; height:40px;}
+.nav{ float:left; width:auto; height:40px; margin-left:17px; display:inline;}
+.nav li{ float:left; width:60px; height:40px; line-height:40px; padding:0px 21px 0px 16px; background:url(../images/nav_libg.png) no-repeat right top; font-size:14px; position:relative; z-index:4;}
+.nav li.nav_w{ width:30px;}
+.nav li a{ font-weight:bold; color:#8d0000;}
+.nav li a:hover,.nav li.nav_cur a{ position:absolute; z-index:4; width:auto; top:6px; left:-7px; height:34px; background:url(../images/nav_hoverBg.png) no-repeat left top;}
+.nav li a:hover span,.nav li.nav_cur a span{ float:left; width:auto; height:34px; background:url(../images/nav_hoverBg.png) no-repeat right top; margin-left:23px; padding-right:23px; color:#f9052d; cursor:pointer; white-space:nowrap; line-height:28px;}
