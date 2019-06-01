@@ -33,3 +33,21 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .nav_right i{ position:absolute; z-index:5; width:28px; height:20px; left:24px; top:-10px; background:url(../images/nav_new.png) no-repeat; text-indent:-9999px; overflow:hidden;}
 /*小导航部分*/
 .navSmall{ height:122px; background:url(../images/navSmall_bg.png) no-repeat; margin-top:5px;}
+.navSmall dl{ float:left;}
+.navSmall dl dt{ height:24px; line-height:24px; margin-top:6px;}
+.navSmall dl dt a{ color:#ff6400; font-size:14px; font-weight:bold;}
+.navSmall dl dt a:hover{ color:#505050;}
+.navSmall dl dd{ float:left; height:21px; line-height:21px; margin-right:14px; display:inline; white-space:nowrap;}
+.navSmall dl dd a{ color:#505050;}
+.navSmall dl dd a:hover{ color:#ff6400;}
+.navSmall_dl1{ width:90px; margin:0px 35px 0px 19px; display:inline;}
+.navSmall_dl2{ width:140px;}
+.navSmall_dl3{ width:175px; margin-left:22px;}
+.navSmall dl.navSmall_dl3 dd{ margin-right:20px;}
+.navSmall_dl4{ width:165px; margin-left:9px;}
+.navSmall_dl5{ width:140px; margin-left:16px;}
+.navSmall_dl6{ width:100px; margin-left:24px;}
+/*公共的*/
+.floatNone{
+	clear:both;
+}
