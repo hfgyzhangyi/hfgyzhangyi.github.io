@@ -47,6 +47,14 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .navSmall_dl4{ width:165px; margin-left:9px;}
 .navSmall_dl5{ width:140px; margin-left:16px;}
 .navSmall_dl6{ width:100px; margin-left:24px;}
+/*第一部分*/
+.area_first{ margin-top:9px;}
+.areaFirst_left{ width:189px; height:auto; float:left;}
+.areaFirst_L_notice{ width:187px; height:114px; border:1px solid #e0e0e0;}
+.areaFirst_L_h3{ width:162px; height:31px; margin:1px 0px 0px 1px; background:url(../images/areaFirst_Lbg.png) no-repeat; line-height:31px; padding:0px 12px 0px 11px; font-size:14px;}
+.areaFirst_L_h3 a{ float:right;}
+.areaFirst_middle{ width:522px; height:auto; float:left; margin-left:8px; display:inline;}
+.areaFirst_right{ width:221px; float:right; height:auto;}
 /*公共的*/
 .floatNone{
 	clear:both;
