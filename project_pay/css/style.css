@@ -50,11 +50,25 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 /*第一部分*/
 .area_first{ margin-top:9px;}
 .areaFirst_left{ width:189px; height:auto; float:left;}
-.areaFirst_L_notice{ width:187px; height:114px; border:1px solid #e0e0e0;}
-.areaFirst_L_h3{ width:162px; height:31px; margin:1px 0px 0px 1px; background:url(../images/areaFirst_Lbg.png) no-repeat; line-height:31px; padding:0px 12px 0px 11px; font-size:14px;}
-.areaFirst_L_h3 a{ float:right;}
 .areaFirst_middle{ width:522px; height:auto; float:left; margin-left:8px; display:inline;}
 .areaFirst_right{ width:221px; float:right; height:auto;}
+.areaFirst_L_notice{ width:187px; height:auto; border:1px solid #e0e0e0;}
+.areaFirst_L_h3{ width:162px; height:31px; margin:1px 0px 0px 1px; background:url(../images/areaFirst_Lbg.png) no-repeat; line-height:31px; padding:0px 12px 0px 11px; font-size:14px;}
+.areaFirst_L_h3 a{ float:right;}
+.areaFirst_div{ width:100%; height:78px; overflow:hidden;}
+.areaFirst_ul{ width:172px; height:auto; margin:7px 0px 0px 8px;}
+.areaFirst_ul li{ width:100%; height:23px; border-bottom:1px dashed #e0e0e0; line-height:23px;}
+.areaFirst_ul li em{ margin:0px 7px 0px 3px; color:#505050; font-family:Arial;}
+.areaFirst_ul li a{ color:#ff6400;}
+.areaFirst_ul li a:hover{ color:#505050;}
+.areaFirst_L_ulImg{ width:187px; height:78px; padding-top:12px; margin-bottom:10px;}
+.areaFirst_L_ulImg li{ float:left; width:79px; height:76px; border:1px solid #cdcdcd; margin:0px 1px 0px 8px; display:inline;}
+.areaFirst_L_ulTitle{ height:auto; width:171px; overflow:hidden; margin-left:9px;}
+.areaFirst_L_ulTitle li{ padding-left:13px; border-bottom:1px dashed #e0e0e0; height:23px; line-height:23px; position:relative;}
+.areaFirst_L_ulTitle li i{ width:2px; height:2px; background:#505050; position:absolute; top:11px; left:6px;}
+.areaFirst_L_div1{ padding-bottom:5px;}
+.areaFirst_L_coupon{ margin-top:5px; padding-bottom:10px;}
+.areaFirst_L_sell{ margin-top:6px; padding-bottom:14px;}
 /*公共的*/
 .floatNone{
 	clear:both;
