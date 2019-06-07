@@ -84,6 +84,13 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .areaFirst_M_news{ width:520px; height:auto; border:1px solid #e5e5e5; margin-top:10px;}
 .areaFirst_M_h3{ width:496px; height:29px; margin:1px 0px 0px 1px; background:url(../images/hot_news_bg.png) no-repeat; line-height:29px; padding:0px 10px 0px 12px; font-size:14px;}
 .areaFirst_M_h3 a{ float:right;}
+.areaFirst_M_dl{ width:495px; height:187px; margin:5px 0px 0px 11px; overflow:hidden;}
+.areaFirst_M_dl dl{ width:100%; height:93px; border-bottom:1px dashed #cccccc; position:relative;}
+.areaFirst_M_dl dl dt{ width:100%; padding-top:10px;}
+.areaFirst_M_dl dl dt a{ color:#ff6400; font-size:14px; font-weight:bold;}
+.areaFirst_M_dl dl dt a:hover{ color:#505050;}
+.areaFirst_M_dl dl dd p{ text-indent:30px; line-height:18px; padding-top:5px;}
+.areaFirst_M_dl dl dd a{ position:absolute; color:#ff6400; line-height:18px; text-decoration:underline; bottom:8px; right:6px;}
 /*公共的*/
 .floatNone{
 	clear:both;
