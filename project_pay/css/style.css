@@ -69,6 +69,21 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .areaFirst_L_div1{ padding-bottom:5px;}
 .areaFirst_L_coupon{ margin-top:5px; padding-bottom:10px;}
 .areaFirst_L_sell{ margin-top:6px; padding-bottom:14px;}
+.areaFirst_M_flash{ width:516px; height:232px; padding:2px; border:#f1f1f1 1px solid; position:relative; z-index:6;}
+.areaFirst_M_flaImg{ position:relative; z-index:5; width:516px; height:232px;}
+.areaFirst_M_flaImg li{ width:100%; height:100%; position:absolute; top:0px; left:0px; z-index:3;}
+.areaFirst_M_flaImg li em{ position:absolute; left:0px; bottom:0px; width:488px; height:29px; background:url(../images/flash_btn.png) no-repeat; z-index:5; line-height:29px; padding-left:28px; color:#fff;}
+.areaFirst_M_flaImg li a:hover em{ color:#ff6400;}
+.areaFirst_M_flaBtn{ position:absolute; right:2px; bottom:8px; width:87px; height:16px; z-index:5;}
+.areaFirst_M_flaBtn li{ float:left; width:16px; height:16px; margin-right:4px; display:inline; background:url(../images/flash_btn.png) no-repeat; text-indent:-99em; overflow:hidden;}
+.areaFirst_M_flaBtn li.a_M_FB1{ background-position:0px -49px;}
+.areaFirst_M_flaBtn li.a_M_FB2{ background-position:-20px -49px;}
+.areaFirst_M_flaBtn li.a_M_FB3{ background-position:-40px -49px;}
+.areaFirst_M_flaBtn li.a_M_FB4{ background-position:-60px -49px;}
+.a_M_flaImgCur{ z-index:99;}
+.areaFirst_M_news{ width:520px; height:auto; border:1px solid #e5e5e5; margin-top:10px;}
+.areaFirst_M_h3{ width:496px; height:29px; margin:1px 0px 0px 1px; background:url(../images/hot_news_bg.png) no-repeat; line-height:29px; padding:0px 10px 0px 12px; font-size:14px;}
+.areaFirst_M_h3 a{ float:right;}
 /*公共的*/
 .floatNone{
 	clear:both;
