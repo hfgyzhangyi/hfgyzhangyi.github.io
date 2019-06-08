@@ -91,6 +91,17 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .areaFirst_M_dl dl dt a:hover{ color:#505050;}
 .areaFirst_M_dl dl dd p{ text-indent:30px; line-height:18px; padding-top:5px;}
 .areaFirst_M_dl dl dd a{ position:absolute; color:#ff6400; line-height:18px; text-decoration:underline; bottom:8px; right:6px;}
+.areaFirst_M_div{ width:499px; height:145px; background:#fdf8e7; border:1px solid #ffe5c1; margin:3px 0px 9px 9px;}
+.areaFirst_M_h3_2{ width:487px; height:34px; line-height:34px; padding-left:12px;}
+.areaFirst_M_div ul{ width:226px; height:104px; margin:0px 5px 0px 16px; float:left; overflow:hidden;}
+.areaFirst_M_div ul li{ width:220px; height:20px; line-height:20px; position:relative; padding-left:6px; border-bottom:1px dashed #f0d5b6;}
+/*.areaFirst_M_div ul li:not(:last-child){ border-bottom:1px dashed #f0d5b6;}*/
+.areaFirst_M_div ul li a{ font-size:13px; color:#904a1d;}
+.areaFirst_M_div ul li a:hover{ color:#505050;}
+.areaFirst_M_div ul li a i{ position:absolute; width:2px; height:2px; background:#904a1d; top:9px; left:-1px;}
+.areaFirst_M_picture{ width:522px; height:115px; margin-top:10px;}
+.areaFirst_M_picture_div1{ width:261px; height:113px; border:1px solid #dbdbdb; margin-right:9px; float:left;}
+.areaFirst_M_picture_div2{ width:248px; height:113px; border:1px solid #dbdbdb; float:left;}
 /*公共的*/
 .floatNone{
 	clear:both;
