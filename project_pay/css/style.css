@@ -147,6 +147,17 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .areaSecond_R_sale img{ display:block; width:198px; height:79px; margin:0px 0px 0px 10px; border:1px solid #cdcdcd;}
 .areaSecond_R_sale ul{ width:201px; height:auto; margin:7px 0px 8px 10px;}
 .areaSecond_R_sale ul li{ width:100%; height:23px; border-bottom:1px dashed #e0e0e0; line-height:23px;}
+.areaSecond_R_shopping1{ width:219px; height:auto; border:1px solid #e0e0e0; margin-top:7px; padding-bottom:6px; margin-bottom:7px;}
+.areaSecond_R_shopping1 dl{ width:189px; height:66px; margin:0px 0px 9px 10px;}
+.areaSecond_R_shopping1 dl dt{ margin-right:11px;}
+.areaSecond_R_shopping1 dl dt img{ display:block; width:78px; height:64px; float:left; border:1px solid #cdcdcd;}
+.areaSecond_R_shopping1 dl dd h4{ width:98px; height:21px; line-height:21px; float:right;}
+.areaSecond_R_shopping1 dl dd p{ width:98px; height:36px; line-height:18px; float:right; color:#505050;}
+.areaSecond_R_shopping2{ width:219px; height:auto; border:1px solid #e0e0e0;}
+.areaSecond_R_shopping2 .areaFirst_R_h3{ margin-bottom:12px;}
+.areaSecond_R_shopping2 img{ display:block; width:198px; height:79px; margin:0px 0px 0px 9px; border:1px solid #cdcdcd;}
+.areaSecond_R_shopping2 ul{ height:114px; width:201px; margin-left:10px; overflow:hidden; margin-top:10px; margin-bottom:17px;}
+.areaSecond_R_shopping2 ul li{ height:23px; width:100%; border-bottom:1px dashed #e0e0e0; line-height:24px;}
 /*公共的*/
 .floatNone{
 	clear:both;
