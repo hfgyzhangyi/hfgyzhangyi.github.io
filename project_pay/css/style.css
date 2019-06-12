@@ -126,6 +126,27 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .areaFirst_R_star dl dd p{ width:100%; height:36px; line-height:18px; clear:both;}
 .areaFirst_R_star dl.a_R_dl4{ margin-bottom:15px;}
 .areaFirst_R_picture{ width:219px; height:113px; margin-top:10px; border:1px solid #dbdbdb; background:url(../images/pic_3.jpg) no-repeat;}
+/*第二部分*/
+.area_second{ margin-top:9px;}
+.areaSecond_left{ width:719px; height:auto; float:left;}
+.areaSecond_right{ width:221px; height:auto; float:right;}
+.areaSecond_L_div1{ width:351px; height:auto; border:1px solid #e4e4e4; float:left;}
+.areaSecond_L_margin1{ margin-right:13px;}
+.areaSecond_L_h3{ width:330px; height:29px; padding-left:21px; line-height:35px; background:url(../images/areaS_listBg.png) no-repeat;}
+.areaSecond_L_content{ width:324px; height:121px; margin:11px 0px 14px 10px;}
+.areaSecond_L_content dt{ float:left; width:119px; height:119px; border:1px solid #d9d9d9;}
+.areaSecond_L_content dd{ width:178px; height:20px; line-height:20px; padding-left:25px; float:left; position:relative;}
+.areaSecond_L_content dd a{ color:#505050;}
+.areaSecond_L_content dd a i{ position:absolute; width:0px; height:0px; border:4px solid transparent; border-left-color:#505050; left:15px; top:6px;}
+.areaSecond_L_content dd a:hover{ color:#ff6400;}
+.areaSecond_L_margin2{ margin-top:7px;}
+.areaSecond_L_div2{ width:717px; height:auto; border:1px solid #eee4cd; margin:7px 0px 7px 0px; float:left; background:#fff7e4;}
+.areaSecond_L_div2 img{ display:inline-block; width:218px; height:89px; border:1px solid #dbdbdb; margin:12px 14px 12px 0px; float:left;}
+.areaSecond_L_div2 img.areaSecond_L_margin3{ margin-left:11px;}
+.areaSecond_R_sale{ width:219px; height:auto; border:1px solid #e0e0e0;}
+.areaSecond_R_sale img{ display:block; width:198px; height:79px; margin:0px 0px 0px 10px; border:1px solid #cdcdcd;}
+.areaSecond_R_sale ul{ width:201px; height:auto; margin:7px 0px 8px 10px;}
+.areaSecond_R_sale ul li{ width:100%; height:23px; border-bottom:1px dashed #e0e0e0; line-height:23px;}
 /*公共的*/
 .floatNone{
 	clear:both;
