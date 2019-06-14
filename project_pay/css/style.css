@@ -183,6 +183,8 @@ body{ color:#000; font-size:12px; font-family:"宋体"; background:#fff;}
 .areaFooter3 .areaFooter3_ul2 .areaFooter3_ul2_margin{ margin-left:9px;}
 .areaFooter3 .areaFooter3_ul2 .areaFooter3_ul2_font{ color:#6b6b6b;}
 .areaFooter3_p2{ line-height:24px; height:24px; width:100%; float:left; text-align:center; margin-top:4px; color:#6b6b6b;}
+/*固定广告*/
+.fixed_ads{ position:fixed; top:120px; left:50%; margin-left:485px; z-index:9999;}
 /*公共的*/
 .floatNone{
 	clear:both;
