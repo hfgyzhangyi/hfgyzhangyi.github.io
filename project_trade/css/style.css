@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+/*初始化样式*/
+body,div,h1,h2,h3,h4,h5,ul,li,dl,dt,dd,form,p,span,a,img,em,i,strong,b,input,select,textarea{ margin:0px; padding:0px;}
+li{ list-style:none;}
+img{ border:0 none; vertical-align:top;}
+em,i{ font-style:normal;}
+input,textarea{ outline:none;}
+a{ color:#010101; text-decoration:none;}
+a:hover{ color:#25afed;}
+body{ font-size:14px; font-family:"宋体","微软雅黑"; color:#959595;}
+.clearFix{ width:1190px; height:auto; margin:0px auto; *zoom:1;}
+.clearFix{ clear:both; content:"."; visibility:hidden; height:0px; display:block;}
+/*头部广告*/
+.adTop{ width:100%; height:80px; position:relative; min-width:1190px; z-index:5;}
+.adTop a{ position:absolute; left:50%; top:0px; margin-left:-960px; width:1920px; height:80px;}
+.adTop span{ width:118px; height:22px; position:absolute; right:9px; top:7px; z-index:99; background:url(../images/ad_xx.png) no-repeat #fff right top; color:#595959; font-size:12px; line-height:22px; padding-left:10px;}
+.adTop span i{ position:absolute; top:0px; right:0px; width:22px; height:22px; cursor:pointer; z-index:5; overflow:hidden; text-indent:-99em;}
