@@ -56,4 +56,26 @@
 		loginRegWebNavSpan.className="";
 		loginRegWebNavUl.style.display="none";
 	}
+	/******************弹出层全部城市菜单*********************/
+	var areaMainNavLis=document.querySelectorAll(".area_main_nav>li");
+	for(var areaMainNavLi of areaMainNavLis){
+		areaMainNavLi.onclick=function(){
+			var areaMainNavLi=this;
+			var areaMainNavLiSelected=document.querySelector(".area_main_nav_select");
+			areaMainNavLiSelected.className="";
+			areaMainNavLi.className="area_main_nav_select";
+		};
+	}
+	/******************关闭弹出层*********************/
+	var areaAll=document.getElementsByClassName("area_all")[0];
+	var areaMainClose=areaAll.getElementsByTagName("i")[0];
+	areaMainClose.onclick=function(){
+		areaAll.style.display="none";
+	};
+	/******************打开弹出层*********************/
+	var logoTel=document.getElementsByClassName("logoTel")[0];
+	var logoTelSpan=logoTel.getElementsByTagName("span")[0];
+	logoTelSpan.onclick=function(){
+		areaAll.style.display="block";
+	};
 })();
