@@ -1,10 +1,10 @@
 // JavaScript Document
 (function(){
 	"use strict"
+	/******************广告倒计时*********************/
 	var adTop=document.getElementById("adTop");
 	var adTopEm=adTop.getElementsByTagName("em")[0];
 	var closeBtn=adTop.getElementsByTagName("i")[0];
-	//广告倒计时
 	function adClose(num){
 		num--;
 		if(num==9){
@@ -66,16 +66,46 @@
 			areaMainNavLi.className="area_main_nav_select";
 		};
 	}
-	/******************关闭弹出层*********************/
+	/******************打开,关闭弹出层*********************/
 	var areaAll=document.getElementsByClassName("area_all")[0];
 	var areaMainClose=areaAll.getElementsByTagName("i")[0];
 	areaMainClose.onclick=function(){
-		areaAll.style.display="none";
+		areaUp(0);
 	};
-	/******************打开弹出层*********************/
 	var logoTel=document.getElementsByClassName("logoTel")[0];
 	var logoTelSpan=logoTel.getElementsByTagName("span")[0];
 	logoTelSpan.onclick=function(){
-		areaAll.style.display="block";
+		areaDown(0);
 	};
+	function areaUp(num){
+		num+=5;
+		if(num<=50){
+			areaAll.style.marginTop=-num+"%";
+			return setTimeout(function(){areaUp(num)},20);
+		}else{
+			areaAll.style.display="none";
+		}
+	}
+	function areaDown(num){
+		if(num==0){
+			areaAll.style.display="block";
+		}
+		num+=5;
+		if(num<=100){
+			areaAll.style.marginTop=(-100+num)+"%";
+			return setTimeout(function(){areaDown(num)},25);
+		}
+	}
+	/******************选择城市*********************/
+	var areaMainHotCities=document.getElementsByClassName("area_main_hotCities")[0];
+	var areaMainHotCitiesLinks=areaMainHotCities.getElementsByTagName("a");
+	var logoAreaI2=document.getElementsByClassName("logo_area_i2")[0];
+	for(var i=0;i<areaMainHotCitiesLinks.length;i++){
+		areaMainHotCitiesLinks[i].onclick=(function(j){
+			return function(){
+				logoAreaI2.innerHTML=this.innerHTML;
+				areaAll.style.display="none";
+			};
+		})(i);
+	}
 })();
