@@ -1,0 +1,147 @@
+html{
+    font-size: 12px;
+}
+body,div,ul,li,input,dt,dd,dl,img{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #f60 !important;
+    text-decoration: underline;
+}
+.clearFix{
+    width: 1180px;
+    height: auto;
+    margin: 0 auto;
+}
+.clearFix::after{
+    content: ".";
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}
+/*top_aera*/
+.top_area{
+    height: 140px;
+}
+.top_area_div{
+    position: relative;
+    height: 70px;
+}
+.top_area_div span{
+    position: absolute;
+    display: block;
+    color: white;
+    bottom: 0px;
+    right: 11px;
+}
+.top_area img{
+    float: left;
+    width: 1180px;
+    height: 70px;
+}
+/*title_area*/
+.title_area{
+    height: 64px;
+}
+.title_area img{
+    float: left;
+    margin: 15px 20px 0 0;
+}
+.title_area .title_city_area{
+    float: left;
+    margin-top: 29px;
+    position: relative;
+    z-index: 30000;
+}
+.title_area .title_city_area .title_city_div1{
+    width: 52px;
+    height: 18px;
+}
+.title_area .city_panel{
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 30000;
+    border: 1px solid #d8d8d8;
+    width: 350px;
+    padding: 7px 0 0 0;
+    left: 0;
+    top: 22px;
+    border-radius: 0 0 4px 4px;
+    display: none;
+}
+.title_area .city_panel dl{
+    width: 322px;
+    padding: 7px 0 6px 0;
+    margin: 0 13px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    line-height: 23px;
+    overflow: hidden;
+    zoom: 1;
+}
+.title_area .city_panel dl dt{
+    width: 72px;
+    float: left;
+    color: #666;
+}
+.title_area .city_panel dl dd{
+    float: left;
+    width: 250px;
+    overflow: hidden;
+    zoom: 1;
+}
+.title_area .city_panel dl dd a{
+    color: #1a519f;
+    float: left;
+    padding: 0 11px 0 0;
+    white-space: nowrap;
+}
+.title_area .city_panel .blank{
+    float: left;
+    height: 22px;
+    line-height: 14px;
+    width: 332px;
+    text-align: right;
+    margin-top: -3px;
+    margin-left: 2px;
+    background-color: #f9f9f9;
+}
+.title_area .city_panel .blank a{
+    color: #1a519f;
+}
+.title_area .city{
+    color: #666;
+    line-height: 18px;
+    cursor: pointer;
+    font-style: normal;
+    display: block;
+    float: left;
+}
+.title_area .city_icon{
+    display: block;
+    float: left;
+    background: url("../images/2.png") no-repeat 0 -148px;
+    width: 19px;
+    height: 7px;
+    margin: 7px 0 0 9px;
+    cursor: pointer;
+}
+.title_area ul{
+    margin-top: 33px;
+    float: right;
+}
+.title_area ul li{
+    float: left;
+}
+.title_area ul li a{
+    color: #797979;
+    margin-right: 10px;
+}
