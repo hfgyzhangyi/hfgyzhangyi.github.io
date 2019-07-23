@@ -73,7 +73,7 @@ a:hover{
     width: 350px;
     padding: 7px 0 0 0;
     left: 0;
-    top: 22px;
+    top: 18px;
     border-radius: 0 0 4px 4px;
     display: none;
 }
@@ -144,4 +144,185 @@ a:hover{
 .title_area ul li a{
     color: #797979;
     margin-right: 10px;
+}
+/*导航栏*/
+.glbNav{
+    width: 100%;
+    height: 48px;
+    background-color: #62ab00;
+}
+.glbNav1180{
+    height: 100%;
+}
+.glbNav .L_tabsnew{
+    display: inline-block;
+    width: 900px;
+    height: 100%;
+}
+.glbNav .L_tabsnew li{
+    position: relative;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    cursor: pointer;
+    float: left;
+}
+.glbNav .L_tabsnew .li_selected{
+    background-color: #528e01;
+    border-radius: 2px;
+}
+.glbNav .L_tabsnew li:hover{
+    background-color: #4A8101;
+}
+.glbNav .L_tabsnew li .a_navnew{
+    padding: 0 17px;
+    font-size: 1.5rem;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+.glbNav .L_tabsnew li .a_navnew:hover{
+    color: #fff !important;
+}
+.glbNav .L_tabsnew .li_single .sec_divnew{
+    position: absolute;
+    left: 0;
+    top: 48px;
+    border: 1px solid #d8d8d8;
+    background-color: #f9f9f9;
+    font-size: 1.333333rem;
+    color: #666;
+    border-radius: 0 0 4px 4px;
+    padding: 0 10px 15px;
+    line-height: 18px;
+    z-index: 20000;
+    display: none;
+}
+.sec_divnew a{
+    display: block;
+    white-space: nowrap;
+    margin-top: 15px;
+    padding: 0 15px 0 10px;
+    color: #666;
+}
+.underline{
+    border-top: 1px solid #ccc;
+    padding-top: 15px !important;
+}
+.sec_divnew a:hover{
+    color: #528E01 !important;
+    text-decoration: none;
+}
+.sec_navlist{
+    display: table;
+}
+.third_navlist{
+    display: table-cell;
+    padding-top: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.third_navlist>a{
+    margin-top: 16px;
+    font-size: 1.166666rem;
+    font-weight: 400;
+    line-height: 14px;
+    padding: 0;
+}
+.sec_divnew a{
+    display: block;
+    white-space: nowrap;
+    padding: 0 8px 0 0px;
+}
+.arrow_upnew{
+    background: url("../images/2.png") 0 -224px no-repeat;
+    width: 14px;
+    height: 10px;
+    position: absolute;
+    top: -6px;
+}
+.glbNav .R_user{
+    height: 48px;
+    float: right;
+}
+.glbNav .R_user .login_info{
+    height: 100%;
+    position: relative;
+    z-index: 1001;
+    white-space: nowrap;
+    float: right;
+}
+.glbNav .R_user .login_info .l{
+    float: left;
+    width: 119px;
+    height: 100%;
+    padding-left: 10px;
+    margin-right: 20px;
+}
+.glbNav .R_user .login_info .l .m{
+    height: 48px;
+    line-height: 48px;
+    background: url("../images/2.png") no-repeat 0 15px;
+    cursor: pointer;
+    margin-right: 12px;
+}
+.m .u_l{
+    color: white;
+    margin-left: 23px;
+    margin-right: 5px;
+    outline: 0;
+    font-size: 1.166666rem;
+}
+.m .u_r{
+    color: white;
+    outline: 0;
+    font-size: 1.166666rem;
+}
+.glbNav .R_user .login_info .appContainer{
+    padding-left: 2px;
+    width: 120px;
+    height: 48px;
+    float: left;
+    cursor: pointer;
+}
+.appContainer .downapp{
+    width: 110px;
+    height: 27px;
+    border-radius: 2px;
+    background-color: #dce8cc;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+.appContainer .downapp:hover{
+    background-color: #F2F6E3;
+}
+.downapp .apppic1{
+    background: url("../images/2.png") no-repeat;
+    display: inline-block;
+    zoom: 1;
+    margin-top: 3px;
+    background-position: 0 -71px;
+    width: 16px;
+    height: 20px;
+    margin-left: 5px;
+}
+.downapp .apppic2{
+    width: 20px;
+    height: 20px;
+    background: url("../images/2.png") no-repeat;
+    background-position: 0 -110px;
+    zoom: 1;
+    display: inline-block;
+    margin-top: 3px;
+}
+.downapp .apptext{
+    zoom: 1;
+    display: inline-block;
+    margin-top: 3px;
+    color: #666;
+    vertical-align: top;
+    line-height: 22px;
+    font-size: 1.166666rem;
 }
