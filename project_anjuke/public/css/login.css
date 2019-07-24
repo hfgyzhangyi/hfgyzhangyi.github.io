@@ -1,0 +1,21 @@
+/*头部*/
+.user-nav{
+    width: 1180px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto;
+    position: relative;
+}
+.user-nav img{
+    margin-top: 19px;
+}
+/*中间*/
+.content{
+    position: relative;
+    height: 706px;
+    width: 100%;
+    border-top: 2px solid #63ad02;
+    background: url("../images/login_bg.jpg") no-repeat center center;
+    background-color: #fbfbfb;
+    
+}

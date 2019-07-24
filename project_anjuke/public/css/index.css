@@ -1,20 +1,3 @@
-html{
-    font-size: 12px;
-}
-body,div,ul,li,input,dt,dd,dl,img{
-    margin: 0;
-    padding: 0;
-}
-li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
-a:hover{
-    color: #f60 !important;
-    text-decoration: underline;
-}
 .clearFix{
     width: 1180px;
     height: auto;
