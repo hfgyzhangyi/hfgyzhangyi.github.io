@@ -11,6 +11,132 @@
                 <img src="./images/logo.png"/>
             </a>
         </div>
-        <div class="content" id="content"></div>
+        <div class="content" id="content">
+            <div class="login-wrap">
+                <div class="frame-login-wrap">
+                    <div class="frame-login-area">
+                        <div class="head">
+                            <h3>登录安居客</h3>
+                        </div>
+                        <div class="form-content">
+                            <div class="tab-wrap">
+                                <a href="javascript:;" id="smsTab" class="cur">手机快捷登录或注册</a>
+                                <i></i>
+                                <a href="javascript:;" id="pwdTab">账号密码登录</a>
+                            </div>
+                            <div class="form-wrap">
+                                <!--手机号登录-->
+                                <form action="" method="POST" id="smsLoginForm">
+                                    <div class="item">
+                                        <p class="hidden error">错误~</p>
+                                        <div class="control-item-wrap">
+                                            <div class="control-item">
+                                                <img src="./images/login_icon-phone.png" class="icon"/>
+                                                <i class="split">|</i>
+                                                <input class="ipt" type="text" name="phone" placeholder="请输入手机号码" maxlength="11"/>
+                                            </div>
+                                        </div>
+                                        <img class="hidden icon-ok" src="./images/login_icon-ok.png"></img>
+                                    </div>
+                                    <div class="item">
+                                        <p class="hidden error">错误~</p>
+                                        <div class="control-item-wrap">
+                                            <div class="control-item control-item-md">
+                                                <img src="./images/login_icon-lock.png" class="icon"/>
+                                                <i class="split">|</i>
+                                                <input class="ipt" type="text" name="sms_code" placeholder="请输入验证码" maxlength="6"/>
+                                            </div>
+                                            <a class="sms-btn sms-disable-btn">获取验证码</a>
+                                        </div>
+                                        <img class="hidden icon-ok" src="./images/login_icon-ok.png"></img>
+                                    </div>
+                                    <div class="check-item">
+                                        <label>
+                                            <input type="checkbox" checked="checked" class="checkbox"/>
+                                            <span>我已阅读并接受</span>
+                                        </label>
+                                        <a target="_blank" href="javascript:;">《安居客用户服务协议》</a>
+                                        &nbsp;及&nbsp;
+                                        <a target="_blank" href="javascript:;">《安居客隐私权政策》</a>
+                                    </div>
+                                    <input type="submit" class="submit-btn" value="立即登录"/>
+                                </form>
+                                <!--用户名密码登录-->
+                                <form action="" method="POST" class="none" id="pwdLoginForm">
+                                    <div class="item">
+                                        <p class="hidden error">错误~</p>
+                                        <div class="control-item-wrap">
+                                            <div class="control-item">
+                                                <img src="./images/login_icon-user.png" class="icon"/>
+                                                <i class="split user-split">|</i>
+                                                <input class="ipt" type="text" name="username" placeholder="手机号/邮箱/安居客用户名" maxlength="30"/>
+                                            </div>
+                                        </div>
+                                        <img class="hidden icon-ok" src="./images/login_icon-ok.png"></img>
+                                    </div>
+                                    <div class="item">
+                                        <p class="hidden error">错误~</p>
+                                        <div class="control-item-wrap">
+                                            <div class="control-item">
+                                                <img src="./images/login_icon-lock.png" class="icon"/>
+                                                <i class="split">|</i>
+                                                <input class="ipt" type="text" name="password" placeholder="请输入密码" maxlength="40"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="check-item">
+                                        <label>
+                                            <input type="checkbox" checked="checked" class="checkbox"/>
+                                            <span>我已阅读并接受</span>
+                                        </label>
+                                        <a target="_blank" href="javascript:;">用户服务协议</a>
+                                    </div>
+                                    <input type="submit" class="submit-btn" value="立即登录"/>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="third-login-title">
+                            <p class="line"></p>
+                            <p class="doc">
+                                <span>其他账户登录</span>
+                            </p>
+                        </div>
+                        <div class="thirds-wrap">
+                            <a href="javascript:;" class="weixin-link">
+                                <img src="./images/login_icon-weixin.png"/>
+                            </a>
+                        </div>
+                        <!--其他登录模块展示-->
+                        <div class="other-login-wrap">
+                            <p class="title">客户登录</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/jquery-1.11.3.min.js"></script>
+        <script>
+            (function(){
+                $(".tab-wrap>a").click(function(){
+                    if(!$(this).hasClass("cur")){
+                        $(".cur").removeClass("cur");
+                        $(this).addClass("cur");
+                        if($(this).attr("id")==="smsTab"){
+                            $("#pwdLoginForm").hide();
+                            $("#smsLoginForm").show();
+                        }else if($(this).attr("id")==="pwdTab"){
+                            $("#smsLoginForm").hide();
+                            $("#pwdLoginForm").show();
+                        }
+                    }
+                });
+                $(".weixin-link").mouseover(function(){
+                    $(this).children("img").attr("src","./images/login_icon-weixin-hover.png");
+                });
+                $(".weixin-link").mouseout(function(){
+                    $(this).children("img").attr("src","./images/login_icon-weixin.png");
+                });
+            })();
+        </script>
     </body>
 </html>

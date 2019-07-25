@@ -19,3 +19,251 @@
     background-color: #fbfbfb;
     
 }
+.login-wrap{
+    margin: 0 auto;
+    padding-top: 70px;
+    width: 1000px;
+}
+.frame-login-wrap{
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    width: 600px;
+    height: 480px;
+    padding: 0 20px 20px;
+    background: #fff;
+    box-shadow: 0 0 8px #888;
+    border-radius: 5px;
+    z-index: 1003;
+    overflow: hidden;
+}
+.frame-login-area{
+    position: relative;
+    width: 600px;
+    height: 100%;
+}
+.frame-login-area .head{
+    height: 58px;
+    padding: 0 2px 0 7px;
+    font-size: 22px;
+    line-height: 23px;
+    color: #62ab00;
+    border-bottom: 2px solid #62ab00;
+}
+.head h3{
+    display: inline-block;
+    font-weight: normal;
+}
+.form-content{
+    margin-left: 0;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.tab-wrap{
+    margin-top: 26px;
+    width: 390px;
+    font-size: 1.333333rem;
+    text-align: center;
+}
+.tab-wrap a{
+    font-size: 1.333333rem;
+    color: #666;
+    outline: none;
+}
+.tab-wrap i{
+    margin: 0 48px;
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: #ccc;
+    font-style: normal;
+    font-weight: normal;
+}
+.tab-wrap .cur{
+    color: #62ab00;
+}
+.tab-wrap .cur:hover{
+    color: #62ab00 !important;
+}
+.tab-wrap a:hover{
+    text-decoration: none;
+}
+/*form表单开始*/
+.form-wrap{
+    margin-top: 8px;
+}
+.item{
+    width: 100%;
+    float: left;
+}
+.error{
+    line-height: 20px;
+    color: #df3f3f;
+}
+.control-item-wrap{
+    display: inline-block;
+    width: 400px;
+    overflow: hidden;
+    font-size: 0;
+    vertical-align: top;
+}
+.control-item{
+    display: inline-block;
+    padding-left: 16px;
+    width: 382px;
+    height: 48px;
+    font-size: 0;
+    color: #666;
+    border:1px solid #ccc;
+}
+.icon{
+    display: inline-block;
+    margin-left: 4px;
+    margin-top: 13px;
+}
+.split{
+    margin: 10px 0 0  12px;
+    font-size: 0;
+    display: inline-block;
+    width: 1px;
+    height: 30px;
+    background: #ccc;
+    vertical-align: top;
+}
+.ipt{
+    padding: 15px 0 15px 15px;
+    width: 327px;
+    font-size: 1.16666rem;
+    height: 18px;
+    line-height: 18px;
+    color: #666;
+    border: 0;
+    vertical-align: top;
+}
+.icon-ok{
+    position: relative;
+    top: 19px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.control-item-md{
+    width: 232px;
+}
+.control-item-md .ipt{
+    width: 177px;
+}
+.sms-btn{
+    margin-left: 10px;
+    display: inline-block;
+    width: 138px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #62ab00;
+    font-size: 1.16666rem;
+    text-align: center;
+    vertical-align: top;
+}
+.sms-disable-btn{
+    cursor: default;
+    color: #ccc;
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+.sms-disable-btn:hover{
+    color: #ccc !important;
+    text-decoration: none;
+}
+.check-item{
+    margin-top: 37px;
+    width: 400px;
+    float: left;
+}
+.check-item label{
+    font-size: 1.166666rem;
+    vertical-align: top;
+}
+.check-item label .checkbox{
+    width: 16px;
+    height: 16px;
+}
+.check-item label span{
+    color: #666;
+    vertical-align: top;
+}
+.check-item a{
+    font-size: 1.166666rem;
+    color: #136ccd;
+    vertical-align: top;
+}
+.none{
+    display: none;
+}
+.user-split{
+    margin: 10px 0 0 8px;
+}
+.submit-btn{
+    float: left;
+    margin-top: 10px;
+    padding: 0;
+    display: block;
+    font-size: 1.333333rem;
+    color: #fff;
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    background: #62ab00;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: "Microsoft YaHei", "宋体", Arial, "\5B8B\4F53", Helvetica, sans-serif;
+}
+/*form表单结束*/
+.third-login-title{
+    margin: 26px 0 0 10px;
+    width: 400px;
+}
+.third-login-title .line{
+    width: 400px;
+    height: 1px;
+    border-bottom: 1px solid #ededed;
+}
+.third-login-title .doc{
+    margin-top: -10px;
+    font-size: 1.166666rem;
+    line-height: 20px;
+    color: #ccc;
+    text-align: center;
+}
+.third-login-title .doc span{
+    background: #fff;
+    padding: 0 16px;
+}
+.thirds-wrap{
+    width: 420px;
+    padding: 8px 0 0;
+}
+.thirds-wrap a{
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+/*其他登录连接区域*/
+.other-login-wrap{
+    position: absolute;
+    top: 114px;
+    right: 0;
+    margin-top: 18px;
+    text-align: center;
+}
+.other-login-wrap .title{
+    margin: 0 0 15px 0;
+    width: 136px;
+    text-align: left;
+    font-size: 1.166666rem;
+    color: #666;
+}

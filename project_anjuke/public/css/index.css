@@ -10,7 +10,7 @@
     clear: both;
     height: 0;
 }
-/*top_aera*/
+/*头部广告区域*/
 .top_area{
     height: 140px;
 }
@@ -30,7 +30,7 @@
     width: 1180px;
     height: 70px;
 }
-/*title_area*/
+/*头部标题区域*/
 .title_area{
     height: 64px;
 }
@@ -128,7 +128,7 @@
     color: #797979;
     margin-right: 10px;
 }
-/*导航栏*/
+/*导航栏区域*/
 .glbNav{
     width: 100%;
     height: 48px;

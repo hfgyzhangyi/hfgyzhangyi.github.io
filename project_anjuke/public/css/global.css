@@ -1,7 +1,7 @@
 html{
     font-size: 12px;
 }
-body,div,ul,li,input,dt,dd,dl,img{
+body,div,ul,li,input,dt,dd,dl,img,form,p{
     margin: 0;
     padding: 0;
 }
@@ -14,4 +14,14 @@ a{
 a:hover{
     color: #f60 !important;
     text-decoration: underline;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 100%;
+}
+.hidden{
+    visibility: hidden !important;
+}
+input{
+    outline: none;
+    font-family: "Microsoft YaHei", "宋体", Arial, "\5B8B\4F53", Helvetica, sans-serif;
 }
