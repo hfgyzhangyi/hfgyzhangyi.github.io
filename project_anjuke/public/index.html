@@ -264,9 +264,9 @@
                         </div>
                         <div class="right-conts">
                             <!--租房,商业地产对应搜索框-->
-                            <form class="search search-form" method="GET" action="" target="_self" id="indexSearch" style="display:block;">
+                            <form class="search search-form" method="GET" action="" target="_self" id="indexSearch" style="display:none;">
                                 <!--商业地产radio-->
-                                <div style="display:block;" id="contsydc" class="contsydc">
+                                <div style="display:none;" id="contsydc" class="contsydc">
                                     <input hidefocus="true" type="radio" value="租写字楼" name="sydc_type" class="sydc-type fst-type" checked="true">&nbsp;租写字楼
                                     <input hidefocus="true" type="radio" value="买写字楼" name="sydc_type" class="sydc-type">&nbsp;买写字楼
                                     <input hidefocus="true" type="radio" value="买商铺" name="sydc_type" class="sydc-type">&nbsp;买商铺
@@ -283,6 +283,149 @@
                                     </a>
                                 </div>
                             </form>
+                            <!--买房搜索框-->
+                            <form class="search search-form" method="GET" action="" target="_self" id="search-form">
+                                <div class="fd1 clearfix" id="searchIpt">
+                                    <input type="text" name="kw" class="kw" id="search-esf" maxlength="100" autocomplete="off" placeholder="请输入小区名称、地址…">
+                                    <i class="home-icon search-close" id="search-close" style="display: none;"></i>
+                                    <!--搜索按钮-->
+                                    <a href="javascript:;">
+                                        <i class="btn-icon" id="btnIcon"></i>
+                                        <input hidefocus="true" id="btnSubmit" type="submit" class="btn btnSubmit" value="二手房">
+                                    </a>
+                                    <a href="javascript:;">
+                                        <i class="btn-icon icon-xfzf"></i>
+                                        <input id="otherBtn" type="button" class="btn-bg-xf btn otherBtn" value="新房">
+                                    </a>
+                                    <div class="auto-wrap">
+                                        <ul class="search-ul esf-search-ul">
+                                            <li>
+                                                <em class="font_tag sou_tg">搜过</em>
+                                                <span class="s_kw">浦恒馨苑</span>
+                                                <label class="gray"></label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag sou_tg">搜过</em>
+                                                <span class="s_kw">同济蓬莱家园</span>
+                                                <label class="gray"></label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag sou_tg">搜过</em>
+                                                <span class="s_kw">旭辉浦江国际</span>
+                                                <label class="gray"></label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag sou_tg">搜过</em>
+                                                <span class="s_kw">松江万达广场</span>
+                                                <label class="gray"></label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag sou_tg">搜过</em>
+                                                <span class="s_kw">万达广场loft户型</span>
+                                                <label class="gray"></label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag kan_tg">看过</em>
+                                                <span class="s_kw">上南七村</span>
+                                                <label class="gray">浦东-世博</label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag kan_tg">看过</em>
+                                                <span class="s_kw">东方花园二期</span>
+                                                <label class="gray">闵行-七宝</label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag recom_tg">推荐</em>
+                                                <span class="s_kw">周康新苑</span>
+                                                <label class="gray">浦东-康桥</label>
+                                            </li>
+                                            <li>
+                                                <em class="font_tag recom_tg">推荐</em>
+                                                <span class="s_kw">莲浦府邸(西区别墅)</span>
+                                                <label class="gray">闵行-七宝</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="buy-house tab-contents" id="content_Rd1">
+                                <div class="clearfix">
+                                    <div class="details float_l">
+                                        <a title="地图找房" href="javascript:;" class="map">
+                                            <i class="home-icon"></i>
+                                            地图找房
+                                        </a>
+                                        <p>二手房</p>
+                                        <div class="areas">
+                                            <a href="javascript:;" title="浦东二手房" target="_self" class="hot-word">浦东</a>
+                                            <a href="javascript:;" title="闵行二手房" target="_self" class="hot-word">闵行</a>
+                                            <a href="javascript:;" title="松江二手房" target="_self" class="hot-word">松江</a>
+                                            <a href="javascript:;" title="宝山二手房" target="_self">宝山</a>
+                                            <a href="javascript:;" title="嘉定二手房" target="_self">嘉定</a>
+                                            <a href="javascript:;" title="徐汇二手房" target="_self">徐汇</a>
+                                            <a href="javascript:;" title="静安二手房" target="_self">静安</a>
+                                            <a href="javascript:;" title="青浦二手房" target="_self">青浦</a>
+                                            <a href="javascript:;" title="普陀二手房" target="_self">普陀</a>
+                                            <a href="javascript:;" title="黄浦二手房" target="_self">黄浦</a>
+                                            <a href="javascript:;" title="长宁二手房" target="_self">长宁</a>
+                                            <a href="javascript:;" title="杨浦二手房" target="_self">杨浦</a>
+                                            <a href="javascript:;" title="奉贤二手房" target="_self">奉贤</a>
+                                            <a href="javascript:;" title="虹口二手房" target="_self">虹口</a>
+                                            <a href="javascript:;" title="金山二手房" target="_self">金山</a>
+                                            <a href="javascript:;" title="上海周边二手房" target="_self">上海周边</a>
+                                        </div>
+                                        <div class="prices">
+                                            <a href="javascript:;" title="100万以下二手房" target="_self">100万以下</a>
+                                            <a href="javascript:;" title="150-200万二手房" target="_self">150-200万</a>
+                                            <a href="javascript:;" title="200-250万二手房" target="_self">200-250万</a>
+                                            <a href="javascript:;" title="250-300万二手房" target="_self">250-300万</a>
+                                            <a href="javascript:;" title="300-400万二手房" target="_self">300-400万</a>
+                                            <a href="javascript:;" title="400-500万二手房" target="_self">400-500万</a>
+                                            <a href="javascript:;" title="500-700万二手房" target="_self">500-700万</a>
+                                            <a href="javascript:;" title="700-1000万二手房" target="_self">700-1000万</a>
+                                        </div>
+                                    </div>
+                                    <i class="solid-line line-mag float_l"></i>
+                                    <div class="details float_l">
+                                        <a title="地图找房" href="javascript:;" class="map">
+                                            <i class="home-icon"></i>
+                                            地图找房
+                                        </a>
+                                        <p>新房</p>
+                                        <div class="areas">
+                                            <a href="javascript:;" title="浦东" target="_self" class="hot-word">浦东</a>
+                                            <a href="javascript:;" title="上海周边" target="_self" class="hot-word">上海周边</a>
+                                            <a href="javascript:;" title="宝山" target="_self" class="hot-word">宝山</a>
+                                            <a href="javascript:;" title="嘉定" target="_self">嘉定</a>
+                                            <a href="javascript:;" title="青浦" target="_self">青浦</a>
+                                            <a href="javascript:;" title="闵行" target="_self">闵行</a>
+                                            <a href="javascript:;" title="松江" target="_self">松江</a>
+                                            <a href="javascript:;" title="奉贤" target="_self">奉贤</a>
+                                            <a href="javascript:;" title="普陀" target="_self">普陀</a>
+                                            <a href="javascript:;" title="崇明" target="_self">崇明</a>
+                                            <a href="javascript:;" title="黄浦" target="_self">黄浦</a>
+                                            <a href="javascript:;" title="金山" target="_self">金山</a>
+                                            <a href="javascript:;" title="杨浦" target="_self">杨浦</a>
+                                            <a href="javascript:;" title="静安" target="_self">静安</a>
+                                            <a href="javascript:;" title="虹口" target="_self">虹口</a>
+                                            <a href="javascript:;" title="徐汇" target="_self">徐汇</a>
+                                            <a href="javascript:;" title="花桥" target="_self">花桥</a>
+                                            <a href="javascript:;" title="长宁" target="_self">长宁</a>
+                                        </div>
+                                        <div class="prices">
+                                            <a href="javascript:;" title="1.5万以下" target="_self">1.5万以下</a>
+                                            <a href="javascript:;" title="1.5-2万" target="_self">1.5-2万</a>
+                                            <a href="javascript:;" title="2-2.5万" target="_self">2-2.5万</a>
+                                            <a href="javascript:;" title="2.5-3万" target="_self">2.5-3万</a>
+                                            <a href="javascript:;" title="3-4万" target="_self">3-4万</a>
+                                            <a href="javascript:;" title="4-5万" target="_self">4-5万</a>
+                                            <a href="javascript:;" title="5-8万" target="_self">5-8万</a>
+                                            <a href="javascript:;" title="8万以上" target="_self">8万以上</a>
+                                            <a href="javascript:;" title="售价待定" target="_self">售价待定</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -303,6 +446,12 @@
                     }
                 });
             });*/
+            jQuery.fn.isChildAndSelfOf = function(b){
+                return (this.closest(b).length > 0);
+            };
+            jQuery.fn.isChildOf = function(b){
+                return (this.parents(b).length > 0);
+            };
             $(".title_city_area").mouseover(function(){
                 $(".city_panel").show();
             });
@@ -347,6 +496,28 @@
             $(".search-close").click(function(){
                 $(".kw").val("");
                 $(this).hide();
+            });
+            $("body").mousemove(function(e){
+                if($(e.target).isChildOf(".auto-wrap")){
+                    if(e.target.nodeName==="SPAN" || e.target.nodeName==="EM" || e.target.nodeName==="LABEL"){
+                        if(!$(e.target.parentNode).hasClass("auto-grayback")){
+                            $(".auto-grayback").removeClass("auto-grayback");
+                            $(e.target.parentNode).addClass("auto-grayback");
+                        }
+                    }else{
+                        if(!$(e.target).hasClass("auto-grayback")){
+                            $(".auto-grayback").removeClass("auto-grayback");
+                            $(e.target).addClass("auto-grayback");
+                        }
+                    }
+                }
+            });
+            $("body").click(function(e){
+                if(!$(e.target).is("#search-esf")){
+                    $(".auto-wrap").hide();
+                }else{
+                    $(".auto-wrap").show();
+                }
             });
         })();
         </script>
