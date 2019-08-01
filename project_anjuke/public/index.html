@@ -4,6 +4,7 @@
         <title>上海房产网，上海二手房，租房，新房，房产信息网–上海58安居客</title>
         <link rel="stylesheet" href="./css/index.css" type="text/css">
         <link rel="stylesheet" href="./css/global.css" type="text/css">
+        <link rel="icon" href="./images/icon.ico">
     </head>
     <body>
         <!--顶部广告-->
@@ -242,6 +243,52 @@
                 </div>
             </div>
         </div>
+        <!--内容区域-->
+        <div id="content">
+            <div class="left-cont fl">
+                <div class="cont-wrap m-t-box">
+                    <div class="box search-cont p-none clearfix">
+                        <div class="left-tabs">
+                            <a href="javascript:;">
+                                <span class="tab h-tab cur-tab">买&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+                            </a>
+                            <a href="javascript:;">
+                                <span class="tab h-tab">卖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+                            </a>
+                            <a href="javascript:;">
+                                <span class="tab">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+                            </a>
+                            <a href="javascript:;">
+                                <span class="tab">商铺写字楼</span>
+                            </a>
+                        </div>
+                        <div class="right-conts">
+                            <!--租房,商业地产对应搜索框-->
+                            <form class="search search-form" method="GET" action="" target="_self" id="indexSearch" style="display:block;">
+                                <!--商业地产radio-->
+                                <div style="display:block;" id="contsydc" class="contsydc">
+                                    <input hidefocus="true" type="radio" value="租写字楼" name="sydc_type" class="sydc-type fst-type" checked="true">&nbsp;租写字楼
+                                    <input hidefocus="true" type="radio" value="买写字楼" name="sydc_type" class="sydc-type">&nbsp;买写字楼
+                                    <input hidefocus="true" type="radio" value="买商铺" name="sydc_type" class="sydc-type">&nbsp;买商铺
+                                    <input hidefocus="true" type="radio" value="租商铺" name="sydc_type" class="sydc-type">&nbsp;租商铺
+                                </div>
+                                <!--搜索框区域-->
+                                <div class="fd1 clearfix" id="searchIpt">
+                                    <input type="text" name="kw" class="kw" id="glb_search0" maxlength="100" autocomplete="false" placeholder="请输入房源特征、地址、小区、楼盘名或…">
+                                    <i class="home-icon search-close" id="home_close" style="display: none;"></i>
+                                    <!--搜索按钮-->
+                                    <a href="javascript:;">
+                                        <i class="btn-icon icon-xzl" id="btnIcon"></i>
+                                        <input hidefocus="true" id="btnSubmit" type="submit" class="btn btn-w-sydc" value="租写字楼">
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-cont fr"></div>
+        </div>
         <!--<div><button id="test">test</button></div>-->
         <script src="./js/jquery-1.11.3.min.js"></script>
         <script>
@@ -275,6 +322,31 @@
             });
             $(".li_single").mouseout(function(){
                 $(".sec_divnew").hide();
+            });
+            $(".tab").mouseover(function(){
+                $(".cur-tab").removeClass("cur-tab");
+                $(this).addClass("cur-tab");
+            });
+            $(".sydc-type").change(function(){
+                var value=$(this).val();
+                $(".btn").val(value);
+                if(value==="租写字楼" || value==="买写字楼"){
+                    $(".icon-xzl").css("left","8px");
+                }else if(value==="买商铺" || value==="租商铺"){
+                    $(".icon-xzl").css("left","16px");
+                }
+            });
+            $(".kw").keyup(function(){
+                var value=$(this).val();
+                if(value!==""){
+                    $(".search-close").show();
+                }else{
+                    $(".search-close").hide();
+                }
+            });
+            $(".search-close").click(function(){
+                $(".kw").val("");
+                $(this).hide();
             });
         })();
         </script>

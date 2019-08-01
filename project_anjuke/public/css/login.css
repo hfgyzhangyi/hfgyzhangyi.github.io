@@ -259,6 +259,7 @@
     right: 0;
     margin-top: 18px;
     text-align: center;
+    font-size: 1.166666rem;
 }
 .other-login-wrap .title{
     margin: 0 0 15px 0;
@@ -266,4 +267,125 @@
     text-align: left;
     font-size: 1.166666rem;
     color: #666;
+}
+.other-login-wrap img{
+    vertical-align: center;
+}
+.other-login-wrap a{
+    color: #666;
+}
+.other-login-wrap p{
+    margin: 0 0 15px 0;
+    width: 136px;
+    display: block;
+    text-align: left;
+}
+.other-login-wrap i{
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+}
+/*登录成功提示界面*/
+.login-success{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 200px;
+    margin: -90px 0 0 -200px;
+    text-align: center;
+}
+.login-success p{
+    margin-top: 12px;
+    font-size: 1.166666rem;
+    color: #666;
+}
+.login-success .success-btn-wrap{
+    margin-top: 45px;
+}
+.login-success .success-btn-wrap a{
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.333333rem;
+    color: #fff;
+    cursor: pointer;
+    background: #62ab00;
+}
+.login-success .success-btn-wrap a:hover{
+    text-decoration: none;
+    color: #fff !important;
+}
+/*底部*/
+.footer{
+    clear: both;
+    border-top: 1px solid #e6e6e6;
+    padding: 15px 0 30px;
+    color: #333;
+}
+.footer .links{
+    width: 1180px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-size: 0;
+    text-align: center;
+}
+.footer .links li{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.footer a{
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+}
+.footer .spe-lines{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 10px;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    vertical-align: -1px;
+}
+.footer .show-mod{
+    display: none;
+    border:1px solid #e6e6e6;
+    border-radius: 4px;
+    width: 730px;
+    padding: 3px 10px;
+    margin:0 auto 5px;
+    overflow: hidden;
+}
+.footer .show-mod li{
+    float: left;
+    margin-right: 22px;
+    line-height: 24px;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.footer .other-city ul{
+    width: 736px;
+}
+.footer .other-city li{
+    width: 76px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 16px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.footer .cp-mod{
+    text-align: center;
+    line-height: 20px;
 }
