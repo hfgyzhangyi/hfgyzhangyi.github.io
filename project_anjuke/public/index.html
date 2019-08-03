@@ -250,16 +250,16 @@
                     <div class="box search-cont p-none clearfix">
                         <div class="left-tabs">
                             <a href="javascript:;">
-                                <span class="tab h-tab cur-tab">买&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+                                <span class="tab h-tab cur-tab" data-type="1">买&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
                             </a>
                             <a href="javascript:;">
-                                <span class="tab h-tab">卖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+                                <span class="tab h-tab" data-type="2">卖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
                             </a>
                             <a href="javascript:;">
-                                <span class="tab">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
+                                <span class="tab" data-type="3">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房</span>
                             </a>
                             <a href="javascript:;">
-                                <span class="tab">商铺写字楼</span>
+                                <span class="tab" data-type="4">商铺写字楼</span>
                             </a>
                         </div>
                         <div class="right-conts">
@@ -267,10 +267,10 @@
                             <form class="search search-form" method="GET" action="" target="_self" id="indexSearch" style="display:none;">
                                 <!--商业地产radio-->
                                 <div style="display:none;" id="contsydc" class="contsydc">
-                                    <input hidefocus="true" type="radio" value="租写字楼" name="sydc_type" class="sydc-type fst-type" checked="true">&nbsp;租写字楼
-                                    <input hidefocus="true" type="radio" value="买写字楼" name="sydc_type" class="sydc-type">&nbsp;买写字楼
-                                    <input hidefocus="true" type="radio" value="买商铺" name="sydc_type" class="sydc-type">&nbsp;买商铺
-                                    <input hidefocus="true" type="radio" value="租商铺" name="sydc_type" class="sydc-type">&nbsp;租商铺
+                                    <input hidefocus="true" type="radio" value="租写字楼" name="sydc_type" class="sydc-type fst-type" checked="true" data-type="1">&nbsp;租写字楼
+                                    <input hidefocus="true" type="radio" value="买写字楼" name="sydc_type" class="sydc-type" data-type="2">&nbsp;买写字楼
+                                    <input hidefocus="true" type="radio" value="买商铺" name="sydc_type" class="sydc-type" data-type="3">&nbsp;买商铺
+                                    <input hidefocus="true" type="radio" value="租商铺" name="sydc_type" class="sydc-type" data-type="4">&nbsp;租商铺
                                 </div>
                                 <!--搜索框区域-->
                                 <div class="fd1 clearfix" id="searchIpt">
@@ -278,7 +278,7 @@
                                     <i class="home-icon search-close" id="home_close" style="display: none;"></i>
                                     <!--搜索按钮-->
                                     <a href="javascript:;">
-                                        <i class="btn-icon icon-xzl" id="btnIcon"></i>
+                                        <i class="btn-icon" id="btnIcon"></i>
                                         <input hidefocus="true" id="btnSubmit" type="submit" class="btn btn-w-sydc" value="租写字楼">
                                     </a>
                                 </div>
@@ -348,6 +348,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <!--买房-->
                             <div class="buy-house tab-contents" id="content_Rd1">
                                 <div class="clearfix">
                                     <div class="details float_l">
@@ -426,11 +427,341 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--end买房-->
+                            <!--卖房-->
+                            <div class="tab-contents clearfix" id="content_Rd8" style="display: none;">
+                                <div class="publish">
+                                    <p class="saler-title">房东委托</p>
+                                    <form class="search" action="" method="GET" id="commlist">
+                                        <div class="name-list">
+                                            <input type="text" name="kw" id="salerIpt" maxlength="100" autocomplete="off" placeholder="请输入并选择小区">
+                                        </div>
+                                        <a href="javascript:;" style="position: relative;">
+                                            <i class="sale-btn-icon"></i>
+                                            <input hidefocus="true" id="salerSubmit" type="submit" class="free-pub" value="免费发布房源">
+                                        </a>
+                                    </form>
+                                </div>
+                                <div class="steps">
+                                    <ul>
+                                        <li>
+                                            <i>1</i>
+                                            <p>在安居客发房</p>
+                                            <em>
+                                                简单2步即可完成发布，方便
+                                                <br>
+                                                快捷免费！
+                                            </em>
+                                        </li>
+                                        <li>
+                                            <i>2</i>
+                                            <p>优质经纪人全程服务</p>
+                                            <em>
+                                                我们挑选优质经纪人为您服
+                                                <br>
+                                                务，拒绝骚扰
+                                            </em>
+                                        </li>
+                                        <li>
+                                            <i>3</i>
+                                            <p>大量买家</p>
+                                            <em>优质经纪人协助您完成办理手续</em>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end卖房-->
+                            <!--租房-->
+                            <div class="tab-contents clearfix" id="content_Rd3" style="display: none;">
+                                <a href="javascript:;" title="地图找房" class="map one-map">
+                                    <i class="home-icon"></i>
+                                    地图找房
+                                </a>
+                                <div class="hot-areas">
+                                    <p>热门区域</p>
+                                    <div class="areas list-height">
+                                        <a href="javascript:;" title="浦东租房" target="_self" class="hot-word">浦东</a>
+                                        <a href="javascript:;" title="闵行租房" target="_self" class="hot-word">闵行</a>
+                                        <a href="javascript:;" title="静安租房" target="_self" class="hot-word">静安</a>
+                                        <a href="javascript:;" title="徐汇租房" target="_self">徐汇</a>
+                                        <a href="javascript:;" title="宝山租房" target="_self">宝山</a>
+                                        <a href="javascript:;" title="嘉定租房" target="_self">嘉定</a>
+                                        <a href="javascript:;" title="松江租房" target="_self">松江</a>
+                                        <a href="javascript:;" title="普陀租房" target="_self">普陀</a>
+                                        <a href="javascript:;" title="黄浦租房" target="_self">黄浦</a>
+                                        <a href="javascript:;" title="杨浦租房" target="_self">杨浦</a>
+                                        <a href="javascript:;" title="长宁租房" target="_self">长宁</a>
+                                        <a href="javascript:;" title="青浦租房" target="_self">青浦</a>
+                                        <a href="javascript:;" title="虹口租房" target="_self">虹口</a>
+                                        <a href="javascript:;" title="奉贤租房" target="_self">奉贤</a>
+                                        <a href="javascript:;" title="金山租房" target="_self">金山</a>
+                                        <a href="javascript:;" title="崇明租房" target="_self">崇明</a>
+                                        <a href="javascript:;" title="上海周边租房" target="_self">上海周边</a>
+                                    </div>
+                                </div>
+                                <i class="solid-line float_l"></i>
+                                <div class="hot-plates">
+                                    <p>热门板块</p>
+                                    <div class="areas list-height">
+                                        <a href="javascript:;" title="浦江镇租房" target="_self" class="hot-word">浦江镇</a>
+                                        <a href="javascript:;" title="川沙租房" target="_self" class="hot-word">川沙</a>
+                                        <a href="javascript:;" title="徐家汇租房" target="_self" class="hot-word">徐家汇</a>
+                                        <a href="javascript:;" title="南桥租房" target="_self">南桥</a>
+                                        <a href="javascript:;" title="徐泾租房" target="_self">徐泾</a>
+                                        <a href="javascript:;" title="大宁租房" target="_self">大宁</a>
+                                        <a href="javascript:;" title="老闵行租房" target="_self">老闵行</a>
+                                        <a href="javascript:;" title="陆家嘴租房" target="_self">陆家嘴</a>
+                                        <a href="javascript:;" title="泗泾租房" target="_self">泗泾</a>
+                                        <a href="javascript:;" title="周浦租房" target="_self">周浦</a>
+                                        <a href="javascript:;" title="嘉定新城租房" target="_self">嘉定新城</a>
+                                        <a href="javascript:;" title="华漕租房" target="_self">华漕</a>
+                                        <a href="javascript:;" title="惠南租房" target="_self">惠南</a>
+                                        <a href="javascript:;" title="张江租房" target="_self">张江</a>
+                                        <a href="javascript:;" title="世博租房" target="_self">世博</a>
+                                        <a href="javascript:;" title="九亭租房" target="_self">九亭</a>
+                                        <a href="javascript:;" title="唐镇租房" target="_self">唐镇</a>
+                                        <a href="javascript:;" title="松江大学城租房" target="_self">松江大学城</a>
+                                        <a href="javascript:;" title="张江(东)租房" target="_self">张江(东)</a>
+                                        <a href="javascript:;" title="金桥租房" target="_self">金桥</a>
+                                    </div>
+                                </div>
+                                <i class="solid-line float_l"></i>
+                                <div class="house-budget">
+                                    <p>租房预算</p>
+                                    <div class="areas list-height">
+                                        <a href="javascript:;" target="_self" title="1000-1500元">1000-1500元</a>
+                                        <a href="javascript:;" target="_self" title="1500-2000元">1500-2000元</a>
+                                        <a href="javascript:;" target="_self" title="2000-2500元">2000-2500元</a>
+                                        <a href="javascript:;" target="_self" title="2500-3000元">2500-3000元</a>
+                                        <a href="javascript:;" target="_self" title="3000-3500元">3000-3500元</a>
+                                        <a href="javascript:;" target="_self" title="3500-4000元">3500-4000元</a>
+                                        <a href="javascript:;" target="_self" title="4000-5000元">4000-5000元</a>
+                                        <a href="javascript:;" target="_self" title="12000元以上">12000元以上</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end租房-->
+                            <!--租写字楼-->
+                            <div class="tab-contents clearfix" id="content_Rd5" style="display: none;">
+                                <div class="details float_l">
+                                    <p>热门区域</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="浦东新区" class="hot-word">浦东新区</a>
+                                        <a href="javascript:;" target="_self" title="闵行区" class="hot-word">闵行区</a>
+                                        <a href="javascript:;" target="_self" title="静安区" class="hot-word">静安区</a>
+                                        <a href="javascript:;" target="_self" title="徐汇区">徐汇区</a>
+                                        <a href="javascript:;" target="_self" title="长宁区">长宁区</a>
+                                        <a href="javascript:;" target="_self" title="黄浦区">黄浦区</a>
+                                        <a href="javascript:;" target="_self" title="普陀区">普陀区</a>
+                                        <a href="javascript:;" target="_self" title="松江区">松江区</a>
+                                        <a href="javascript:;" target="_self" title="杨浦区">杨浦区</a>
+                                        <a href="javascript:;" target="_self" title="虹口区">虹口区</a>
+                                        <a href="javascript:;" target="_self" title="嘉定区">嘉定区</a>
+                                        <a href="javascript:;" target="_self" title="宝山区">宝山区</a>
+                                        <a href="javascript:;" target="_self" title="青浦区">青浦区</a>
+                                        <a href="javascript:;" target="_self" title="奉贤区">奉贤区</a>
+                                        <a href="javascript:;" target="_self" title="金山区">金山区</a>
+                                        <a href="javascript:;" target="_self" title="崇明区">崇明区</a>
+                                        <a href="javascript:;" target="_self" title="上海周边">上海周边</a>
+                                    </div>
+                                </div>
+                                <i class="solid-line line-mag float_l" style="height: 121px;"></i>
+                                <div class="details float_l">
+                                    <p>热门板块</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="陆家嘴" class="hot-word">陆家嘴</a>
+                                        <a href="javascript:;" target="_self" title="张江" class="hot-word">张江</a>
+                                        <a href="javascript:;" target="_self" title="漕河泾" class="hot-word">漕河泾</a>
+                                        <a href="javascript:;" target="_self" title="金桥">金桥</a>
+                                        <a href="javascript:;" target="_self" title="八佰伴">八佰伴</a>
+                                        <a href="javascript:;" target="_self" title="五角场">五角场</a>
+                                        <a href="javascript:;" target="_self" title="浦江">浦江</a>
+                                        <a href="javascript:;" target="_self" title="中山公园">中山公园</a>
+                                        <a href="javascript:;" target="_self" title="徐家汇">徐家汇</a>
+                                        <a href="javascript:;" target="_self" title="静安寺">静安寺</a>
+                                        <a href="javascript:;" target="_self" title="七宝">七宝</a>
+                                        <a href="javascript:;" target="_self" title="莘庄">莘庄</a>
+                                        <a href="javascript:;" target="_self" title="南京东路">南京东路</a>
+                                        <a href="javascript:;" target="_self" title="人民广场">人民广场</a>
+                                        <a href="javascript:;" target="_self" title="南桥">南桥</a>
+                                        <a href="javascript:;" target="_self" title="虹桥">虹桥</a>
+                                        <a href="javascript:;" target="_self" title="南京西路">南京西路</a>
+                                        <a href="javascript:;" target="_self" title="松江大学城">松江大学城</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end租写字楼-->
+                            <!--买写字楼-->
+                            <div class="tab-contents clearfix" id="content_Rd4" style="display: none;">
+                                <div class="details float_l">
+                                    <p>热门区域</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="浦东新区" class="hot-word">浦东新区</a>
+                                        <a href="javascript:;" target="_self" title="静安区" class="hot-word">静安区</a>
+                                        <a href="javascript:;" target="_self" title="闵行区" class="hot-word">闵行区</a>
+                                        <a href="javascript:;" target="_self" title="徐汇区">徐汇区</a>
+                                        <a href="javascript:;" target="_self" title="黄浦区">黄浦区</a>
+                                        <a href="javascript:;" target="_self" title="嘉定区">嘉定区</a>
+                                        <a href="javascript:;" target="_self" title="松江区">松江区</a>
+                                        <a href="javascript:;" target="_self" title="普陀区">普陀区</a>
+                                        <a href="javascript:;" target="_self" title="长宁区">长宁区</a>
+                                        <a href="javascript:;" target="_self" title="宝山区">宝山区</a>
+                                        <a href="javascript:;" target="_self" title="杨浦区">杨浦区</a>
+                                        <a href="javascript:;" target="_self" title="虹口区">虹口区</a>
+                                        <a href="javascript:;" target="_self" title="青浦区">青浦区</a>
+                                        <a href="javascript:;" target="_self" title="奉贤区">奉贤区</a>
+                                        <a href="javascript:;" target="_self" title="金山区">金山区</a>
+                                        <a href="javascript:;" target="_self" title="崇明区">崇明区</a>
+                                        <a href="javascript:;" target="_self" title="上海周边">上海周边</a>
+                                        <a href="javascript:;" target="_self" title="万盛">万盛</a>
+                                    </div>
+                                </div>
+                                <i class="solid-line line-mag float_l" style="height: 121px;"></i>
+                                <div class="details float_l">
+                                    <p>热门板块</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="陆家嘴" class="hot-word">陆家嘴</a>
+                                        <a href="javascript:;" target="_self" title="南京东路" class="hot-word">南京东路</a>
+                                        <a href="javascript:;" target="_self" title="金桥" class="hot-word">金桥</a>
+                                        <a href="javascript:;" target="_self" title="张江">张江</a>
+                                        <a href="javascript:;" target="_self" title="江苏路地铁">江苏路地铁</a>
+                                        <a href="javascript:;" target="_self" title="莘庄">莘庄</a>
+                                        <a href="javascript:;" target="_self" title="彭浦">彭浦</a>
+                                        <a href="javascript:;" target="_self" title="衡山路">衡山路</a>
+                                        <a href="javascript:;" target="_self" title="九亭">九亭</a>
+                                        <a href="javascript:;" target="_self" title="五角场">五角场</a>
+                                        <a href="javascript:;" target="_self" title="北京西路">北京西路</a>
+                                        <a href="javascript:;" target="_self" title="浦江">浦江</a>
+                                        <a href="javascript:;" target="_self" title="豫园">豫园</a>
+                                        <a href="javascript:;" target="_self" title="周浦">周浦</a>
+                                        <a href="javascript:;" target="_self" title="徐家汇">徐家汇</a>
+                                        <a href="javascript:;" target="_self" title="中山公园">中山公园</a>
+                                        <a href="javascript:;" target="_self" title="南京西路">南京西路</a>
+                                        <a href="javascript:;" target="_self" title="川沙">川沙</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end买写字楼-->
+                            <!--买商铺-->
+                            <div class="tab-contents clearfix" id="content_Rd6" style="display: none;">
+                                <div class="details float_l">
+                                    <p>热门区域</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="浦东新区" class="hot-word">浦东新区</a>
+                                        <a href="javascript:;" target="_self" title="黄浦区" class="hot-word">黄浦区</a>
+                                        <a href="javascript:;" target="_self" title="静安区" class="hot-word">静安区</a>
+                                        <a href="javascript:;" target="_self" title="闵行区">闵行区</a>
+                                        <a href="javascript:;" target="_self" title="徐汇区">徐汇区</a>
+                                        <a href="javascript:;" target="_self" title="松江区">松江区</a>
+                                        <a href="javascript:;" target="_self" title="嘉定区">嘉定区</a>
+                                        <a href="javascript:;" target="_self" title="宝山区">宝山区</a>
+                                        <a href="javascript:;" target="_self" title="长宁区">长宁区</a>
+                                        <a href="javascript:;" target="_self" title="杨浦区">杨浦区</a>
+                                        <a href="javascript:;" target="_self" title="普陀区">普陀区</a>
+                                        <a href="javascript:;" target="_self" title="虹口区">虹口区</a>
+                                        <a href="javascript:;" target="_self" title="青浦区">青浦区</a>
+                                        <a href="javascript:;" target="_self" title="奉贤区">奉贤区</a>
+                                        <a href="javascript:;" target="_self" title="金山区">金山区</a>
+                                        <a href="javascript:;" target="_self" title="崇明区">崇明区</a>
+                                        <a href="javascript:;" target="_self" title="上海周边">上海周边</a>
+                                        <a href="javascript:;" target="_self" title="万盛">万盛</a>
+                                    </div>
+                                </div>
+                                <i class="solid-line line-mag float_l" style="height: 121px;"></i>
+                                <div class="details float_l">
+                                    <p>热门板块</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="南京东路" class="hot-word">南京东路</a>
+                                        <a href="javascript:;" target="_self" title="豫园" class="hot-word">豫园</a>
+                                        <a href="javascript:;" target="_self" title="南京西路" class="hot-word">南京西路</a>
+                                        <a href="javascript:;" target="_self" title="陆家嘴">陆家嘴</a>
+                                        <a href="javascript:;" target="_self" title="淮海中路">淮海中路</a>
+                                        <a href="javascript:;" target="_self" title="徐家汇">徐家汇</a>
+                                        <a href="javascript:;" target="_self" title="五角场">五角场</a>
+                                        <a href="javascript:;" target="_self" title="松江大学城">松江大学城</a>
+                                        <a href="javascript:;" target="_self" title="北京西路">北京西路</a>
+                                        <a href="javascript:;" target="_self" title="周浦">周浦</a>
+                                        <a href="javascript:;" target="_self" title="九亭">九亭</a>
+                                        <a href="javascript:;" target="_self" title="张江">张江</a>
+                                        <a href="javascript:;" target="_self" title="华漕">华漕</a>
+                                        <a href="javascript:;" target="_self" title="黄浦周边">黄浦周边</a>
+                                        <a href="javascript:;" target="_self" title="金桥">金桥</a>
+                                        <a href="javascript:;" target="_self" title="衡山路">衡山路</a>
+                                        <a href="javascript:;" target="_self" title="南桥">南桥</a>
+                                        <a href="javascript:;" target="_self" title="人民广场">人民广场</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end买商铺-->
+                            <!--租商铺-->
+                            <div class="tab-contents clearfix" id="content_Rd7" style="display: none;">
+                                <div class="details float_l">
+                                    <p>热门区域</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="浦东新区" class="hot-word">浦东新区</a>
+                                        <a href="javascript:;" target="_self" title="闵行区" class="hot-word">闵行区</a>
+                                        <a href="javascript:;" target="_self" title="静安区" class="hot-word">静安区</a>
+                                        <a href="javascript:;" target="_self" title="黄浦区">黄浦区</a>
+                                        <a href="javascript:;" target="_self" title="徐汇区">徐汇区</a>
+                                        <a href="javascript:;" target="_self" title="宝山区">宝山区</a>
+                                        <a href="javascript:;" target="_self" title="普陀区">普陀区</a>
+                                        <a href="javascript:;" target="_self" title="长宁区">长宁区</a>
+                                        <a href="javascript:;" target="_self" title="松江区">松江区</a>
+                                        <a href="javascript:;" target="_self" title="嘉定区">嘉定区</a>
+                                        <a href="javascript:;" target="_self" title="杨浦区">杨浦区</a>
+                                        <a href="javascript:;" target="_self" title="虹口区">虹口区</a>
+                                        <a href="javascript:;" target="_self" title="青浦区">青浦区</a>
+                                        <a href="javascript:;" target="_self" title="奉贤区">奉贤区</a>
+                                        <a href="javascript:;" target="_self" title="金山区">金山区</a>
+                                        <a href="javascript:;" target="_self" title="崇明区">崇明区</a>
+                                        <a href="javascript:;" target="_self" title="上海周边">上海周边</a>
+                                    </div>
+                                </div>
+                                <i class="solid-line line-mag float_l" style="height: 121px;"></i>
+                                <div class="details float_l">
+                                    <p>热门板块</p>
+                                    <div class="areas">
+                                        <a href="javascript:;" target="_self" title="南京东路" class="hot-word">南京东路</a>
+                                        <a href="javascript:;" target="_self" title="七宝" class="hot-word">七宝</a>
+                                        <a href="javascript:;" target="_self" title="周浦" class="hot-word">周浦</a>
+                                        <a href="javascript:;" target="_self" title="金桥">金桥</a>
+                                        <a href="javascript:;" target="_self" title="静安寺">静安寺</a>
+                                        <a href="javascript:;" target="_self" title="南京西路">南京西路</a>
+                                        <a href="javascript:;" target="_self" title="莘庄">莘庄</a>
+                                        <a href="javascript:;" target="_self" title="豫园">豫园</a>
+                                        <a href="javascript:;" target="_self" title="张江">张江</a>
+                                        <a href="javascript:;" target="_self" title="徐家汇">徐家汇</a>
+                                        <a href="javascript:;" target="_self" title="五角场">五角场</a>
+                                        <a href="javascript:;" target="_self" title="彭浦">彭浦</a>
+                                        <a href="javascript:;" target="_self" title="中山公园">中山公园</a>
+                                        <a href="javascript:;" target="_self" title="陆家嘴">陆家嘴</a>
+                                        <a href="javascript:;" target="_self" title="江苏路地铁">江苏路地铁</a>
+                                        <a href="javascript:;" target="_self" title="衡山路">衡山路</a>
+                                        <a href="javascript:;" target="_self" title="三林">三林</a>
+                                        <a href="javascript:;" target="_self" title="长寿路">长寿路</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end租商铺-->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="right-cont fr"></div>
+            <div class="right-cont fr">
+                <!--免费发布房源-->
+                <div class="Entrusthouse-cont">
+                    <div class="btn-links">
+                        <a class="btn publish-btn" target="_blank" href="javascript:;" rel="nofollow">
+                            <div><i></i></div>
+                            我要卖房
+                        </a>
+                    </div>
+                    <div class="links">
+                        <a href="javascript:;" target="_blank" rel="nofollow">>>我要估价</a>
+                    </div>
+                </div>
+                <!--end免费发布房源-->
+            </div>
         </div>
         <!--<div><button id="test">test</button></div>-->
         <script src="./js/jquery-1.11.3.min.js"></script>
@@ -477,12 +808,24 @@
                 $(this).addClass("cur-tab");
             });
             $(".sydc-type").change(function(){
+                $(".tab-contents").hide();
                 var value=$(this).val();
                 $(".btn").val(value);
                 if(value==="租写字楼" || value==="买写字楼"){
-                    $(".icon-xzl").css("left","8px");
+                    $(".btn-icon").removeClass("icon-sp");
+                    $(".btn-icon").addClass("icon-xzl");
                 }else if(value==="买商铺" || value==="租商铺"){
-                    $(".icon-xzl").css("left","16px");
+                    $(".btn-icon").removeClass("icon-xzl");
+                    $(".btn-icon").addClass("icon-sp");
+                }
+                if(value==="租写字楼"){
+                    $("#content_Rd5").show();
+                }else if(value==="买写字楼"){
+                    $("#content_Rd4").show();
+                }else if(value==="买商铺"){
+                    $("#content_Rd6").show();
+                }else if(value==="租商铺"){
+                    $("#content_Rd7").show();
                 }
             });
             $(".kw").keyup(function(){
@@ -517,6 +860,54 @@
                     $(".auto-wrap").hide();
                 }else{
                     $(".auto-wrap").show();
+                }
+            });
+            $(".left-tabs>a>span").mouseover(function(){
+                $(".tab-contents").hide();
+                $("#search-form").hide();
+                $("#contsydc").hide();
+                if($(this).data("type")===1){
+                    $("#indexSearch").hide();
+                    $("#search-form").show();
+                    $("#content_Rd1").show();
+                }else if($(this).data("type")===2){
+                    $("#indexSearch>#contsydc").hide();
+                    $("#indexSearch>.fd1").hide();
+                    $("#content_Rd8").show();
+                    $("#indexSearch").show();
+                }else if($(this).data("type")===3){
+                    $("#indexSearch>#searchIpt>a>.btn-icon").removeClass("icon-xzl");
+                    $("#indexSearch>#searchIpt>a>.btn-icon").removeClass("icon-sp");
+                    $("#indexSearch>#searchIpt>a>.btn-icon").addClass("icon-xfzf");
+                    $("#indexSearch>#searchIpt>a>#btnSubmit").val("租房");
+                    $("#indexSearch>#searchIpt>a>#btnSubmit").removeClass("btn-w-sydc");
+                    $("#indexSearch>.fd1").show();
+                    $("#indexSearch").show();
+                    $("#content_Rd3").show();
+                }else if($(this).data("type")===4){
+                    $("#indexSearch>#searchIpt>a>.btn-icon").removeClass("icon-xfzf");
+                    if($(".sydc-type:checked").data("type")===1){
+                        $("#indexSearch>#searchIpt>a>#btnSubmit").val("租写字楼");
+                        $("#indexSearch>#searchIpt>a>.btn-icon").addClass("icon-xzl");
+                        $("#content_Rd5").show();
+                    }
+                    else if($(".sydc-type:checked").data("type")===2){
+                        $("#indexSearch>#searchIpt>a>#btnSubmit").val("买写字楼");
+                        $("#indexSearch>#searchIpt>a>.btn-icon").addClass("icon-xzl");
+                        $("#content_Rd4").show();
+                    }else if($(".sydc-type:checked").data("type")===3){
+                        $("#indexSearch>#searchIpt>a>#btnSubmit").val("买商铺");
+                        $("#indexSearch>#searchIpt>a>.btn-icon").addClass("icon-sp");
+                        $("#content_Rd6").show();
+                    }else if($(".sydc-type:checked").data("type")===4){
+                        $("#indexSearch>#searchIpt>a>#btnSubmit").val("租商铺");
+                        $("#indexSearch>#searchIpt>a>.btn-icon").addClass("icon-sp");
+                        $("#content_Rd7").show();
+                    }
+                    $("#indexSearch>#searchIpt>a>#btnSubmit").addClass("btn-w-sydc");
+                    $("#contsydc").show();
+                    $("#indexSearch>.fd1").show();
+                    $("#indexSearch").show();
                 }
             });
         })();
