@@ -10,6 +10,12 @@
     clear: both;
     height: 0;
 }
+.font-16{
+    font-size: 1.333333rem;
+}
+.font-20{
+    font-size: 1.666666rem;
+}
 input{
     outline: 0;
 }
@@ -19,6 +25,23 @@ select,input{
 em{
     font-style: normal;
     font-weight: normal;
+}
+h1{
+    font-family: "Hiragino Sans GB","Microsoft YaHei",tahoma,arial,simhei;
+    font-size: 1.666666rem;
+}
+body{
+    color:#333;
+    font-family: "Microsoft YaHei","宋体",Arial,"\5B8B\4F53",Helvetica,sans-serif;
+    font-size: 1rem;
+}
+a:link, a:visited, a:active{
+    color: #0041d9;
+    text-decoration: none;
+    outline: 0;
+}
+h3{
+    font-family: "Hiragino Sans GB","Microsoft YaHei",tahoma,arial,simhei;
 }
 /*头部广告区域*/
 .top_area{
@@ -772,6 +795,114 @@ p.saler-title{
     padding-left: 22px;
     width: 153px;
 }
+/*新房优惠*/
+.home-title{
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.home-title a, .home-title a:link, .home-title a:visited, .home-title a:active{
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", tahoma, arial, simhei;
+    font-size: 1.666666rem;
+    color: #333;
+    cursor: pointer;
+}
+.newhouse-cont, .ershouRecomm-cont, .popGuide-cont, .ershouRecomm-cont, .ershouChoose-cont, .renthouse-cont, .hotcommercial-cont{
+    width: 828px;
+    overflow: hidden;
+}
+.newhouse-cont{
+    position: relative;
+    width: 870px;
+    height: 412px;
+    overflow: hidden;
+}
+.newhouse-ul li{
+    float: left;
+    margin-right: 22px;
+}
+.newhouse-li a{
+    width: 382px;
+    padding: 20px;
+    height: 370px;
+    display: block;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+}
+.newhouse-li p{
+    color: #333333;
+}
+.newhouse-li p .sub-title{
+    color: #333;
+    font-size: 16px;
+}
+.newhouse-li a:hover{
+    border: 1px solid #f60;
+    text-decoration: none;
+}
+.newhouse-li a:hover p .sub-title{
+    text-decoration: underline;
+    color: #ff6600;
+}
+.newhouse-li-div {
+    position:relative;
+}
+.newhouse-li-specialspan {
+    position:absolute;
+    right:10px;
+    bottom:14px;
+    color:white;
+    font-size:12px;
+}
+.newhouse-li img{
+    border: 0;
+    width: 382px;
+    height: 260px;
+    margin-bottom: 12px;
+}
+.newhouse-li span{
+    color: #999;
+    font-size: 14px;
+    display: block;
+}
+.buy-info {
+    float:left;
+    color: #ff6600;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: normal;
+}
+.buy-tip {
+    float: right;
+    height: 32px;
+    line-height: 32px;
+}
+.newhouse-cont a.show-next,.newhouse-cont  a.show-pre {
+    width: 38px;
+    height: 39px;
+    display: block;
+    position: absolute;
+    top: 132px;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+.newhouse-cont a.show-next {
+    right: 1px;
+    background-color:#000;
+    background-position: 8px -51px;
+    width: 40px;
+}
+.newhouse-cont a.show-pre {
+    left: 1px;
+    background-color:#000;
+    background-position: 5px -4px;
+ }
+.newhouse-cont a.show-next:hover,.newhouse-cont a.show-pre:hover{
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
 /*右侧内容*/
 .Entrusthouse-cont{
     width: 286px;
@@ -826,4 +957,210 @@ p.saler-title{
 .Entrusthouse-cont .links a{
     color: #a65d34;
     font-size: 1.333333rem;
+}
+/*热门导购*/
+.popGuide-cont{
+    position: relative;
+}
+.popguide-scroll-ul{
+    width: 2544px;
+    padding: 0;
+    margin: 0%;
+}
+.popguide-scroll-ul li {
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    width: 828px;
+}
+.popguide-scroll-ul li a:hover p{
+    color: #ff6600;
+}
+.big-guide {
+    float: left;
+}
+.big-guide img {
+    display: block;
+    width: 403px;
+    height: 335px;
+}
+.big-guide p {
+    font-size: 20px;
+    color: #333333;
+    height: 54px;
+    line-height: 54px;
+    display: inline;
+}
+.small-guide {
+    width: 425px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.small-guide span {
+    margin: 0px 0px 10px 22px;
+    float: left;
+}
+.small-guide img{
+    display: block;
+    width: 190px;
+    height: 130px;
+}
+.small-guide p {
+    margin-top: 4px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333333;
+    width: 190px;
+    height: 56px;
+    line-height: 28px;
+}
+.m-b-s-guid{
+    margin-bottom: 10px;
+}
+.scroller-num {
+    width: 84px;
+    _width: 95px;
+    margin: 6px 372px;
+}
+.scroller-num li{
+    cursor: pointer;
+    float: left;
+    margin: 0 10px;
+    list-style: none;
+    border-radius: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #BEBEBE;
+    overflow: hidden;
+}
+.scroller-num .cur-num {
+    background-color: #62ab00;
+}
+
+.popGuide-cont a.show-next,.popGuide-cont a.show-pre {
+    width: 38px;
+    height: 39px;
+    display: block;
+    position: absolute;
+    top: 132px;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+.popGuide-cont a.show-next {
+    right: 0px;
+    background-color:#000;
+    background-position: 8px -51px;
+    width: 40px;
+}
+.popGuide-cont a.show-pre {
+    left: 0px;
+    background-color:#000;
+    background-position: 5px -4px;
+ }
+.popGuide-cont a.show-next:hover,.popGuide-cont a.show-pre:hover{
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+/*看房团*/
+.seehouse-cont{
+    position: relative;
+    height: 410px;
+    padding: 0;
+}
+.kft-box{
+    box-sizing: border-box;
+    padding: 15px 20px 0;
+    width: 286px;
+}
+.kft-box-inner{
+    position: relative;
+    width: 246px;
+    height: 361px;
+    overflow: hidden;
+}
+.kftscroll{
+    height: 361px;
+}
+.kftscroll .kftpage{
+    float: left;
+    width: 246px;
+    position: relative;
+    height: 100%;
+}
+.kftscroll h3{
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.kftscroll .kftpage li{
+    margin-top: 23px;
+    padding-left: 15px;
+    background: url("../images/4.png") no-repeat 0 9px;
+    vertical-align: middle;
+}
+.kftscroll .kftpage li h4{
+    font-size: 14px;
+    color: #333;
+}
+.kftscroll .kftpage li p{
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.kft-line_baoming{
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+}
+.kft-line_baoming .iconfont{
+    color: #f60;
+    margin-right: 5px;
+}
+.kft-link_btn{
+    position: absolute;
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    background: #62ab00;
+    border-radius: 4px;
+    cursor: pointer;
+    bottom: 15px;
+}
+.kft-link_btn:hover{
+    background: #477e00
+}
+.kftscroller-num{
+    margin: 0 auto;
+    text-align: center;
+}
+.kftscroller-num li{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 4px;
+    list-style: none;
+    border-radius: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #d8d8d8;
+    overflow: hidden;
+}
+.kftscroller-num .cur-pointer{
+    background-color: #62ab00;
+}
+.kft-a_link:hover{
+    text-decoration: none;
 }
