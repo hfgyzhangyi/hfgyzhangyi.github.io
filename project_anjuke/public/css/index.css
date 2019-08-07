@@ -43,6 +43,10 @@ a:link, a:visited, a:active{
 h3{
     font-family: "Hiragino Sans GB","Microsoft YaHei",tahoma,arial,simhei;
 }
+img{
+    display: inline-block;
+    border:0;
+}
 /*头部广告区域*/
 .top_area{
     height: 140px;
@@ -507,7 +511,7 @@ h3{
     border: 0;
     border-radius: 5px;
     color: #fff;
-    font-size: 21px;
+    font-size: 1.75rem;
     padding-left: 11px;
     margin-left: 3px;
     background-color: #ff911b;
@@ -836,7 +840,7 @@ p.saler-title{
 }
 .newhouse-li p .sub-title{
     color: #333;
-    font-size: 16px;
+    font-size: 1.333333rem;
 }
 .newhouse-li a:hover{
     border: 1px solid #f60;
@@ -854,7 +858,7 @@ p.saler-title{
     right:10px;
     bottom:14px;
     color:white;
-    font-size:12px;
+    font-size: 1rem;
 }
 .newhouse-li img{
     border: 0;
@@ -864,13 +868,13 @@ p.saler-title{
 }
 .newhouse-li span{
     color: #999;
-    font-size: 14px;
+    font-size: 1.166666rem;
     display: block;
 }
 .buy-info {
     float:left;
     color: #ff6600;
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 32px;
     font-weight: normal;
 }
@@ -986,7 +990,7 @@ p.saler-title{
     height: 335px;
 }
 .big-guide p {
-    font-size: 20px;
+    font-size: 1.666666rem;
     color: #333333;
     height: 54px;
     line-height: 54px;
@@ -1010,7 +1014,7 @@ p.saler-title{
 .small-guide p {
     margin-top: 4px;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 1.333333rem;
     color: #333333;
     width: 190px;
     height: 56px;
@@ -1091,7 +1095,7 @@ p.saler-title{
 }
 .kftscroll h3{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.666666rem;
     color: #333;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1104,11 +1108,11 @@ p.saler-title{
     vertical-align: middle;
 }
 .kftscroll .kftpage li h4{
-    font-size: 14px;
+    font-size: 1.166666rem;
     color: #333;
 }
 .kftscroll .kftpage li p{
-    font-size: 14px;
+    font-size: 1.166666rem;
     color: #999;
     margin-top: 5px;
     overflow: hidden;
@@ -1117,7 +1121,7 @@ p.saler-title{
 }
 .kft-line_baoming{
     text-align: center;
-    font-size: 13px;
+    font-size: 1.083333rem;
     color: #999;
     position: absolute;
     bottom: 80px;
@@ -1134,7 +1138,7 @@ p.saler-title{
     line-height: 50px;
     text-align: center;
     color: #fff;
-    font-size: 20px;
+    font-size: 1.666666rem;
     background: #62ab00;
     border-radius: 4px;
     cursor: pointer;
@@ -1163,4 +1167,180 @@ p.saler-title{
 }
 .kft-a_link:hover{
     text-decoration: none;
+}
+/*特色楼盘*/
+.popGuide-cont, .specialprop-cont{
+    height: 426px;
+    overflow: hidden;
+}
+.m-b-s-title{
+    margin-bottom: 20px;
+}
+.border-b{
+    border-bottom: 1px dashed #e6e6e6;
+}
+.specialprop-ul-title{
+    margin-bottom: 15px;
+}
+.specialprop-ul-title a{
+    font-family: "Microsoft YaHei","Hiragino Sans GB",tahoma,arial,simhei;
+    display: inline-block;
+    height: 24px;
+    padding: 0 10px;
+    border: 1px #62ab00 solid;
+    line-height: 24px;
+    text-align: center;
+    font-size: 1.166666rem;
+    color: #61ab00;
+}
+.specialprop-ul-title a:hover{
+    text-decoration: none;
+    color: #61ab00 !important;
+    background-color: #F2FFE1;
+}
+.specialprop-ul-m-b{
+    margin-bottom: 6px;
+}
+.xf-comm-dl-pad{
+    padding-bottom: 13px;
+}
+.xf-comm-dl dt{
+    width: 160px;
+    float: left;
+}
+.xf-comm-dl dt a{
+    color: #333;
+    font-size: 1.166666rem;
+    display: block;
+    overflow: hidden;
+}
+.xf-comm-dl dt, .xf-comm-dl dd{
+    font-family: "Microsoft YaHei","Hiragino Sans GB",tahoma,arial,simhei;
+    overflow: hidden;
+    line-height: 21px;
+    color: #333;
+    height: 21px;
+    font-size: 1.166666rem;
+}
+.xf-comm-dl dd{
+    font-size: 1.166666rem;
+    width: 80px;
+    float: right;
+    text-align: right;
+}
+/*左侧广告*/
+.left-1st-ad, .right-1st-ad, .left-2nd-ad, .right-2nd-ad, .left-3rd-ad, .right-3rd-ad, .left-4th-ad, .right-4th-ad{
+    height: 95px;
+    overflow: hidden;
+}
+.left-1st-ad{
+    width: 870px;
+}
+/*热点追踪*/
+.cont-wrap-fl{
+    width: 560px;
+    overflow: hidden;
+}
+.propmarket-cont{
+    height: 478px;
+    overflow: hidden;
+}
+.propmarket-ul li{
+    padding-bottom: 22px;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #d8d8d8;
+    display: block;
+}
+.propmarket-img{
+    width: 160px;
+    margin-right: 20px;
+}
+.propmarket-img img{
+    width: 160px;
+    height: 120px;
+    border: 0;
+}
+.propmarket-info{
+    width: 336px;
+}
+.font-14, .font-16, .font-18, .font-20, .font-24{
+    font-family: "Microsoft YaHei","Hiragino Sans GB",tahoma,arial,simhei;
+    font-weight: normal;
+}
+.propmarket-info h3 a{
+    line-height: 30px;
+    margin-bottom: 8px;
+    color: #333;
+    height: 30px;
+    overflow: hidden;
+    display: block;
+}
+.font-14{
+    font-size: 1.166666rem;
+}
+.propmarket-info p{
+    line-height: 26px;
+    color: #999;
+    height: 83px;
+    overflow: hidden;
+}
+.propmarket-ul li.border-none{
+    border-bottom: none;
+}
+/*实地探盘*/
+.cont-wrap-fr{
+    width: 286px;
+}
+.propmarket-cont, .field-cont, .newdynamic-cont{
+    height: 478px;
+    overflow: hidden;
+}
+.field-ul li{
+    border-bottom: 1px dashed #d8d8d8;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+}
+.field-ul li.border-none{
+    border-bottom: none;
+}
+.field-ul li img{
+    width: 245px;
+    height: 160px;
+    border: 0;
+}
+.mar-top{
+    margin-top: -2px;
+}
+.field-ul li p a{
+    line-height: 28px;
+    font-size: 1.333333rem;
+    color: #333;
+}
+/*新房动态*/
+.m-t-re-font{
+    margin-top: 0px;
+}
+.newdynamic-ul-b{
+    margin-bottom: 57px;
+}
+.newdynamic-ul-t{
+    margin-top: -4px;
+}
+.con-list li{
+    background: url("../images/4.png") no-repeat 0px 9px;
+    vertical-align: middle;
+    padding-left: 16px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+.con-list li.xf-con-list{
+    padding-bottom: 0px;
+    margin-bottom: 25px;
+}
+.con-list li a{
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", tahoma, arial, simhei;
+    font-size: 1.166666rem;
+    color: #333;
 }
