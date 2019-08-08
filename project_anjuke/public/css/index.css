@@ -618,9 +618,6 @@ img{
     width: 315px;
     position: relative;
 }
-.home-icon{
-    background: url("../images/1.png") no-repeat 0 0;
-}
 .map i{
     position: absolute;
     width: 12px;
@@ -1343,4 +1340,201 @@ p.saler-title{
     font-family: "Microsoft YaHei", "Hiragino Sans GB", tahoma, arial, simhei;
     font-size: 1.166666rem;
     color: #333;
+}
+/*二手房推荐小区*/
+.ershouRecomm-cont, .pricetrend-cont{
+    height: 360px;
+    overflow: hidden;
+}
+.m-t-f-4{
+    margin-top: -4px;
+
+}
+.m-b-con-jg{
+    margin-bottom: 17px;
+}
+.ershouRecomm-w-t li{
+    width: 404px;
+}
+.com-rec li{
+    float: left;
+}
+.m-r-li-l{
+    margin-right: 20px;
+}
+.m-b-title-con{
+    margin-bottom: 15px;
+}
+.com-rec-title{
+    color: #467E00;
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+    font-weight: normal;
+}
+.font-18{
+    font-size: 1.5rem;
+}
+.com-rec-img, .com-rec-img img{
+    border: 0;
+    width: 180px;
+    height: 135px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.com-rimg-t{
+    margin-top: 10px;
+}
+.m-t-con-con2{
+    margin-top: 15px;
+}
+.com-rec-text dt, .com-rec-text dd{
+    padding-bottom: 4px;
+}
+.com-rec-text dt, .com-rec-text dd, .com-rec-text dt a{
+    line-height: 21px;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", tahoma, arial, simhei;
+    font-size: 1.166666rem;
+    color: #333;
+    overflow: hidden;
+    width: 180px;
+    height: 21px;
+}
+.com-rec-text dt em, .com-rec-text dd em{
+    font-family: "tahoma";
+    font-size: 1.166666rem;
+}
+address, caption, th, cite, code, em{
+    font-style: normal;
+    font-weight: normal;
+}
+.m-r-li{
+    margin-right: 33px;
+}
+.ershouRecomm-cont ul li div a:hover dl dt,.ershouRecomm-cont ul li div a:hover dl dd{
+    color: #f60 !important;
+}
+.m-t-img-font{
+    margin-top: 3px;
+}
+.com-rec-w{
+    width: 852px;
+}
+.com-rec-w li{
+    width: 180px
+}
+.m-t-con-con{
+    margin-top: 22px;
+}
+.m-b-title-con2{
+    margin-bottom: 11px;
+}
+.com-rec li a:hover dt,.com-rec li a:hover dd{
+    color: #f60 !important;
+}
+/*房价趋势*/
+.m-t-f-pricetrend{
+    margin-top: -8px;
+}
+.pricetrend-dl dt{
+    width: 106px;
+    color: #999;
+    font-size: 1.166666rem;
+}
+.pricetrend-dl dd, .pricetrend-dl dt{
+    font-family: "Microsoft YaHei","Hiragino Sans GB",  tahoma, arial, simhei;
+    float: left;
+    overflow: hidden;
+    line-height: 33px;
+}
+.pricetrend-dl dd{
+    width: 100px;
+    font-size: 1.333333rem;
+}
+.pricetrend-dl dd span{
+    font-family: tahoma;
+}
+.color-orange{
+    color: #f60;
+}
+.color-green{
+    color: #62ab00;
+}
+.pricetrend-chart{
+    width: 197px;
+    border: 0;
+    display: block;
+    margin-top: 15px;
+}
+.pricetrend-chart img{
+    width: 245px;
+    height: 197px;
+}
+.pricetrend-p{
+    font-size: 1rem;
+    color: #999;
+    font-family: "tahoma";
+    margin-top: 42px;
+}
+/*二手房房源精选*/
+.ershouChoose-cont{
+    position: relative;
+}
+.ershouChoose-cont, .houseqa-cont, .renthouse-cont, .rentCommunity-cont{
+    height: 339px;
+    overflow: hidden;
+}
+.p-l-title{
+    padding-left: 22px;
+}
+.ershouChoose-opt1{
+    background-position: -7px -309px;
+}
+.ershouChoose-opt1, .ershouChoose-opt2{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 5px;
+    overflow: hidden;
+}
+.com-rec .img-wrap{
+    position: relative;
+}
+.esf-axf{
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    background: #62ab00;
+    background-image: linear-gradient(-90deg, #02C26D 0%, #7ED665 100%);
+}
+.com-rec-text dd.grey{
+    color: #999999;
+}
+.ershouChoose-opt2{
+    background-position: -7px -334px;
+}
+.ershouChoose-opt3{
+    overflow: hidden;
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    background-position: -7px -357px;
+    left: 0;
+    top: 5px;
+}
+.ershouChoose-opt4{
+    overflow: hidden;
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    background-position: -6px -378px;
+    left: 0;
+    top: 4px;
 }
