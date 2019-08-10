@@ -298,6 +298,9 @@ img{
     outline: 0;
     font-size: 1.166666rem;
 }
+.m a:hover{
+    color: #fff !important;
+}
 .glbNav .R_user .login_info .appContainer{
     padding-left: 2px;
     width: 120px;
@@ -1831,4 +1834,222 @@ a.bu1, a.bu2, a.bu3, a.bu4, a.bu5, a.bu5, a.bu6, a.bu7, a.bu8, a.bu9, a.bu10, a.
     overflow: hidden;
     text-align: center;
     color: #333;
+}
+.footer_seo_tabs .seo_tabs:hover, .footer_seo_tabs .seoTabsOn:link, .footer_seo_tabs .seoTabsOn:visited, .footer_seo_tabs .seoTabsOn:hover{
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    text-decoration: none;
+    color: #4e8d00 !important;
+    font-weight: 700;
+    border-bottom: 1px solid #fff;
+}
+.footer_seo_con{
+    margin: 0 14px 0 13px;
+    padding: 12px 0 7px 0;
+    border-bottom: 1px dotted #e6e6e6;
+    height: 120px;
+}
+.footer_seo_con, .footer_seo_city{
+    clear: both;
+    overflow: hidden;
+}
+.footer_seo_con li{
+    float: left;
+    padding: 0 0 0 5px;
+    width: 151px;
+    line-height: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+.footer_seo_con li a:hover{
+    text-decoration: underline;
+}
+.footer_seo_city{
+    position: relative;
+    margin: 11px 0 0 18px;
+}
+.footer_seo_city a:link, .footer_seo_city a:visited, .footer_seo_city a:hover{
+    margin: 0 12px 0 9px;
+}
+.footer_seo_city a:hover{
+    text-decoration: underline;
+}
+.footer_seo_city .a_more:link, .footer_seo_city .a_more:visited{
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+.a_more:hover{
+    text-decoration: underline;
+}
+/*简介tips*/
+.seo-tips{
+    color: #999;
+    line-height: 20px;
+    text-align: left;
+    padding: 38px 25px 7px 25px;
+    font-size: 12px;
+}
+.seo-tips a{
+    color: #666;
+    text-decoration: none;
+    outline: none;
+}
+.seo-tips a:hover{
+    color: #666 !important;
+}
+.partner{
+    width: 1140px;
+    padding: 10px 20px;
+    background-color: #F9F9F9;
+    float: left;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.partner span{
+    display: block;
+    float: left;
+    line-height: 1.6em;
+    width: 1140px;
+    margin-bottom: 15px;
+}
+.partner li{
+    padding: 0;
+    display: block;
+    float: left;
+    margin: 0px 12px 0 0;
+    width: 126px;
+    line-height: 24px;
+    list-style-type: none;
+}
+.partner li a:visited{
+    text-decoration: none;
+    color: #999;
+}
+.partner li a:link{
+    text-decoration: none;
+    color: #999;
+}
+.partner li a:hover{
+    color: #999 !important;
+    text-decoration: underline;
+}
+/*footer部分*/
+#footer-mod{
+    margin: 30px auto 0;
+}
+.footer{
+    clear: both;
+    border-top: 1px solid #e6e6e6;
+    padding: 15px 0 30px;
+    color: #333;
+}
+.footer .links{
+    width: 1180px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-size: 0;
+    text-align: center;
+}
+.footer .links li{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.footer a{
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+.footer .spe-lines{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 10px;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    vertical-align: -1px;
+}
+.footer .show-mod{
+    display: none;
+    border:1px solid #e6e6e6;
+    border-radius: 4px;
+    width: 730px;
+    padding: 3px 10px;
+    margin:0 auto 5px;
+    overflow: hidden;
+}
+.footer .show-mod li{
+    float: left;
+    margin-right: 22px;
+    line-height: 24px;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.footer .other-city ul{
+    width: 736px;
+}
+.footer .other-city li{
+    width: 76px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 16px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.footer .cp-mod{
+    text-align: center;
+    line-height: 20px;
+}
+.footer .gov-mod{
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 8px;
+}
+.footer a{
+    display: inline-block;
+    font-size: 12px;
+    color: #333;
+}
+.footer .gov-mod a, .footer .gov-mod a:hover{
+    color: #666 !important;
+    text-decoration: none;
+}
+.footer .gov-mod img{
+    display: inline-block;
+    vertical-align: -5px;
+}
+.footer .license{
+    text-align: center;
+    padding: 20px 0 0;
+}
+.footer .jubao-img{
+    width: 125px;
+    height: 60px;
+}
+.footer .cnnic{
+    position: relative;
+    bottom: 6px;
+    margin-left: 10px;
+}
+.footer .license a{
+    margin: 0 10px;
+}
+.footer .jubao-img img{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #ccc;
 }
