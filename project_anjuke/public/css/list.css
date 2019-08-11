@@ -1,0 +1,203 @@
+#container{
+    width: 100% !important;
+    margin: 0 auto;
+}
+/*顶部区域*/
+#header{
+    width: 100%;
+    font-family: "Microsoft YaHei","微软雅黑","Hiragino Sans GB",tahoma,arial,simhei;
+    padding-bottom: 8px;
+}
+.top-nav, .mid-nav, .sec-nav{
+    width: 100%;
+}
+.top-nav{
+    font-size: 0;
+    border-bottom: 1px solid #ddd;
+    padding: 14px 0 10px 0;
+}
+.nav-content{
+    width: 1180px;
+    margin: 0 auto;
+}
+.L_tabsnew, .R_user{
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+.L_tabsnew{
+    width: 60%;
+    margin: 0;
+    font-size: 0;
+    display: inline-block;
+}
+.L_tabsnew li{
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+}
+.L_tabsnew a:link, .L_tabsnew a:visited{
+    font-size: 1.166666rem;
+    color: #666;
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+    display: inline-block;
+    line-height: 14px;
+    margin: 3px 0;
+}
+.first-child a.a_navnew, .L_tabsnew li:first-child a{
+    padding-left: 0;
+}
+.L_tabsnew a:hover{
+    text-decoration: none;
+}
+.last-child a.a_navnew, .L_tabsnew li:last-child a{
+    border-right: 0;
+}
+.R_user{
+    width: 40%;
+    display: inline-block;
+    font-size: 0;
+    text-align: right;
+    overflow: hidden;
+}
+.dropdown{
+    font-size: 13px;
+    color: #666;
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+}
+.dropdown.menu, .custom-login, .user-login, .favorite, .developer-login, .broker-login, .notification{
+    display: inline-block;
+    vertical-align: top;
+}
+.dropdown.last-child, .dropdown:last-child{
+    border-right: 0;
+}
+.dropdown .title{
+    height: 20px;
+    line-height: 20px;
+}
+.user-login .title{
+    padding-left: 20px;
+    background: url("../images/list/1.png") no-repeat 0 0;
+}
+.R_user a:link, .R_user a:visited{
+    color: #666;
+    font-size: 1.083333rem;
+    text-decoration: none;
+    outline: 0;
+}
+.R_user a:hover{
+    text-decoration: none;
+}
+.dropdown .title a, .name{
+    height: 20px;
+    line-height: 20px;
+    max-width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+}
+.mid-nav{
+    padding: 18px 0;
+}
+.nav-content{
+    width: 1180px;
+    margin: 0 auto;
+}
+a.logo{
+    padding: 0 15px 0 0;
+    display: inline-block;
+    width: 85px;
+    height: 25px;
+    background: url("../images/logo.png") 0 0 no-repeat;
+    background-size: 85px 25px;
+    overflow: hidden;
+    vertical-align: bottom;
+    border-right: 1px solid #DDD;
+}
+span.logo{
+    padding: 0 10px 0 15px;
+    color: #62ab00;
+    font-size: 24px;
+    height: 25px;
+    line-height: 25px;
+}
+.cur_citynew{
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+    cursor: default;
+}
+.cur_citynew .city{
+    color: #666;
+    font-style: normal;
+    font-size: 1.166666rem;
+    line-height: 18px;
+    cursor: pointer;
+}
+.cur_citynew .city_icon{
+    background: url("../images/list/1.png") -2px -20px no-repeat;
+    line-height: 7px;
+    width: 10px;
+    height: 10px;
+    margin: 7px 0 0 5px;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+}
+.city_panel{
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 30000;
+    border: 1px solid #d8d8d8;
+    width: 350px;
+    padding: 7px 0 0 0;
+    left: 0;
+    top: 21px;
+    border-radius: 0 0 4px 4px;
+    display: none;
+}
+.cur_citynew .city_panel dl{
+    width: 322px;
+    padding: 7px 0 6px 0;
+    margin: 0 13px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    line-height: 23px;
+    overflow: hidden;
+    zoom: 1;
+}
+.cur_citynew .city_panel dl dt{
+    width: 72px;
+    float: left;
+    color: #666;
+}
+.cur_citynew .city_panel dl dd{
+    float: left;
+    width: 250px;
+    overflow: hidden;
+    zoom: 1;
+}
+.cur_citynew .city_panel dl dd a{
+    color: #1a519f;
+    float: left;
+    padding: 0 11px 0 0;
+    white-space: nowrap;
+}
+.cur_citynew .city_panel .blank{
+    float: left;
+    height: 22px;
+    line-height: 14px;
+    width: 332px;
+    text-align: right;
+    margin-top: -3px;
+    margin-left: 2px;
+    background-color: #f9f9f9;
+}
+.cur_citynew .city_panel .blank a{
+    color: #1a519f;
+}
