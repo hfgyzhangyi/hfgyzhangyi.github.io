@@ -14,6 +14,10 @@ select,input{
     line-height: 0;
     visibility: hidden;
 }
+address, caption, th, cite, code, em{
+    font-style: normal;
+    font-weight: normal;
+}
 /*header区域*/
 #header{
     width: 100%;
@@ -614,4 +618,261 @@ span.logo{
 }
 .condul li{
     margin-left: 10px;
+}
+#condmenu #selectfitment_id, #condmenu #selectschool_id, #condmenu #condbrand_id, #condmenu #condhouseage_id, #condmenu #condfloor_id, #condmenu #condarrow_id, #condmenu #conddecoration_id, #condmenu #condusetype_id, #condmenu #condeconomics_id, #condmenu #condpubtime_id{
+    position: relative;
+}
+#condmenu .condul a{
+    width: 91px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0;
+    border: 1px solid #d1d1d1;
+    margin-right: 0;
+}
+#condmenu #condhouseage_id a{
+    display: inline-block;
+    margin-left: 0;
+}
+#condmenu a{
+    height: 100%;
+    width: 80px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #b3b3b3;
+    margin-left: 10px;
+    margin-right: 8px;
+    padding: 2px 0;
+    color: #333;
+}
+#condmenu .condul a{
+    margin-left: 0;
+}
+#condmenu .select_item span.txt{
+    display: inline-block;
+    padding-left: 7px;
+    white-space: nowrap;
+    width: 60px;
+    cursor: pointer;
+}
+#condmenu #condhouseage_id .select_item span.txt{
+    width: 70px;
+}
+#condhouseage_id:hover a span{
+    color: #333;
+}
+#condmenu .condul a .icon{
+    position: absolute;
+    right: 7px;
+    top: 9px;
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 4px solid;
+    border-color: #7b7b7b #fff #fff #fff;
+}
+#condmenu ul ul{
+    visibility: hidden;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 96px;
+    z-index: 1000;
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+#condmenu .condul ul{
+    overflow: hidden;
+    zoom: 1;
+    background: #fff;
+    padding: 4px 0;
+}
+#condmenu #condhouseage_id ul{
+    width: 91px;
+}
+#condmenu ul ul li{
+    display: block;
+    height: auto;
+    line-height: 12px;
+    width: 70px;
+    margin-left: 0;
+}
+#condmenu #condhouseage_id ul li{
+    width: 100px;
+    margin-left: 0;
+}
+#condmenu .condul ul a, #condmenu .condul ul a:link, #condmenu .condul ul a:visited{
+    display: block;
+    width: 72px;
+    height: 100%;
+    padding: 6px 8px;
+    margin: 0;
+    line-height: 12px;
+    color: #333;
+    background: #fff;
+    border: 0 none;
+}
+#condmenu #condhouseage_id ul a:link, #condmenu #condhouseage_id ul a:visited, #condmenu #condhouseage_id ul a:hover, #condmenu #condhouseage_id ul a:active{
+    width: 84px;
+}
+#condmenu #condhouseage_id ul li.selected a{
+    color: #f60;
+}
+#condmenu #condhouseage_id ul li a:hover{
+    text-decoration: underline;
+}
+#condmenu .condul #condusetype_id a, #condmenu .condul #condeconomics_id a, #condmenu .condul #condusetype_id ul{
+    display: block;
+}
+#condmenu .condul #condusetype_id ul{
+    width: 91px;
+}
+.search_bottom a{
+    display: inline-block;
+    zoom: 1;
+}
+#condmenu .condul #condfloor_id ul, #condmenu .condul #condarrow_id ul, #condmenu .condul #conddecoration_id ul{
+    width: 91px;
+}
+#condmenu .condul #condeconomics_id a{
+    width: 112px;
+}
+#condmenu .condul #condeconomics_id ul{
+    width: 112px;
+}
+/*left content*/
+.sale-left{
+    float: left;
+    width: 900px;
+    position: relative;
+    z-index: 0;
+}
+/*right content*/
+.sale-right{
+    float: right;
+    width: 255px;
+    padding-bottom: 45px;
+}
+.ifx-ad-r-in{
+    padding: 16px 0;
+    margin-top: 20px;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+}
+.ifx-ad-r-in div{
+    margin: 0 auto !important;
+}
+.house-qa{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px 16.5px;
+}
+.sale-right .block-title{
+    font-size: 1.333333rem;
+    color: #333333;
+    font-weight: bold;
+    display: block;
+    padding-left: 16px;
+}
+.house-qa .block-title{
+    margin-bottom: 25px;
+}
+.house-qa a{
+    display: block;
+}
+.house-qa .questions a{
+    margin-bottom: 19px;
+    color: #333333;
+    width: 215px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.house-qa i{
+    display: block;
+    height: 0px;
+    width: 233px;
+    border-bottom: 1px dashed #D8D8D8;
+    margin-bottom: 20px;
+    margin-left: -8px;
+}
+.house-qa a.ask-link{
+    background-color: #62ab00;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 1.333333rem;
+    height: 40px;
+    line-height: 40px;
+    width: 150px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.house-qa a.ask-link:hover{
+    background-color: #4A8200;
+    text-decoration: none;
+    color: white !important;
+}
+.div-border{
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+}
+.r-mag-top{
+    margin-top: 20px;
+}
+.r-padding{
+    padding: 20px 16.5px;
+}
+.sale-right .house-price{
+    padding-bottom: 25px;
+}
+.sale-right .block-title{
+    font-size: 1.333333rem;
+    color: #333333;
+    font-weight: bold;
+    display: block;
+    padding-left: 16px;
+}
+.sale-right .house-price .block-title{
+    margin-bottom: 18px;
+}
+.sale-right .house-price .month-price{
+    margin-bottom: 14px;
+}
+.sale-right .house-price dt, .sale-right .house-price dd{
+    display: inline-block;
+}
+.sale-right .house-price dt{
+    width: 130px;
+    color: #999999;
+}
+.sale-right .month-price .price-num{
+    font-weight: bold;
+}
+.sale-right .house-price em{
+    font-family: Tahoma;
+}
+.sale-right .house-price .compare-price{
+    margin-bottom: 10px;
+}
+.sale-right .house-price .up{
+    color: #ff6600;
+}
+.sale-right .house-price .price-trend-chat{
+    display: inline-block;
+}
+.sale-right .house-price img{
+    margin-bottom: 20px;
+}
+.sale-right .house-price .price-tip{
+    margin-left: -5px;
+    margin-right: -5px;
+    font-size: 12px;
+    color: #999999;
+}
+.sale-right .find-broker span{
+    display: block;
+    margin-bottom: 20px;
 }

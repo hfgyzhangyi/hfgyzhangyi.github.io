@@ -25,3 +25,7 @@ input{
     outline: none;
     font-family: "Microsoft YaHei", "宋体", Arial, "\5B8B\4F53", Helvetica, sans-serif;
 }
+img{
+    border: none;
+    display: inline-block;
+}

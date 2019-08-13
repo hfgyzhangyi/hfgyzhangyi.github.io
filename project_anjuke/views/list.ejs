@@ -186,7 +186,7 @@
                     <!--区域-->
                     <div class="items">
                         <span class="item-title">区域：</span>
-                        <span class="elems-l">
+                        <span class="elems-l" id="domain">
                             <a class="selected-item" href='javascript:;' title='全部二手房'>全部</a>
                             <a href='javascript:;' class='' title='浦东二手房' >浦东</a>
                             <a href='javascript:;' class='' title='闵行二手房' >闵行</a>
@@ -277,12 +277,123 @@
                                 <a href='javascript:;' class='' title='周浦二手房'>周浦</a>
                                 <a href='javascript:;' class='' title='竹园二手房'>竹园</a>
                             </div>
+                            <div class="sub-items" id="sub_items_2" style="display: none;">
+                                <a class="selected-item" href='javascript:;' title='全部二手房'>全部</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">B</span>
+                                <a href="javascript:;" class="" title="北桥二手房">北桥</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">C</span>
+                                <a href="javascript:;" class="" title="漕宝路二手房">漕宝路</a>
+                                <a href="javascript:;" class="" title="春申二手房">春申</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">G</span>
+                                <a href="javascript:;" class="" title="古美罗阳二手房">古美罗阳</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">H</span>
+                                <a href="javascript:;" class="" title="航华二手房">航华</a>
+                                <a href="javascript:;" class="" title="华漕二手房">华漕</a>
+                                <a href="javascript:;" class="" title="虹桥二手房">虹桥</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">J</span>
+                                <a href="javascript:;" class="" title="静安新城二手房">静安新城</a>
+                                <a href="javascript:;" class="" title="金虹桥二手房">金虹桥</a>
+                                <a href="javascript:;" class="" title="江川路二手房">江川路</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">L</span>
+                                <a href="javascript:;" class="" title="老闵行二手房">老闵行</a>
+                                <a href="javascript:;" class="" title="龙柏金汇二手房">龙柏金汇</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">M</span>
+                                <a href="javascript:;" class="" title="梅陇二手房">梅陇</a>
+                                <a href="javascript:;" class="" title="马桥二手房">马桥</a>
+                                <a href="javascript:;" class="" title="闵行周边二手房">闵行周边</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">N</span>
+                                <a href="javascript:;" class="" title="南方商城二手房">南方商城</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">P</span>
+                                <a href="javascript:;" class="" title="浦江二手房">浦江</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">Q</span>
+                                <a href="javascript:;" class="" title="七宝二手房">七宝</a>
+                                <a href="javascript:;" class="" title="七莘路二手房">七莘路</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">W</span>
+                                <a href="javascript:;" class="" title="吴泾二手房">吴泾</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">X</span>
+                                <a href="javascript:;" class="" title="莘庄二手房">莘庄</a>
+                                <a href="javascript:;" class="" title="莘庄工业区二手房">莘庄工业区</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">Z</span>
+                                <a href="javascript:;" class="" title="诸翟二手房">诸翟</a>
+                                <a href="javascript:;" class="" title="颛桥二手房">颛桥</a>
+                            </div>
+                            <div class="sub-items" id="sub_items_3" style="display: none;">
+                                <a class="selected-item" href='javascript:;' title='全部二手房'>全部</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">B</span>
+                                <a href="javascript:;" class="" title="宝山周边二手房">宝山周边</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">D</span>
+                                <a href="javascript:;" class="" title="大华路二手房">大华路</a>
+                                <a href="javascript:;" class="" title="大场二手房">大场</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">G</span>
+                                <a href="javascript:;" class="" title="顾村二手房">顾村</a>
+                                <a href="javascript:;" class="" title="共富新村二手房">共富新村</a>
+                                <a href="javascript:;" class="" title="高境二手房">高境</a>
+                                <a href="javascript:;" class="" title="共康二手房">共康</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">J</span>
+                                <a href="javascript:;" class="" title="锦秋花园二手房">锦秋花园</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">L</span>
+                                <a href="javascript:;" class="" title="罗店二手房">罗店</a>
+                                <a href="javascript:;" class="" title="罗泾二手房">罗泾</a>
+                                <a href="javascript:;" class="" title="刘行二手房">刘行</a>
+                                <a href="javascript:;" class="" title="罗南二手房">罗南</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">S</span>
+                                <a href="javascript:;" class="" title="上海大学二手房">上海大学</a>
+                                <a href="javascript:;" class="" title="淞南二手房">淞南</a>
+                                <a href="javascript:;" class="" title="泗塘新村二手房">泗塘新村</a>
+                                <a href="javascript:;" class="" title="水产路二手房">水产路</a>
+                                <a href="javascript:;" class="" title="淞宝二手房">淞宝</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">T</span>
+                                <a href="javascript:;" class="" title="通河新村二手房">通河新村</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">Y</span>
+                                <a href="javascript:;" class="" title="杨行二手房">杨行</a>
+                                <a href="javascript:;" class="" title="友谊路二手房">友谊路</a>
+                                <a href="javascript:;" class="" title="月浦二手房">月浦</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">Z</span>
+                                <a href="javascript:;" class="" title="张庙二手房">张庙</a>
+                            </div>
+                            <div class="sub-items" id="sub_items_4" style="display: none;">
+                                <a class="selected-item" href='javascript:;' title='全部二手房'>全部</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">B</span>
+                                <a href='javascript:;' class='' title='滨江路 二手房'>滨江路 </a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">C</span>
+                                <a href='javascript:;' class='' title='漕河泾二手房'>漕河泾</a>
+                                <a href='javascript:;' class='' title='漕宝路地铁口二手房'>漕宝路地铁口</a>
+                                <a href='javascript:;' class='' title='长桥二手房'>长桥</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">F</span>
+                                <a href='javascript:;' class='' title='复兴中路二手房'>复兴中路</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">H</span>
+                                <a href='javascript:;' class='' title='湖南路二手房'>湖南路</a>
+                                <a href='javascript:;' class='' title='华东理工二手房'>华东理工</a>
+                                <a href='javascript:;' class='' title='华泾二手房'>华泾</a>
+                                <a href='javascript:;' class='' title='衡山路二手房'>衡山路</a>
+                                <a href='javascript:;' class='' title='淮海西路二手房'>淮海西路</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">K</span>
+                                <a href='javascript:;' class='' title='康建二手房'>康建</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">L</span>
+                                <a href='javascript:;' class='' title='凌云路二手房'>凌云路</a>
+                                <a href='javascript:;' class='' title='龙华二手房'>龙华</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">S</span>
+                                <a href='javascript:;' class='' title='上海南站二手房'>上海南站</a>
+                                <a href='javascript:;' class='' title='上海师大二手房'>上海师大</a>
+                                <a href='javascript:;' class='' title='上海植物园二手房'>上海植物园</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">T</span>
+                                <a href='javascript:;' class='' title='田林二手房'>田林</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">W</span>
+                                <a href='javascript:;' class='' title='万体馆二手房'>万体馆</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">X</span>
+                                <a href='javascript:;' class='' title='徐家汇二手房'>徐家汇</a>
+                                <a href='javascript:;' class='' title='斜土路二手房'>斜土路</a>
+                                <a href='javascript:;' class='' title='襄阳公园二手房'>襄阳公园</a>
+                                <a href='javascript:;' class='' title='徐汇周边二手房'>徐汇周边</a>
+                                <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">Z</span>
+                                <a href='javascript:;' class='' title='肇嘉浜路二手房'>肇嘉浜路</a>
+                            </div>
                         </span>
                     </div>
                     <!--售价-->
                     <div class="items">
                         <span class="item-title">售价：</span>
-                        <span class="elems-l">
+                        <span class="elems-l" id="price">
                             <a class="selected-item" href='javascript:;'>全部</a>
                             <a href='javascript:;' class='' rel="nofollow">100万以下</a>
                             <a href='javascript:;' class='' rel="nofollow">100-150万</a>
@@ -297,7 +408,7 @@
                             <a href='javascript:;' class='' rel="nofollow">1500-2000万</a>
                             <a href='javascript:;' class='' rel="nofollow">2000万以上</a>
                             <div class="pricecond">
-                                <form action="" id="pr_form_apf_id_11">
+                                <form action="" id="pr_form_apf_id_11" method="GET">
                                     <input class="from-price" type="text" name="from_price" maxlength="5"  id="from_price" autocomplete="off"/>
                                     -
                                     <input class="to-price" type="text" name="to_price" maxlength="5" id="to_price" autocomplete="off"/>
@@ -310,7 +421,7 @@
                     <!--面积-->
                     <div class="items">
                         <span class="item-title">面积：</span>
-                        <span class="elems-l">
+                        <span class="elems-l" id="area">
                             <a class="selected-item" href='javascript:;'>全部</a>
                             <a href='javascript:;' class=''>50m²以下</a>
                             <a href='javascript:;' class=''>50-70m²</a>
@@ -335,7 +446,7 @@
                     <!--房型-->
                     <div class="items">
                         <span class="item-title">房型：</span>
-                        <span class="elems-l">
+                        <span class="elems-l" id="layout">
                             <a class="selected-item" href='javascript:;'>全部</a>
                             <a href='javascript:;' class=''>一室</a>
                             <a href='javascript:;' class=''>二室</a>
@@ -383,8 +494,163 @@
                                 <li class="condlist_tip">
                                     <span>更多：</span>
                                 </li>
+                                <li id="condhouseage_id">
+                                    <a href="javascript:;">
+                                        <span class="select_item">
+                                            <span class="txt" id="condhouseage_txt_id">建造年代</span>
+                                            <span class="icon">&nbsp;</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li class="selected"><a href="javascript:;">全部</a></li>
+                                        <li><a href="javascript:;">2010年以后</a></li>
+                                        <li><a href="javascript:;">2005年以后</a></li>
+                                        <li><a href="javascript:;">2000年以后</a></li>
+                                        <li><a href="javascript:;">2000年以前</a></li>
+                                    </ul>
+                                </li>
+                                <li id="condusetype_id">
+                                    <a href="javascript:;">
+                                        <span class="select_item">
+                                            <span class="txt" id="condhouseage_txt_id">房屋类型</span>
+                                            <span class="icon">&nbsp;</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li class="selected"><a href="javascript:;">全部</a></li>
+                                        <li><a href="javascript:;">老公房</a></li>
+                                        <li><a href="javascript:;">公寓</a></li>
+                                        <li><a href="javascript:;">新里洋房</a></li>
+                                        <li><a href="javascript:;">普通住宅</a></li>
+                                        <li><a href="javascript:;">别墅</a></li>
+                                        <li><a href="javascript:;">其它</a></li>
+                                        <li><a href="javascript:;">平房</a></li>
+                                    </ul>
+                                </li>
+                                <li id="condfloor_id">
+                                    <a href="javascript:;">
+                                        <span class="select_item">
+                                            <span class="txt" id="condhouseage_txt_id">楼层</span>
+                                            <span class="icon">&nbsp;</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li class="selected"><a href="javascript:;">全部</a></li>
+                                        <li><a href="javascript:;">6层以下</a></li>
+                                        <li><a href="javascript:;">6-12层</a></li>
+                                        <li><a href="javascript:;">12层以上</a></li>
+                                    </ul>
+                                </li>
+                                <li id="condarrow_id">
+                                    <a href="javascript:;">
+                                        <span class="select_item">
+                                            <span class="txt" id="condhouseage_txt_id">朝向</span>
+                                            <span class="icon">&nbsp;</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li class="selected"><a href="javascript:;">全部</a></li>
+                                        <li><a href="javascript:;">东</a></li>
+                                        <li><a href="javascript:;">南</a></li>
+                                        <li><a href="javascript:;">西</a></li>
+                                        <li><a href="javascript:;">北</a></li>
+                                        <li><a href="javascript:;">东南</a></li>
+                                        <li><a href="javascript:;">东北</a></li>
+                                        <li><a href="javascript:;">西南</a></li>
+                                        <li><a href="javascript:;">西北</a></li>
+                                    </ul>
+                                </li>
+                                <li id="conddecoration_id">
+                                    <a href="javascript:;">
+                                        <span class="select_item">
+                                            <span class="txt" id="condhouseage_txt_id">装修</span>
+                                            <span class="icon">&nbsp;</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li class="selected"><a href="javascript:;">全部</a></li>
+                                        <li><a href="javascript:;">毛坯</a></li>
+                                        <li><a href="javascript:;">普通装修</a></li>
+                                        <li><a href="javascript:;">豪华装修</a></li>
+                                        <li><a href="javascript:;">精装修</a></li>
+                                    </ul>
+                                </li>
+                                <li id="condeconomics_id">
+                                    <a href="javascript:;">
+                                        <span class="select_item">
+                                            <span class="txt" id="condhouseage_txt_id">品牌中介</span>
+                                            <span class="icon">&nbsp;</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li class="selected"><a href="javascript:;">全部</a></li>
+                                        <li><a href="javascript:;">中原地产</a></li>
+                                        <li><a href="javascript:;">太平洋房屋</a></li>
+                                        <li><a href="javascript:;">我爱我家</a></li>
+                                        <li><a href="javascript:;">易居房友</a></li>
+                                        <li><a href="javascript:;">21世纪不动...</a></li>
+                                        <li><a href="javascript:;">瑞阳不动产</a></li>
+                                        <li><a href="javascript:;">万科物业</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <!--left content-->
+                <div class="sale-left"></div>
+                <!--right content-->
+                <div class="sale-right">
+                    <div id="IFX_p939" class="ifx-wrap ifx-ad-r-in">
+                        <div style="width:200px;height:200px;border:none;padding:0px;margin:0px;overflow:hidden;position: relative;">
+                            <a target="_blank" href="javascript:;">
+                                <img style="width:200px;height:200px;border:none;" src="./images/list/4.jpg"/>
+                            </a>
+                            <span style="position: absolute;right: 11px;bottom: 0;color: white;">广告</span>
+                        </div>
+                    </div>
+                    <div id="IFX_p940" class="ifx-wrap ifx-ad-r-in">
+                        <div style="width:200px;height:200px;border:none;padding:0px;margin:0px;overflow:hidden;position: relative;">
+                            <a target="_blank" href="javascript:;">
+                                <img style="width:200px;height:200px;border:none;" src="./images/list/5.jpg"/>
+                            </a>
+                            <span style="position: absolute;right: 11px;bottom: 0;color: white;">广告</span>
+                        </div>
+                    </div>
+                    <div class="house-qa">
+                        <a class="block-title" href="javascript:;" target="_blank" _soj="listing">热门房产问答&nbsp;&gt;</a>
+                        <div class="questions">
+                            <a alt="住房公积金贷款比率是多少？" title="住房公积金贷款比率是多少？" href="javascript:;" target="_blank">住房公积金贷款比率是多少？</a>
+                            <a alt="按揭中的房屋可以买卖吗？" title="按揭中的房屋可以买卖吗？" href="javascript:;" target="_blank">按揭中的房屋可以买卖吗？</a>
+                            <a alt="公寓与普住有什么区别？" title="公寓与普住有什么区别？" href="javascript:;" target="_blank">公寓与普住有什么区别？</a>
+                            <a alt="二套房首付贷款最低多少？" title="二套房首付贷款最低多少？" href="javascript:;" target="_blank">二套房首付贷款最低多少？</a>
+                            <a alt="买二手房都交哪些税？" title="买二手房都交哪些税？" href="javascript:;" target="_blank">买二手房都交哪些税？</a>
+                            <a alt="经济适用房需要什么手续卖房？" title="经济适用房需要什么手续卖房？" href="javascript:;" target="_blank">经济适用房需要什么手续卖房？</a>
+                            <a alt="买房公摊面积在多少比较合理？" title="买房公摊面积在多少比较合理？" href="javascript:;" target="_blank">买房公摊面积在多少比较合理？</a>
+                        </div>
+                        <i></i>
+                        <a class="ask-link" href="javascript:;" target="_blank" _soj="listing">我要提问</a>
+                    </div>
+                    <!--房价趋势-->
+                    <div class="div-border r-mag-top r-padding house-price">
+                        <a class="block-title" href="javascript:;" target="_blank">上海房价趋势&nbsp;&nbsp;&gt;</a>
+                        <dl class="month-price">
+                            <dt>上海08月均价:</dt>
+                            <dd class="price-num"><em>50270</em>元/<em>m²</em></dd>
+                        </dl>
+                        <dl class="compare-price">
+                            <dt>环比07月:</dt>
+                            <dd class="up">上升<em>0.19</em>%</dd>
+                        </dl>
+                        <a class="price-trend-chat" href="javascript:;" target="_blank" _soj="listing">
+                            <img src="./images/list/6.png">
+                        </a>
+                        <span class="price-tip">本站"均价"数据统计自物业顾问发布的数据</span>
+                    </div>
+                    <!--找经纪人-->
+                    <div class="div-border r-mag-top r-padding find-broker">
+                        <span>马上找个满意的经纪人,事半功倍哦!</span>
+                        <a target="_blank" href="javascript:;">现在去找</a>
                     </div>
                 </div>
             </div>
@@ -412,20 +678,112 @@
                     $(this).hide();
                 });
                 /*区域选择事件处理*/
-                $(".items>.elems-l>a").click(function(e){
+                $(".items>#domain>a").click(function(e){
                     if($(this).hasClass("selected-item")){
                         e.preventDefault();
                     }else{
-                        $(".items>.elems-l>a.selected-item").removeClass("selected-item");
+                        $(".sub-items").hide();
+                        $(".sub-items>a.selected-item").removeClass("selected-item");
+                        $(".sub-items:eq(0)>a:eq(0)").addClass("selected-item");
+                        $(".sub-items:eq(1)>a:eq(0)").addClass("selected-item");
+                        $(".sub-items:eq(2)>a:eq(0)").addClass("selected-item");
+                        $(".sub-items:eq(3)>a:eq(0)").addClass("selected-item");
+                        $(".items>#domain>a.selected-item").removeClass("selected-item");
+                        $(this).addClass("selected-item");
+                        if($(this).text()==="浦东"){
+                            $("#sub_items_1").show();
+                        }else if($(this).text()==="闵行"){
+                            $("#sub_items_2").show();
+                        }else if($(this).text()==="宝山"){
+                            $("#sub_items_3").show();
+                        }else if($(this).text()==="徐汇"){
+                            $("#sub_items_4").show();
+                        }
+                    }
+                });
+                $(".sub-items>a").click(function(e){
+                    if($(this).hasClass("selected-item")){
+                        e.preventDefault();
+                    }else{
+                        $(".sub-items>a.selected-item").removeClass("selected-item");
                         $(this).addClass("selected-item");
                     }
                 });
                 /*售价选择事件处理*/
-                $("#pr_form_apf_id_11>input").mousedown(function(){
+                $(".items>#price>a").click(function(e){
+                    if($(this).hasClass("selected-item")){
+                        e.preventDefault();
+                    }else{
+                        $(".items>#price>a.selected-item").removeClass("selected-item");
+                        $(this).addClass("selected-item");
+                    }
+                });
+                $("#price input").focus(function(){
                     $("#pricerange_search").show();
                 });
-                $("#pr_form_apf_id_11>input").blur(function(){
+                $("#price input").blur(function(){
                     $("#pricerange_search").hide();
+                });
+                /*面积事件处理*/
+                $(".items>#area>a").click(function(e){
+                    if($(this).hasClass("selected-item")){
+                        e.preventDefault();
+                    }else{
+                        $(".items>#area>a.selected-item").removeClass("selected-item");
+                        $(this).addClass("selected-item");
+                    }
+                });
+                $("#area input").focus(function(){
+                    $("#arearange_search").show();
+                });
+                $("#area input").blur(function(){
+                    $("#arearange_search").hide();
+                });
+                /*房型事件处理*/
+                $(".items>#layout>a").click(function(e){
+                    if($(this).hasClass("selected-item")){
+                        e.preventDefault();
+                    }else{
+                        $(".items>#layout>a.selected-item").removeClass("selected-item");
+                        $(this).addClass("selected-item");
+                    }
+                });
+                /*更多下拉框事件处理*/
+                $("#condhouseage_id").mouseover(function(){
+                    $(this).children("ul").css("visibility","visible");
+                });
+                $("#condhouseage_id").mouseout(function(){
+                    $(this).children("ul").css("visibility","hidden");
+                });
+                $("#condusetype_id").mouseover(function(){
+                    $(this).children("ul").css("visibility","visible");
+                });
+                $("#condusetype_id").mouseout(function(){
+                    $(this).children("ul").css("visibility","hidden");
+                });
+                $("#condfloor_id").mouseover(function(){
+                    $(this).children("ul").css("visibility","visible");
+                });
+                $("#condfloor_id").mouseout(function(){
+                    $(this).children("ul").css("visibility","hidden");
+                });
+                $("#condarrow_id").mouseover(function(){
+                    $(this).children("ul").css("visibility","visible");
+                });
+                $("#condarrow_id").mouseout(function(){
+                    $(this).children("ul").css("visibility","hidden");
+                });
+                $("#conddecoration_id").mouseover(function(){
+                    $(this).children("ul").css("visibility","visible");
+                });
+                $("#conddecoration_id").mouseout(function(){
+                    $(this).children("ul").css("visibility","hidden");
+                });
+                $("#condeconomics_id").mouseover(function(){
+                    $(this).children("ul").css("visibility","visible");
+                });
+                $("#condeconomics_id").mouseout(function(){
+                    $(this).children("ul").css("visibility","hidden");
                 });
             })();
         </script>
