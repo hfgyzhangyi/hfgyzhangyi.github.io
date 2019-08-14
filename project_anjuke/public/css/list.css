@@ -876,3 +876,362 @@ span.logo{
     display: block;
     margin-bottom: 20px;
 }
+/*58联盟广告页*/
+.luna-58-wrap{
+    width: 220px;
+    height: 220px;
+    margin-top: 20px;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 14px 17px 14px 16px;
+    position: relative;
+}
+.luna-58-wrap ul li{
+    float: left;
+    margin-right: 17px;
+}
+.prev{
+    background: url("../images/list/7.png") no-repeat 0 0;
+    width: 15px;
+    height: 25px;
+    background-position: -22px -100px;
+    left: 16px;
+    position: absolute;
+    top: 125px;
+    margin-top: -32px;
+    display: block;
+    z-index: 999;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    display: none;
+}
+.next{
+    background: url("../images/list/7.png") no-repeat 0 0;
+    width: 15px;
+    height: 25px;
+    background-position: -22px -55px;
+    right: 17px;
+    position: absolute;
+    top: 125px;
+    margin-top: -32px;
+    display: block;
+    z-index: 999;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    display: none;
+}
+.tab-wrap{
+    margin-top: 24px;
+    font-size: 0;
+    border-bottom: 2px solid #62ab00;
+    position: relative;
+}
+.tab-wrap .list-tab{
+    display: inline-block;
+    padding: 0 30px;
+    color: #666;
+    font-size: 16px;
+    line-height: 38px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-bottom: none;
+}
+.tab-wrap .list-tab:hover{
+    color: #666 !important;
+}
+.tab-wrap .slted, .tab-wrap .slted:hover{
+    background: #62ab00;
+    color: #fff !important;
+    border: 1px solid #62ab00;
+    border-bottom: none;
+}
+.tab-wrap .list-tab:last-child{
+    border-right: 1px solid #ccc;
+}
+.tab-wrap a:nth-child(2) img{
+    vertical-align: -3px;
+}
+.tab-wrap a:nth-child(3) img{
+    vertical-align: -2px;
+}
+.tab-wrap a:nth-child(4) img{
+    vertical-align: -4px;
+}
+.sortby{
+    color: #666;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+.sortby-top-v2{
+    margin-top: 19px;
+}
+.sortby strong{
+    color: #e54b00;
+    font-weight: normal;
+}
+.sortby .sort-con{
+    float: right;
+}
+.sortby .sort-con a:link, .sortby .sort-con a:visited{
+    color: #666;
+}
+.sortby .sort-con a.cur{
+    color: #e54b00;
+    font-weight: normal;
+}
+.sortby .sort-con a{
+    margin-left: 20px;
+    padding-right: 15px;
+    background-image: url("../images/list/11.png");
+    background-image: -webkit-image-set(url("../images/list/11.png") 1x,url("../images/list/12.png") 2x);
+    background-position: -50px 0;
+    background-repeat: no-repeat;
+}
+.sortby .sort-con a.fst{
+    margin-left: 0px;
+    padding-right: 0px;
+    background-image: none;
+}
+.sortby .sort-con .down{
+    background-position: 30px -45px;
+}
+.sortby .sort-con .up{
+    background-position: 30px -31px;
+}
+/*列表样式*/
+.houselist-mod{
+    border-top: 1px solid #e6e6e6;
+    font-size: 1.166666rem;
+}
+.houselist-mod .list-item{
+    padding: 20px 20px 14px 220px;
+    color: #666;
+    border-bottom: 1px dashed #e6e6e6;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.houselist-mod .list-item .item-img{
+    float: left;
+    margin-left: -200px;
+    width: 180px;
+    height: 135px;
+    position: relative;
+    z-index: 2;
+}
+.houselist-mod .list-item .item-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.houselist-mod .list-item .icon-wrapper{
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+}
+.houselist-mod .icon-wrapper .icon-video-new{
+    margin-right: 5px;
+    background: url("../images/list/15.png") no-repeat;
+    background: -webkit-image-set(url("../images/list/15.png") 1x,url("../images/list/16.png") 2x);
+}
+.houselist-mod .icon-wrapper .icon-video-new, .houselist-mod .icon-wrapper .icon-720{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+.houselist-mod i{
+    font-style: normal;
+}
+.houselist-mod .icon-wrapper .icon-720{
+    background: url("../images/list/13.png") no-repeat;
+    background: -webkit-image-set(url("../images/list/13.png") 1x,url("../images/list/14.png") 2x);
+}
+.houselist-mod-new .house-details{
+    height: 135px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.houselist-mod .house-details .house-title{
+    margin-bottom: 6px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 0;
+}
+.houselist-mod .house-details .house-title a{
+    font-size: 1.333333rem;
+    color: #333;
+    font-weight: bold;
+}
+.houselist-mod .list-item a{
+    display: inline-block;
+    vertical-align: top;
+}
+.houselist-mod .house-details .house-title a{
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 7px;
+    max-width: 375px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.houselist-mod .list-item .house-icon{
+    margin-top: 7px;
+}
+.houselist-mod .list-item .house-icon-anxuan{
+    display: inline-block;
+    width: 36px;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    background-image: linear-gradient(-90deg, #02C26D 0%, #7ED665 100%);
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 900;
+    margin-left: 5px;
+}
+.list-item .house-icon-default, .list-item .house-icon-high, .list-item .house-icon-warning, .list-item .house-icon-safe{
+    position: relative;
+    padding: 0 4px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.list-item .house-icon-default{
+    color: #02c26d;
+    margin-left: 0;
+}
+.houselist-mod .list-item .house-icon{
+    margin-top: 7px;
+    border: 1px solid #02c26d;
+    border-left: none;
+}
+.houselist-mod .house-details .details-item{
+    height: 30px;
+    line-height: 30px;
+}
+.houselist-mod .details-item span{
+    margin-right: 10px;
+    font-size: 1.166666rem;
+}
+.houselist-mod .details-item .spe-lines{
+    display: inline-block;
+    margin-right: 10px;
+    width: 1px;
+    background: #ccc;
+    height: 10px;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.houselist-mod .details-item{
+    font-size: 0;
+}
+.houselist-mod .details-item span{
+    margin-right: 10px;
+}
+.houselist-mod .details-item .comm-address{
+    display: inline-block;
+    max-width: 342px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0;
+}
+.houselist-mod .details-item .comm-address{
+    max-width: 342px;
+}
+.houselist-mod .tags-bottom{
+    width: 550px;
+    margin: 0 0 7px -8px;
+    font-size: 0;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.tags-bottom .item-tags{
+    display: inline-block;
+    font-size: 1rem;
+    height: 22px;
+    line-height: 22px;
+    margin: 8px 0 5px 8px;
+    padding: 0 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tags-bottom .tag-others{
+    color: #799374;
+    background: #f2f6ed;
+}
+.broker-item{
+    font-size: 0;
+    height: 30px;
+    line-height: 30px;
+    width: 550px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.broker-img-wrap{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: -4px;
+}
+.broker-img-wrap img{
+    width: 100%;
+}
+.broker-text{
+    color: #999;
+    font-size: 1.166666rem;
+}
+.broker-name{
+    margin: 0 8px 0 5px;
+}
+.broker-ax-img{
+    width: 14px;
+    margin-right: 8px;
+    vertical-align: -3px;
+}
+.houselist-mod .pro-price{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 112px;
+    text-align: right;
+    white-space: nowrap;
+}
+.houselist-mod .pro-price .price-det{
+    display: block;
+    width: 112px;
+    height: 30px;
+    line-height: 30px;
+    color: #e54b00;
+}
+.houselist-mod .pro-price strong{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Tahoma;
+    margin-right: 3px;
+}
+.houselist-mod .pro-price .unit-price{
+    font-size: 1rem;
+    color: #999;
+}
