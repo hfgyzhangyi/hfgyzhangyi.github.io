@@ -623,6 +623,7 @@
                             <a class="down" href="javascript:;">最新</a>
                         </span>
                     </div>
+                    <!--
                     <ul id="houselist-mod-new" class="houselist-mod houselist-mod-new">
                         <li class="list-item">
                             <div class="item-img">
@@ -674,6 +675,95 @@
                             </div>
                         </li>
                     </ul>
+                    -->
+                    <ul id="houselist-mod-new" class="houselist-mod houselist-mod-new">
+                        <%items.forEach(function(item){%>
+                        <li class="list-item">
+                            <div class="item-img">
+                                <img src="./images/list/<%=item.img_name%>"/>
+                                <div class="icon-wrapper">
+                                    <i class="icon-video-new"></i>
+                                    <i class="icon-720"></i>
+                                </div>
+                            </div>
+                            <div class="house-details">
+                                <div class="house-title">
+                                    <a title="<%=item.title%>" href="javascript:;" target="_blank" class="houseListTitle"><%=item.title%></a>
+                                    <i class="house-icon house-icon-anxuan" style="font-weight: normal;">安选</i>
+                                    <i class="house-icon house-icon-default border-line">真实在售</i>
+                                </div>
+                                <div class="details-item">
+                                    <span><%=item.layout%></span>
+                                    <em class="spe-lines">|</em>
+                                    <span><%=item.area%></span>
+                                    <em class="spe-lines">|</em>
+                                    <span><%=item.floor%></span>
+                                    <em class="spe-lines">|</em>
+                                    <span><%=item.time%></span>                                
+                                </div>
+                                <div class="details-item">
+                                    <span class="comm-address" title="<%=item.estate_name%>&nbsp;&nbsp;<%=item.address%>"><%=item.estate_name%>&nbsp;&nbsp;<%=item.address%></span>
+                                </div>
+                                <div class="tags-bottom">
+                                    <span class="item-tags tag-others">安全性高</span>
+                                    <span class="item-tags tag-others">繁华地段</span>
+                                    <span class="item-tags tag-others">品质小区</span>
+                                </div>
+                                <div class="broker-item">
+                                    <span class="broker-img-wrap">
+                                        <img src="./images/list/17.jpg">
+                                    </span>
+                                    <span class="broker-name broker-text">常永伟</span>
+                                    <span>
+                                        <img class="broker-ax-img" src="./images/list/18.png">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="pro-price">
+                                <span class="price-det">
+                                    <strong><%=item.total_price%></strong>
+                                    万
+                                </span>
+                                <span class="unit-price"><%=item.univalence%>元/m²</span>
+                            </div>
+                        </li>
+                        <%});%>
+                    </ul>
+                    <div class="multi-page">
+                        <%if(pageNow==1){%>
+                            <i class="iPre">上一页</i>
+                        <%}else{%>
+                            <a href="javascript:;" class="aPre">上一页</a>
+                        <%}%>
+                        <%pagingNumber.forEach(function(num){%>
+                        <%});%>
+                    </div>
+                    <!--
+                    <div class="multi-page">
+                        <a href="javascript:;" class="aPre">上一页</a>
+                        <a href="javascript:;">1</a>
+                        <a href="javascript:;">2</a>
+                        <i class="curr">3</i>
+                        <a href="javascript:;">4</a>
+                        <a href="javascript:;">5</a>
+                        <a href="javascript:;">6</a>
+                        <a href="javascript:;">7</a>
+                        <i class="aDotted">...</i>
+                        <a href="javascript:;" class="aNxt">下一页 &gt;</a>
+                    </div>
+                    -->
+                    <!--
+                    <%items.forEach(function(item){%>%>
+                        <li><%=item.id%></li>
+                    <%});%>
+                    -->
+                    <!--
+                    <%if(2>3){%>
+                        <strong>我是真结果</strong>
+                    <%}else{%>
+                        <strong>我是假结果</strong>
+                    <%}%>
+                    -->
                 </div>
                 <!--right content-->
                 <div class="sale-right">

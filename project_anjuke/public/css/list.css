@@ -1235,3 +1235,78 @@ span.logo{
     font-size: 1rem;
     color: #999;
 }
+.list-item:hover{
+    background-color: #F9F9F9;
+}
+.multi-page{
+    margin: 30px 20px 40px 0;
+    text-align: right !important;
+}
+.multi-page i, .multi-page a:link, .multi-page a:visited{
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    margin: 0 0 0 2px;
+    color: #777;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 26px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    font-family: Tahoma;
+}
+.multi-page a:hover{
+    color: white !important;
+    background-color: #5A9B01;
+    border-color: #62AC01;
+}
+.multi-page .iPre, .multi-page .aPre:link, .multi-page .aPre:visited, .multi-page .iNxt, .multi-page .aNxt:link, .multi-page .aNxt:visited{
+    font-size: 1.166666rem;
+    font-weight: 700;
+}
+.multi-page .iPre, .multi-page .aPre:link, .multi-page .aPre:visited{
+    width: 68px;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+.multi-page .aPre:link, .multi-page .aPre:visited{
+    color: #666;
+}
+.multi-page .curr{
+    color: #63aa02;
+    background: #fff;
+    border: 1px solid #62ac01;
+    font-weight: 700;
+}
+.multi-page i{
+    font-style: normal;
+}
+.multi-page .aDotted, .multi-page .aDotted:link, .multi-page .aDotted:visited{
+    width: 29px;
+    border: 0;
+}
+.multi-page .aNxt:link, .multi-page .aNxt:visited{
+    background: #62ac01;
+    border: 1px solid #89c040;
+}
+.multi-page .iNxt, .multi-page .aNxt:link, .multi-page .aNxt:visited{
+    width: 139px;
+    color: #fff;
+    line-height: 31px;
+}
+.multi-page .aNxt:hover{
+    color: white !important;
+    background-color: #5A9B01;
+}
+.multi-page .aPre:hover{
+    color: white !important;
+    background-color: #5A9B01;
+    border-color: #5A9B01;
+}
+.multi-page .iPre, .multi-page .aPre:link, .multi-page .aPre:visited{
+    width: 68px;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
