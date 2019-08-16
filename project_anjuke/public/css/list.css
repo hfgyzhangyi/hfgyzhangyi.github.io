@@ -1291,9 +1291,14 @@ span.logo{
     background: #62ac01;
     border: 1px solid #89c040;
 }
-.multi-page .iNxt, .multi-page .aNxt:link, .multi-page .aNxt:visited{
+.multi-page .aNxt:link, .multi-page .aNxt:visited{
     width: 139px;
     color: #fff;
+    line-height: 31px;
+}
+.multi-page .iNxt{
+    width: 139px;
+    color: #ccc;
     line-height: 31px;
 }
 .multi-page .aNxt:hover{
@@ -1303,10 +1308,210 @@ span.logo{
 .multi-page .aPre:hover{
     color: white !important;
     background-color: #5A9B01;
-    border-color: #5A9B01;
+    border-color: #5A9B01 !important;
 }
-.multi-page .iPre, .multi-page .aPre:link, .multi-page .aPre:visited{
+.multi-page .aPre:link, .multi-page .aPre:visited{
+    width: 68px;
+    color: #666;
+    border: 1px solid #ccc;
+}
+.multi-page .iPre{
     width: 68px;
     color: #ccc;
     border: 1px solid #ccc;
+}
+/*底部样式*/
+.seo-tips{
+    color: #999;
+    line-height: 20px;
+    text-align: left;
+    padding: 38px 25px 7px 25px;
+    font-size: 1rem;
+}
+.seo-tips a{
+    color: #999;
+}
+#seo-box{
+    width: 1180px;
+    font-size: 12px;
+    margin: 0 auto 30px;
+    font-family: Microsoft YaHei, "微软雅黑";
+}
+.parent-1{
+    border: 1px solid #D8D8D8;
+    padding: 0px 20px;
+}
+.tab-1{
+    display: block;
+    border-bottom: 1px dashed #e6e6e6;
+    padding-top: 10px;
+    font-size: 0;
+}
+.no-btm-border{
+    border-bottom: 0;
+}
+.tab1-a{
+    font-weight: bold;
+    display: inline-block;
+    width: 115px;
+    font-size: 1rem;
+}
+.tab-1 a:link, .tab-1 a:visited, .tab-1 a:hover, .tab-1 a:active{
+    color: #454545 !important;
+    text-decoration: none;
+    cursor: default;
+}
+.parent-2{
+    display: inline-block;
+    vertical-align: top;
+    width: 1022px;
+    font-size: 1rem;
+}
+.tab-2, .tab-3{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.tab-2 a:link, .tab-2 a:visited{
+    color: #454545;
+}
+.current-tab{
+    font-weight: bold;
+}
+.parent-3{
+    display: none;
+}
+.tab-3 a:link, .tab-3 a:visited{
+    color: #999999 !important;
+}
+.tab-1>.parent-2>.tab-2>a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.partner{
+    float: left;
+    overflow: hidden;
+    margin: 0 0 30px;
+    width: 100%;
+    padding: 20px 0px 16px 0px;
+    background-color: #F9F9F9;
+    font-size: 1rem;
+    font-family: "Microsoft YaHei", "微软雅黑", Tahoma, Arial, simhei, Helvetica, sans-serif;
+}
+.partner span{
+    display: block;
+    width: 1140px;
+    padding-left: 30px;
+    float: left;
+    line-height: 2.6em;
+    margin-bottom: 0px;
+}
+.partner ul{
+    padding: 0 30px;
+    display: block;
+    float: left;
+    width: 930px;
+    overflow: hidden;
+    color: #999;
+    margin: 0 0 10px 0px;
+}
+.partner li{
+    display: block;
+    padding: 0;
+    float: left;
+    margin: 0px 26px 0 0;
+    width: 85px;
+    line-height: 1.6em;
+    list-style-type: none;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.partner li a:visited,.partner li a:link{
+    text-decoration: none;
+    color: #999;
+}
+.partner li a:hover{
+    text-decoration: underline;
+    color: #999 !important;
+}
+#footer-mod{
+    margin: 30px auto 0;
+}
+.footer{
+    clear: both;
+    border-top: 1px solid #e6e6e6;
+    padding: 15px 0 30px;
+    font-size: 1rem;
+    color: #333;
+}
+#footer{
+    margin: 30px auto 0;
+    width: 100%;
+}
+.footer .links{
+    width: 1180px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-size: 0;
+    text-align: center;
+}
+.footer .links li{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.footer a{
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+}
+.footer .spe-lines{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 10px;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    vertical-align: -1px;
+}
+.footer .show-mod{
+    display: none;
+    border:1px solid #e6e6e6;
+    border-radius: 4px;
+    width: 730px;
+    padding: 3px 10px;
+    margin:0 auto 5px;
+    overflow: hidden;
+}
+.footer .show-mod li{
+    float: left;
+    margin-right: 22px;
+    line-height: 24px;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.footer .other-city ul{
+    width: 736px;
+}
+.footer .other-city li{
+    width: 76px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 16px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.footer .cp-mod{
+    text-align: center;
+    line-height: 20px;
 }
