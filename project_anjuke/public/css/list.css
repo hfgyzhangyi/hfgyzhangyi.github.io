@@ -742,6 +742,15 @@ span.logo{
 #condmenu .condul #condeconomics_id ul{
     width: 112px;
 }
+#condmenu .selected a{
+    color: #f60 !important;
+}
+#condmenu .selected a:hover{
+    text-decoration: underline;
+}
+#condmenu div ul li ul li a:hover{
+    text-decoration: underline;
+}
 /*left content*/
 .sale-left{
     float: left;
