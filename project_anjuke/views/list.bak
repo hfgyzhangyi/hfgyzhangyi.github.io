@@ -187,13 +187,24 @@
                     <div class="items">
                         <span class="item-title">区域：</span>
                         <span class="elems-l" id="domain">
-                            <%district_list.forEach(function(district){%>
-                                <%if(district_selected==district.text){%>
-                                    <a class="selected-item" href='<%=district.href%>'><%=district.text%></a>
-                                <%}else{%>
-                                    <a href='<%=district.href%>'><%=district.text%></a>
-                                <%}%>
-                            <%})%>
+                            <a class="selected-item" href='http://localhost:3000/list/detail?district=' title='全部二手房'>全部</a>
+                            <a href='http://localhost:3000/list/detail?district=浦东' class='' title='浦东二手房'>浦东</a>
+                            <a href='http://localhost:3000/list/detail?district=闵行' class='' title='闵行二手房'>闵行</a>
+                            <a href='http://localhost:3000/list/detail?district=宝山' class='' title='宝山二手房'>宝山</a>
+                            <a href='http://localhost:3000/list/detail?district=徐汇' class='' title='徐汇二手房'>徐汇</a>
+                            <a href='javascript:;' class='' title='松江二手房'>松江</a>
+                            <a href='javascript:;' class='' title='嘉定二手房'>嘉定</a>
+                            <a href='javascript:;' class='' title='静安二手房'>静安</a>
+                            <a href='javascript:;' class='' title='普陀二手房'>普陀</a>
+                            <a href='javascript:;' class='' title='杨浦二手房'>杨浦</a>
+                            <a href='javascript:;' class='' title='虹口二手房'>虹口</a>
+                            <a href='javascript:;' class='' title='长宁二手房'>长宁</a>
+                            <a href='javascript:;' class='' title='黄浦二手房'>黄浦</a>
+                            <a href='javascript:;' class='' title='青浦二手房'>青浦</a>
+                            <a href='javascript:;' class='' title='奉贤二手房'>奉贤</a>
+                            <a href='javascript:;' class='' title='金山二手房'>金山</a>
+                            <a href='javascript:;' class='' title='崇明二手房'>崇明</a>
+                            <a href='javascript:;' class='' title='上海周边二手房'>上海周边</a>
                             <div class="sub-items" id="sub_items_1" style="display: none;">
                                 <a class="selected-item" href='javascript:;' title='全部二手房'>全部</a>
                                 <span class="sub-letter-item" style="color: #f60;margin-right: 3px;">B</span>
@@ -383,24 +394,24 @@
                     <div class="items">
                         <span class="item-title">售价：</span>
                         <span class="elems-l" id="price">
-                            <%price_list.forEach(function(price){%>
-                                <%if(price_selected==price.text){%>
-                                    <a class="selected-item" href='<%=price.href%>'><%=price.text%></a>
-                                <%}else{%>
-                                    <a href='<%=price.href%>'><%=price.text%></a>
-                                <%}%>
-                            <%})%>
+                            <a class="selected-item" href='http://localhost:3000/list/detail?from_price=&to_price='>全部</a>
+                            <a href='http://localhost:3000/list/detail?from_price=&to_price=100' class='' rel="nofollow">100万以下</a>
+                            <a href='http://localhost:3000/list/detail?from_price=100&to_price=150' class='' rel="nofollow">100-150万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=150&to_price=200' class='' rel="nofollow">150-200万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=200&to_price=250' class='' rel="nofollow">200-250万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=250&to_price=300' class='' rel="nofollow">250-300万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=300&to_price=400' class='' rel="nofollow">300-400万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=400&to_price=500' class='' rel="nofollow">400-500万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=500&to_price=700' class='' rel="nofollow">500-700万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=700&to_price=1000' class='' rel="nofollow">700-1000万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=1000&to_price=1500' class='' rel="nofollow">1000-1500万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=1500&to_price=2000' class='' rel="nofollow">1500-2000万</a>
+                            <a href='http://localhost:3000/list/detail?from_price=2000&to_price=' class='' rel="nofollow">2000万以上</a>
                             <div class="pricecond">
                                 <form action="/list/detail?customize_price=true" id="pr_form_apf_id_11" method="POST">
-                                    <%if(price_selected=="其他"){%>
-                                        <input class="from-price yell" type="text" name="from_price" maxlength="5"  id="from_price" autocomplete="off" value="<%=price_from%>"/>
-                                        -
-                                        <input class="to-price yell" type="text" name="to_price" maxlength="5" id="to_price" autocomplete="off" value="<%=price_to%>"/>
-                                    <%}else{%>
-                                        <input class="from-price" type="text" name="from_price" maxlength="5"  id="from_price" autocomplete="off"/>
-                                        -
-                                        <input class="to-price" type="text" name="to_price" maxlength="5" id="to_price" autocomplete="off"/>
-                                    <%}%>
+                                    <input class="from-price" type="text" name="from_price" maxlength="5"  id="from_price" autocomplete="off"/>
+                                    -
+                                    <input class="to-price" type="text" name="to_price" maxlength="5" id="to_price" autocomplete="off"/>
                                     &nbsp;<span>万</span>
                                     <input class="smit" id="pricerange_search" style="display:none" type="submit" value="确定"/>
                                 </form>
@@ -411,24 +422,21 @@
                     <div class="items">
                         <span class="item-title">面积：</span>
                         <span class="elems-l" id="area">
-                            <%area_list.forEach(function(area){%>
-                                <%if(area_selected==area.text){%>
-                                    <a class="selected-item" href='<%=area.href%>'><%=area.text%></a>
-                                <%}else{%>
-                                    <a href='<%=area.href%>'><%=area.text%></a>
-                                <%}%>
-                            <%})%>
+                            <a class="selected-item" href='http://localhost:3000/list/detail?from_area=&to_area='>全部</a>
+                            <a href='http://localhost:3000/list/detail?from_area=&to_area=50' class=''>50m²以下</a>
+                            <a href='http://localhost:3000/list/detail?from_area=50&to_area=70' class=''>50-70m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=70&to_area=90' class=''>70-90m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=90&to_area=110' class=''>90-110m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=110&to_area=130' class=''>110-130m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=130&to_area=150' class=''>130-150m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=150&to_area=200' class=''>150-200m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=200&to_area=300' class=''>200-300m²</a>
+                            <a href='http://localhost:3000/list/detail?from_area=300&to_area=' class=''>300m²以上</a>
                             <div class="areacond" style="display: inline">
                                 <form method="POST" action="/list/detail?customize_area=true" id="pr_form_apf_id_11">
-                                    <%if(area_selected=="其他"){%>
-                                        <input class="from-area yell" type="text" maxlength="5" name="from_area" id="from_area" autocomplete="off" value="<%=area_from%>"/>
-                                        -
-                                        <input class="to-area yell" type="text" maxlength="5" name="to_area" id="to_area" autocomplete="off" value="<%=area_to%>"/>
-                                    <%}else{%>
-                                        <input class="from-area" type="text" maxlength="5" name="from_area" id="from_area" autocomplete="off"/>
-                                        -
-                                        <input class="to-area" type="text" maxlength="5" name="to_area" id="to_area" autocomplete="off"/>
-                                    <%}%>
+                                    <input class="from-area" type="text" maxlength="5" name="from_area" id="from_area" autocomplete="off"/>
+                                    -
+                                    <input class="to-area" type="text" maxlength="5" name="to_area" id="to_area" autocomplete="off"/>
                                     &nbsp;<span class="">m²</span>
                                     <input class="smit" id="arearange_search" style="display:none" type="submit" value="确定"/>
                                 </form>
@@ -439,13 +447,13 @@
                     <div class="items">
                         <span class="item-title">房型：</span>
                         <span class="elems-l" id="layout">
-                            <%layout_list.forEach(function(layout){%>
-                                <%if(layout_selected==layout.text){%>
-                                    <a class="selected-item" href='<%=layout.href%>'><%=layout.text%></a>
-                                <%}else{%>
-                                    <a href='<%=layout.href%>'><%=layout.text%></a>
-                                <%}%>
-                            <%})%>
+                            <a class="selected-item" href='http://localhost:3000/list/detail?layout='>全部</a>
+                            <a href='http://localhost:3000/list/detail?layout=1室1厅' class=''>一室</a>
+                            <a href='http://localhost:3000/list/detail?layout=2室1厅' class=''>二室</a>
+                            <a href='http://localhost:3000/list/detail?layout=3室1厅' class=''>三室</a>
+                            <a href='http://localhost:3000/list/detail?layout=4室1厅' class=''>四室</a>
+                            <a href='http://localhost:3000/list/detail?layout=5室1厅' class=''>五室</a>
+                            <a href='http://localhost:3000/list/detail?layout=5室1厅以上' class=''>五室以上</a>
                         </span>
                     </div>
                     <!--特色-->
@@ -527,13 +535,10 @@
                                         </span>
                                     </a>
                                     <ul>
-                                        <%floor_list.forEach(function(floor){%>
-                                            <%if(floor_selected==floor.text){%>
-                                                <li class="selected"><a href='<%=floor.href%>'><%=floor.text%></a></li>
-                                            <%}else{%>
-                                                <li><a href='<%=floor.href%>'><%=floor.text%></a></li>
-                                            <%}%>
-                                        <%})%>
+                                        <li class="selected"><a href="http://localhost:3000/list/detail?floor=">全部</a></li>
+                                        <li><a href="http://localhost:3000/list/detail?floor=中层(共6层)">6层以下</a></li>
+                                        <li><a href="http://localhost:3000/list/detail?floor=中高层(共12层)">6-12层</a></li>
+                                        <li><a href="http://localhost:3000/list/detail?floor=高层(12层以上)">12层以上</a></li>
                                     </ul>
                                 </li>
                                 <li id="condarrow_id">

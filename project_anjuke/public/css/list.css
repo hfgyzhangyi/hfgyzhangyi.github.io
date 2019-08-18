@@ -751,6 +751,9 @@ span.logo{
 #condmenu div ul li ul li a:hover{
     text-decoration: underline;
 }
+.items form input.yell{
+    color: #ff6600;
+}
 /*left content*/
 .sale-left{
     float: left;

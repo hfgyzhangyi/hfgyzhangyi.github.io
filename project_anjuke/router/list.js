@@ -1,6 +1,25 @@
 const pool=require("../pool.js");
 const express=require("express");
-const district_list=['浦东','闵行','宝山','徐汇','松江','嘉定','静安','普陀','杨浦','虹口','长宁','黄浦','青浦','奉贤','金山','崇明','上海周边'];
+const district_list=[
+    {href:"http://localhost:3000/list/detail?district=",text:"全部"},
+    {href:"http://localhost:3000/list/detail?district=浦东",text:"浦东"},
+    {href:"http://localhost:3000/list/detail?district=闵行",text:"闵行"},
+    {href:"http://localhost:3000/list/detail?district=宝山",text:"宝山"},
+    {href:"http://localhost:3000/list/detail?district=徐汇",text:"徐汇"},
+    {href:"javascript:;",text:"松江"},
+    {href:"javascript:;",text:"嘉定"},
+    {href:"javascript:;",text:"静安"},
+    {href:"javascript:;",text:"普陀"},
+    {href:"javascript:;",text:"杨浦"},
+    {href:"javascript:;",text:"虹口"},
+    {href:"javascript:;",text:"长宁"},
+    {href:"javascript:;",text:"黄浦"},
+    {href:"javascript:;",text:"青浦"},
+    {href:"javascript:;",text:"奉贤"},
+    {href:"javascript:;",text:"金山"},
+    {href:"javascript:;",text:"崇明"},
+    {href:"javascript:;",text:"上海周边"}
+];
 const price_list=[
     {href:"http://localhost:3000/list/detail?from_price=&to_price=",text:"全部"},
     {href:"http://localhost:3000/list/detail?from_price=&to_price=100",text:"100万以下"},
@@ -110,7 +129,7 @@ router.get("/",(req,res)=>{
         });
     });
 });
-router.all("/detail",(req,res)=>{
+router.get("/detail",(req,res)=>{
     var sql1="select * from ershoufang_list";
     var sql2="select count(*) as count from ershoufang_list";
     //房型
@@ -142,18 +161,19 @@ router.all("/detail",(req,res)=>{
     var toArea=res.cookie.toArea;
     var q_fromArea=req.query.from_area;
     var q_toArea=req.query.to_area;
-    var q_customize_area=req.query.customize_area;
+    //var q_customize_area=req.query.customize_area;
     //console.log(q_customize_area=="true");✔
     //console.log(q_fromArea==undefined);✔
     //console.log(q_customize_area==undefined);
+    //console.log(q_customize_area);
     if(q_fromArea!=undefined&&q_toArea!=undefined){
         res.cookie.fromArea=q_fromArea;
         res.cookie.toArea=q_toArea;
-        if(q_customize_area==undefined){
-            res.cookie.customizeArea="false";
-        }else{
-            res.cookie.customizeArea="true";
-        }
+        //if(q_customize_area==undefined){
+        res.cookie.customizeArea="false";
+        //}else{
+        //    res.cookie.customizeArea="true";
+        //}
         if(q_fromArea==""){
             if(q_toArea!=""){
                 sql2+=" and area<="+q_toArea;
@@ -228,20 +248,22 @@ router.all("/detail",(req,res)=>{
     var toPrice=res.cookie.toPrice;
     var q_fromPrice=req.query.from_price;
     var q_toPrice=req.query.to_price;
-    var q_customize_price=req.query.customize_price;
+    //var q_customize_price=req.query.customize_price;
     //console.log(q_fromPrice==undefined);✔
     //console.log(q_fromPrice==null);✔
     //console.log(q_fromPrice=="");✖
     //console.log(fromPrice==null);✔
     //console.log(q_fromPrice=="");不填✔
+    //console.log(q_customize_price);
+    //console.log(q_fromPrice);
     if(q_fromPrice!=undefined&&q_toPrice!=undefined){
         res.cookie.fromPrice=q_fromPrice;
         res.cookie.toPrice=q_toPrice;
-        if(q_customize_price==undefined){
-            res.cookie.customizePrice="false";
-        }else{
-            res.cookie.customizePrice="true";
-        }
+        //if(q_customize_price==undefined){
+        res.cookie.customizePrice="false";
+        //}else{
+        //    res.cookie.customizePrice="true";
+        //}
         if(q_fromPrice==""){
             if(q_toPrice!=""){
                 sql2+=" and total_price<="+q_toPrice;
@@ -343,54 +365,502 @@ router.all("/detail",(req,res)=>{
             var cookie_district=res.cookie.district;
             var price_selected="";
             var area_selected="";
+            var district_selected="";
+            var floor_selected="";
+            var layout_selected="";
+            if(cookie_layout==""||cookie_layout==undefined){
+                layout_selected="全部";
+            }else if(cookie_layout=="1室1厅"){
+                layout_selected="一室";
+            }else if(cookie_layout=="2室1厅"){
+                layout_selected="二室";
+            }else if(cookie_layout=="3室1厅"){
+                layout_selected="三室";
+            }else if(cookie_layout=="4室1厅"){
+                layout_selected="四室";
+            }else if(cookie_layout=="5室1厅"){
+                layout_selected="五室";
+            }else if(cookie_layout=="5室1厅以上"){
+                layout_selected="五室以上";
+            }
+            if(cookie_floor==""||cookie_floor==undefined){
+                floor_selected="全部";
+            }else if(cookie_floor=="中层(共6层)"){
+                floor_selected="6层以下";
+            }else if(cookie_floor=="中高层(共12层)"){
+                floor_selected="6-12层";
+            }else if(cookie_floor=="高层(12层以上)"){
+                floor_selected="12层以上";
+            }
+            if(cookie_district==""||cookie_district==undefined){
+                district_selected="全部";
+            }else{
+                district_selected=cookie_district;
+            }
             if(res.cookie.customizeArea=="true"){
                 area_selected="其他";
+            }else{
+                if(cookie_fromArea==""&&cookie_toArea==""||cookie_fromArea==undefined&&cookie_toArea==undefined){
+                    area_selected="全部";
+                }else if(cookie_fromArea==""){
+                    area_selected=cookie_toArea+"m²以下";
+                }else if(cookie_toArea==""){
+                    area_selected=cookie_fromArea+"m²以上";
+                }else{
+                    area_selected=cookie_fromArea+"-"+cookie_toArea+"m²";
+                }
             }
             if(res.cookie.customizePrice=="true"){
                 price_selected="其他";
+            }else{
+                if(cookie_fromPrice==""&&cookie_toPrice==""||cookie_fromPrice==undefined&&cookie_toPrice==undefined){
+                    price_selected="全部";
+                }else if(cookie_fromPrice==""){
+                    price_selected=cookie_toPrice+"万以下";
+                }else if(cookie_toPrice==""){
+                    price_selected=cookie_fromPrice+"万以上";
+                }else{
+                    price_selected=cookie_fromPrice+"-"+cookie_toPrice+"万";
+                }
             }
             if(pageNow<=4){
                 if(totalPage>7){
                     res.render('list',{pagingNumber:[1,2,3,4,5,6,7],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
-                        district_list:district_list,district_selected:"全部",
-                        price_list:price_list,price_selected:"全部",price_from:0,price_to:0,
-                        area_list:area_list,area_selected:"全部",area_from:0,area_to:0,
-                        layout_list:layout_list,layout_selected:"全部",
-                        floor_list:floor_list,floor_selected:"全部"
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
                     });
                 }
                 else{
                     var pagingNumber=[];
                     for(var i=0;i<totalPage;i++)
                         pagingNumber[i]=i+1;
-                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage});
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
                 }
             }else if(pageNow==5){
                 if(totalPage>8){
-                    res.render('list',{pagingNumber:[1,2,3,4,5,6,7,8],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage});
+                    res.render('list',{pagingNumber:[1,2,3,4,5,6,7,8],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
                 }
                 else{
                     var pagingNumber=[];
                     for(var i=0;i<totalPage;i++)
                     pagingNumber[i]=i+1;
-                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage});
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
                 }
             }else if(totalPage-pageNow>3){
                 var pagingNumber=[];
                 for(var i=pageNow-3,j=0;i<=pageNow+3;i++,j++)
                     pagingNumber[j]=i;
-                res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:true,pageNow:pageNow,totalPage:totalPage});
+                res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
+                    district_list:district_list,district_selected:district_selected,
+                    price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                    area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                    layout_list:layout_list,layout_selected:layout_selected,
+                    floor_list:floor_list,floor_selected:floor_selected
+                });
             }else{
                 if(totalPage<=8){
                     var pagingNumber=[];
                     for(var i=1,j=0;i<=totalPage;i++,j++)
                         pagingNumber[j]=i;
-                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage});
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
                 }else{
                     var pagingNumber=[];
                     for(var i=totalPage-6,j=0;i<=totalPage;i++,j++)
                         pagingNumber[j]=i;
-                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:false,pageNow:pageNow,totalPage:totalPage});
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
+                }
+            }
+        });
+    });
+});
+router.post("/detail",(req,res)=>{
+    var sql1="select * from ershoufang_list";
+    var sql2="select count(*) as count from ershoufang_list";
+    //房型
+    var layout=res.cookie.layout;
+    //var q_layout=req.query.layout;
+    // if(q_layout!=undefined){
+    //     res.cookie.layout=q_layout;
+    //     if(q_layout==""){
+    //         sql2+=" where 1=1";
+    //         sql1+=" where 1=1";
+    //     }else{
+    //         sql2+=" where layout='"+q_layout+"'";
+    //         sql1+=" where layout='"+q_layout+"'";
+    //     }
+    // }else 
+    if(layout!=undefined){
+        if(layout==""){
+            sql2+=" where 1=1";
+            sql1+=" where 1=1";
+        }else{
+            sql2+=" where layout='"+layout+"'";
+            sql1+=" where layout='"+layout+"'";
+        }
+    }else{
+        sql2+=" where 1=1";
+        sql1+=" where 1=1";
+    }
+    //面积
+    var fromArea=res.cookie.fromArea;
+    var toArea=res.cookie.toArea;
+    var q_fromArea=req.body.from_area;
+    var q_toArea=req.body.to_area;
+    if(q_fromArea!=undefined&&q_toArea!=undefined){
+        res.cookie.fromArea=q_fromArea;
+        res.cookie.toArea=q_toArea;
+        //if(q_customize_area==undefined){
+        //    res.cookie.customizeArea="false";
+        //}else{
+        res.cookie.customizeArea="true";
+        //}
+        if(q_fromArea==""){
+            if(q_toArea!=""){
+                sql2+=" and area<="+q_toArea;
+                sql1+=" and area<="+q_toArea;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else if(q_toArea==""){
+            if(q_fromArea!=""){
+                sql2+=" and area>="+q_fromArea;
+                sql1+=" and area>="+q_fromArea;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else{
+            sql2+=" and area between "+q_fromArea+" and "+q_toArea;
+            sql1+=" and area between "+q_fromArea+" and "+q_toArea;
+        }
+    }else if(fromArea!=null&&toArea!=null){
+        if(fromArea==""){
+            if(toArea!=""){
+                sql2+=" and area<="+toArea;
+                sql1+=" and area<="+toArea;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else if(toArea==""){
+            if(fromArea!=""){
+                sql2+=" and area>="+fromArea;
+                sql1+=" and area>="+fromArea;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else{
+            sql2+=" and area between "+fromArea+" and "+toArea;
+            sql1+=" and area between "+fromArea+" and "+toArea;
+        }
+    }else{
+        sql2+=" and 1=1";
+        sql1+=" and 1=1";
+    }
+    //楼层
+    var floor=res.cookie.floor;
+    //var q_floor=req.query.floor;
+    // if(q_floor!=undefined){
+    //     res.cookie.floor=q_floor;
+    //     if(q_floor==""){
+    //         sql2+=" and 1=1";
+    //         sql1+=" and 1=1";
+    //     }else{
+    //         sql2+=" and floor='"+q_floor+"'";
+    //         sql1+=" and floor='"+q_floor+"'";
+    //     }
+    // }else
+    if(floor!=undefined){
+        if(floor==""){
+            sql2+=" and 1=1";
+            sql1+=" and 1=1";
+        }else{
+            sql2+=" and floor='"+floor+"'";
+            sql1+=" and floor='"+floor+"'";
+        }
+    }else{
+        sql2+=" and 1=1";
+        sql1+=" and 1=1";
+    }
+    //售价
+    var fromPrice=res.cookie.fromPrice;
+    var toPrice=res.cookie.toPrice;
+    var q_fromPrice=req.body.from_price;
+    var q_toPrice=req.body.to_price;
+    //console.log(req.body.from_price);
+    //console.log(req.body.to_price);
+    if(q_fromPrice!=undefined&&q_toPrice!=undefined){
+        res.cookie.fromPrice=q_fromPrice;
+        res.cookie.toPrice=q_toPrice;
+        //if(q_customize_price==undefined){
+        //    res.cookie.customizePrice="false";
+        //}else{
+        res.cookie.customizePrice="true";
+        //}
+        if(q_fromPrice==""){
+            if(q_toPrice!=""){
+                sql2+=" and total_price<="+q_toPrice;
+                sql1+=" and total_price<="+q_toPrice;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else if(q_toPrice==""){
+            if(q_fromPrice!=""){
+                sql2+=" and total_price>="+q_fromPrice;
+                sql1+=" and total_price>="+q_fromPrice;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else{
+            sql2+=" and total_price between "+q_fromPrice+" and "+q_toPrice;
+            sql1+=" and total_price between "+q_fromPrice+" and "+q_toPrice;
+        }
+    }else if(fromPrice!=null&&toPrice!=null){
+        if(fromPrice==""){
+            if(toPrice!=""){
+                sql2+=" and total_price<="+toPrice;
+                sql1+=" and total_price<="+toPrice;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else if(toPrice==""){
+            if(fromPrice!=""){
+                sql2+=" and total_price>="+fromPrice;
+                sql1+=" and total_price>="+fromPrice;
+            }else{
+                sql2+=" and 1=1";
+                sql1+=" and 1=1";
+            }
+        }else{
+            sql2+=" and total_price between "+fromPrice+" and "+toPrice;
+            sql1+=" and total_price between "+fromPrice+" and "+toPrice;
+        }
+    }else{
+        sql2+=" and 1=1";
+        sql1+=" and 1=1";
+    }
+    //区域
+    var district=res.cookie.district;
+    //var q_district=req.query.district;
+    //console.log(q_district=="");全部✔
+    // if(q_district!=undefined){
+    //     res.cookie.district=q_district;
+    //     if(q_district==""){
+    //         sql2+=" and 1=1";
+    //         sql1+=" and 1=1";
+    //     }else{
+    //         sql2+=" and district='"+q_district+"'";
+    //         sql1+=" and district='"+q_district+"'";
+    //     }
+    // }else
+    if(district!=undefined){
+        if(district==""){
+            sql2+=" and 1=1";
+            sql1+=" and 1=1";
+        }else{
+            sql2+=" and district='"+district+"'";
+            sql1+=" and district='"+district+"'";
+        }
+    }else{
+        sql2+=" and 1=1";
+        sql1+=" and 1=1";
+    }
+    var pageNow=req.query.pageNow;
+    if(pageNow==undefined){
+        pageNow=1;
+    }else{
+        pageNow=parseInt(pageNow);
+    }
+    var pageSize=60;
+    var totalPage=0;
+    sql1+=" limit "+(pageNow-1)*60+","+pageSize;
+    pool.query(sql2,null,(err,result)=>{
+        totalPage=Math.ceil(result[0].count/60);
+        //console.log(totalPage);
+        pool.query(sql1,null,(err,result)=>{
+            var cookie_layout=res.cookie.layout;
+            var cookie_fromArea=res.cookie.fromArea;
+            var cookie_toArea=res.cookie.toArea;
+            var cookie_floor=res.cookie.floor;
+            var cookie_fromPrice=res.cookie.fromPrice;
+            var cookie_toPrice=res.cookie.toPrice;
+            var cookie_district=res.cookie.district;
+            var price_selected="";
+            var area_selected="";
+            var district_selected="";
+            var floor_selected="";
+            var layout_selected="";
+            if(cookie_layout==""||cookie_layout==undefined){
+                layout_selected="全部";
+            }else if(cookie_layout=="1室1厅"){
+                layout_selected="一室";
+            }else if(cookie_layout=="2室1厅"){
+                layout_selected="二室";
+            }else if(cookie_layout=="3室1厅"){
+                layout_selected="三室";
+            }else if(cookie_layout=="4室1厅"){
+                layout_selected="四室";
+            }else if(cookie_layout=="5室1厅"){
+                layout_selected="五室";
+            }else if(cookie_layout=="5室1厅以上"){
+                layout_selected="五室以上";
+            }
+            if(cookie_floor==""||cookie_floor==undefined){
+                floor_selected="全部";
+            }else if(cookie_floor=="中层(共6层)"){
+                floor_selected="6层以下";
+            }else if(cookie_floor=="中高层(共12层)"){
+                floor_selected="6-12层";
+            }else if(cookie_floor=="高层(12层以上)"){
+                floor_selected="12层以上";
+            }
+            if(cookie_district==""||cookie_district==undefined){
+                district_selected="全部";
+            }else{
+                district_selected=cookie_district;
+            }
+            if(res.cookie.customizeArea=="true"){
+                area_selected="其他";
+            }else{
+                if(cookie_fromArea==""&&cookie_toArea==""||cookie_fromArea==undefined&&cookie_toArea==undefined){
+                    area_selected="全部";
+                }else if(cookie_fromArea==""){
+                    area_selected=cookie_toArea+"m²以下";
+                }else if(cookie_toArea==""){
+                    area_selected=cookie_fromArea+"m²以上";
+                }else{
+                    area_selected=cookie_fromArea+"-"+cookie_toArea+"m²";
+                }
+            }
+            if(res.cookie.customizePrice=="true"){
+                price_selected="其他";
+            }else{
+                if(cookie_fromPrice==""&&cookie_toPrice==""||cookie_fromPrice==undefined&&cookie_toPrice==undefined){
+                    price_selected="全部";
+                }else if(cookie_fromPrice==""){
+                    price_selected=cookie_toPrice+"万以下";
+                }else if(cookie_toPrice==""){
+                    price_selected=cookie_fromPrice+"万以上";
+                }else{
+                    price_selected=cookie_fromPrice+"-"+cookie_toPrice+"万";
+                }
+            }
+            if(pageNow<=4){
+                if(totalPage>7){
+                    res.render('list',{pagingNumber:[1,2,3,4,5,6,7],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
+                }
+                else{
+                    var pagingNumber=[];
+                    for(var i=0;i<totalPage;i++)
+                        pagingNumber[i]=i+1;
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
+                }
+            }else if(pageNow==5){
+                if(totalPage>8){
+                    res.render('list',{pagingNumber:[1,2,3,4,5,6,7,8],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
+                }
+                else{
+                    var pagingNumber=[];
+                    for(var i=0;i<totalPage;i++)
+                    pagingNumber[i]=i+1;
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
+                }
+            }else if(totalPage-pageNow>3){
+                var pagingNumber=[];
+                for(var i=pageNow-3,j=0;i<=pageNow+3;i++,j++)
+                    pagingNumber[j]=i;
+                res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
+                    district_list:district_list,district_selected:district_selected,
+                    price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                    area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                    layout_list:layout_list,layout_selected:layout_selected,
+                    floor_list:floor_list,floor_selected:floor_selected
+                });
+            }else{
+                if(totalPage<=8){
+                    var pagingNumber=[];
+                    for(var i=1,j=0;i<=totalPage;i++,j++)
+                        pagingNumber[j]=i;
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
+                }else{
+                    var pagingNumber=[];
+                    for(var i=totalPage-6,j=0;i<=totalPage;i++,j++)
+                        pagingNumber[j]=i;
+                    res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                        district_list:district_list,district_selected:district_selected,
+                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        layout_list:layout_list,layout_selected:layout_selected,
+                        floor_list:floor_list,floor_selected:floor_selected
+                    });
                 }
             }
         });
