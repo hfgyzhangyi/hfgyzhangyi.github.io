@@ -690,7 +690,7 @@
                                 <div class="details-item">
                                     <span><%=item.layout%></span>
                                     <em class="spe-lines">|</em>
-                                    <span><%=item.area%></span>
+                                    <span><%=item.area%>m²</span>
                                     <em class="spe-lines">|</em>
                                     <span><%=item.floor%></span>
                                     <em class="spe-lines">|</em>
@@ -729,10 +729,10 @@
                             <%if(pageNow==1){%>
                                 <i class="iPre">上一页</i>
                             <%}else{%>
-                                <a href="http://localhost:3000/list?pageNow=<%=pageNow-1%>" class="aPre">上一页</a>
+                                <a href="http://localhost:3000/list/detail?pageNow=<%=pageNow-1%>" class="aPre">上一页</a>
                             <%}%>
                             <%if(lEllipsis){%>
-                                <a href="http://localhost:3000/list?pageNow=1">1</a>
+                                <a href="http://localhost:3000/list/detail?pageNow=1">1</a>
                             <%}%>
                             <%if(lEllipsis){%>
                                 <i class="aDotted">...</i>
@@ -741,7 +741,7 @@
                                 <%if(num==pageNow){%>
                                     <i class="curr"><%=num%></i>
                                 <%}else{%>
-                                    <a href="http://localhost:3000/list?pageNow=<%=num%>"><%=num%></a>
+                                    <a href="http://localhost:3000/list/detail?pageNow=<%=num%>"><%=num%></a>
                                 <%}%>
                             <%});%>
                             <%if(rEllipsis){%>

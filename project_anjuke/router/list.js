@@ -1,5 +1,11 @@
 const pool=require("../pool.js");
 const express=require("express");
+var router=express.Router();
+const session=require("express-session");
+router.use(session({
+    secret:'test secret',
+    cookie:{maxAge:60*1000*30}
+}));
 const district_list=[
     {href:"http://localhost:3000/list/detail?district=",text:"全部"},
     {href:"http://localhost:3000/list/detail?district=浦东",text:"浦东"},
@@ -62,12 +68,21 @@ const floor_list=[
     {href:"http://localhost:3000/list/detail?floor=中高层(共12层)",text:"6-12层"},
     {href:"http://localhost:3000/list/detail?floor=高层(12层以上)",text:"12层以上"}
 ];
-var router=express.Router();
 router.get("/",(req,res)=>{
     //res.redirect('http://localhost:3000/list.html');
     //res.render('list',{start:"aaa"});
     //var items=[1,2,3,4,5];
     //res.render('list',{items:items});
+    //销毁session:req.session.destroy();
+    req.session.layout=null;
+    req.session.fromArea=null;
+    req.session.toArea=null;
+    req.session.floor=null;
+    req.session.fromPrice=null;
+    req.session.toPrice=null;
+    req.session.district=null;
+    req.session.customizeArea=null;
+    req.session.customizePrice=null;
     var pageNow=parseInt(req.query.pageNow);
     var pageSize=60;
     var totalPage=0;
@@ -133,10 +148,10 @@ router.get("/detail",(req,res)=>{
     var sql1="select * from ershoufang_list";
     var sql2="select count(*) as count from ershoufang_list";
     //房型
-    var layout=res.cookie.layout;
+    var layout=req.session.layout;
     var q_layout=req.query.layout;
     if(q_layout!=undefined){
-        res.cookie.layout=q_layout;
+        req.session.layout=q_layout;
         if(q_layout==""){
             sql2+=" where 1=1";
             sql1+=" where 1=1";
@@ -157,8 +172,8 @@ router.get("/detail",(req,res)=>{
         sql1+=" where 1=1";
     }
     //面积
-    var fromArea=res.cookie.fromArea;
-    var toArea=res.cookie.toArea;
+    var fromArea=req.session.fromArea;
+    var toArea=req.session.toArea;
     var q_fromArea=req.query.from_area;
     var q_toArea=req.query.to_area;
     //var q_customize_area=req.query.customize_area;
@@ -167,10 +182,10 @@ router.get("/detail",(req,res)=>{
     //console.log(q_customize_area==undefined);
     //console.log(q_customize_area);
     if(q_fromArea!=undefined&&q_toArea!=undefined){
-        res.cookie.fromArea=q_fromArea;
-        res.cookie.toArea=q_toArea;
+        req.session.fromArea=q_fromArea;
+        req.session.toArea=q_toArea;
         //if(q_customize_area==undefined){
-        res.cookie.customizeArea="false";
+        req.session.customizeArea="false";
         //}else{
         //    res.cookie.customizeArea="true";
         //}
@@ -220,10 +235,10 @@ router.get("/detail",(req,res)=>{
         sql1+=" and 1=1";
     }
     //楼层
-    var floor=res.cookie.floor;
+    var floor=req.session.floor;
     var q_floor=req.query.floor;
     if(q_floor!=undefined){
-        res.cookie.floor=q_floor;
+        req.session.floor=q_floor;
         if(q_floor==""){
             sql2+=" and 1=1";
             sql1+=" and 1=1";
@@ -244,8 +259,8 @@ router.get("/detail",(req,res)=>{
         sql1+=" and 1=1";
     }
     //售价
-    var fromPrice=res.cookie.fromPrice;
-    var toPrice=res.cookie.toPrice;
+    var fromPrice=req.session.fromPrice;
+    var toPrice=req.session.toPrice;
     var q_fromPrice=req.query.from_price;
     var q_toPrice=req.query.to_price;
     //var q_customize_price=req.query.customize_price;
@@ -257,10 +272,10 @@ router.get("/detail",(req,res)=>{
     //console.log(q_customize_price);
     //console.log(q_fromPrice);
     if(q_fromPrice!=undefined&&q_toPrice!=undefined){
-        res.cookie.fromPrice=q_fromPrice;
-        res.cookie.toPrice=q_toPrice;
+        req.session.fromPrice=q_fromPrice;
+        req.session.toPrice=q_toPrice;
         //if(q_customize_price==undefined){
-        res.cookie.customizePrice="false";
+        req.session.customizePrice="false";
         //}else{
         //    res.cookie.customizePrice="true";
         //}
@@ -310,11 +325,13 @@ router.get("/detail",(req,res)=>{
         sql1+=" and 1=1";
     }
     //区域
-    var district=res.cookie.district;
+    //var district=res.cookie.district;
+    var district=req.session.district;
     var q_district=req.query.district;
     //console.log(q_district=="");全部✔
     if(q_district!=undefined){
-        res.cookie.district=q_district;
+        //res.cookie.district=q_district;
+        req.session.district=q_district;
         if(q_district==""){
             sql2+=" and 1=1";
             sql1+=" and 1=1";
@@ -356,79 +373,86 @@ router.get("/detail",(req,res)=>{
         totalPage=Math.ceil(result[0].count/60);
         //console.log(totalPage);
         pool.query(sql1,null,(err,result)=>{
-            var cookie_layout=res.cookie.layout;
-            var cookie_fromArea=res.cookie.fromArea;
-            var cookie_toArea=res.cookie.toArea;
-            var cookie_floor=res.cookie.floor;
-            var cookie_fromPrice=res.cookie.fromPrice;
-            var cookie_toPrice=res.cookie.toPrice;
-            var cookie_district=res.cookie.district;
+            // var cookie_layout=res.cookie.layout;
+            // var cookie_fromArea=res.cookie.fromArea;
+            // var cookie_toArea=res.cookie.toArea;
+            // var cookie_floor=res.cookie.floor;
+            // var cookie_fromPrice=res.cookie.fromPrice;
+            // var cookie_toPrice=res.cookie.toPrice;
+            // var cookie_district=res.cookie.district;
+            var session_layout=req.session.layout;
+            var session_fromArea=req.session.fromArea;
+            var session_toArea=req.session.toArea;
+            var session_floor=req.session.floor;
+            var session_fromPrice=req.session.fromPrice;
+            var session_toPrice=req.session.toPrice;
+            var session_district=req.session.district;
             var price_selected="";
             var area_selected="";
             var district_selected="";
             var floor_selected="";
             var layout_selected="";
-            if(cookie_layout==""||cookie_layout==undefined){
+            if(session_layout==""||session_layout==undefined){
                 layout_selected="全部";
-            }else if(cookie_layout=="1室1厅"){
+            }else if(session_layout=="1室1厅"){
                 layout_selected="一室";
-            }else if(cookie_layout=="2室1厅"){
+            }else if(session_layout=="2室1厅"){
                 layout_selected="二室";
-            }else if(cookie_layout=="3室1厅"){
+            }else if(session_layout=="3室1厅"){
                 layout_selected="三室";
-            }else if(cookie_layout=="4室1厅"){
+            }else if(session_layout=="4室1厅"){
                 layout_selected="四室";
-            }else if(cookie_layout=="5室1厅"){
+            }else if(session_layout=="5室1厅"){
                 layout_selected="五室";
-            }else if(cookie_layout=="5室1厅以上"){
+            }else if(session_layout=="5室1厅以上"){
                 layout_selected="五室以上";
             }
-            if(cookie_floor==""||cookie_floor==undefined){
+            if(session_floor==""||session_floor==undefined){
                 floor_selected="全部";
-            }else if(cookie_floor=="中层(共6层)"){
+            }else if(session_floor=="中层(共6层)"){
                 floor_selected="6层以下";
-            }else if(cookie_floor=="中高层(共12层)"){
+            }else if(session_floor=="中高层(共12层)"){
                 floor_selected="6-12层";
-            }else if(cookie_floor=="高层(12层以上)"){
+            }else if(session_floor=="高层(12层以上)"){
                 floor_selected="12层以上";
             }
-            if(cookie_district==""||cookie_district==undefined){
+            if(session_district==""||session_district==undefined){
                 district_selected="全部";
             }else{
-                district_selected=cookie_district;
+                district_selected=session_district;
             }
-            if(res.cookie.customizeArea=="true"){
+            if(req.session.customizeArea=="true"){
                 area_selected="其他";
             }else{
-                if(cookie_fromArea==""&&cookie_toArea==""||cookie_fromArea==undefined&&cookie_toArea==undefined){
+                if(session_fromArea==""&&session_toArea==""||session_fromArea==undefined&&session_toArea==undefined){
                     area_selected="全部";
-                }else if(cookie_fromArea==""){
-                    area_selected=cookie_toArea+"m²以下";
-                }else if(cookie_toArea==""){
-                    area_selected=cookie_fromArea+"m²以上";
+                }else if(session_fromArea==""){
+                    area_selected=session_toArea+"m²以下";
+                }else if(session_toArea==""){
+                    area_selected=session_fromArea+"m²以上";
                 }else{
-                    area_selected=cookie_fromArea+"-"+cookie_toArea+"m²";
+                    area_selected=session_fromArea+"-"+session_toArea+"m²";
                 }
             }
-            if(res.cookie.customizePrice=="true"){
+            if(req.session.customizePrice=="true"){
                 price_selected="其他";
             }else{
-                if(cookie_fromPrice==""&&cookie_toPrice==""||cookie_fromPrice==undefined&&cookie_toPrice==undefined){
+                if(session_fromPrice==""&&session_toPrice==""||session_fromPrice==undefined&&session_toPrice==undefined){
                     price_selected="全部";
-                }else if(cookie_fromPrice==""){
-                    price_selected=cookie_toPrice+"万以下";
-                }else if(cookie_toPrice==""){
-                    price_selected=cookie_fromPrice+"万以上";
+                }else if(session_fromPrice==""){
+                    price_selected=session_toPrice+"万以下";
+                }else if(session_toPrice==""){
+                    price_selected=session_fromPrice+"万以上";
                 }else{
-                    price_selected=cookie_fromPrice+"-"+cookie_toPrice+"万";
+                    price_selected=session_fromPrice+"-"+session_toPrice+"万";
                 }
             }
             if(pageNow<=4){
                 if(totalPage>7){
                     res.render('list',{pagingNumber:[1,2,3,4,5,6,7],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -439,8 +463,8 @@ router.get("/detail",(req,res)=>{
                         pagingNumber[i]=i+1;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -449,8 +473,8 @@ router.get("/detail",(req,res)=>{
                 if(totalPage>8){
                     res.render('list',{pagingNumber:[1,2,3,4,5,6,7,8],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -461,8 +485,8 @@ router.get("/detail",(req,res)=>{
                     pagingNumber[i]=i+1;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -473,8 +497,8 @@ router.get("/detail",(req,res)=>{
                     pagingNumber[j]=i;
                 res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
                     district_list:district_list,district_selected:district_selected,
-                    price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                    area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                    price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                    area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                     layout_list:layout_list,layout_selected:layout_selected,
                     floor_list:floor_list,floor_selected:floor_selected
                 });
@@ -485,8 +509,8 @@ router.get("/detail",(req,res)=>{
                         pagingNumber[j]=i;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -496,8 +520,8 @@ router.get("/detail",(req,res)=>{
                         pagingNumber[j]=i;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -510,7 +534,7 @@ router.post("/detail",(req,res)=>{
     var sql1="select * from ershoufang_list";
     var sql2="select count(*) as count from ershoufang_list";
     //房型
-    var layout=res.cookie.layout;
+    var layout=req.session.layout;
     //var q_layout=req.query.layout;
     // if(q_layout!=undefined){
     //     res.cookie.layout=q_layout;
@@ -535,17 +559,17 @@ router.post("/detail",(req,res)=>{
         sql1+=" where 1=1";
     }
     //面积
-    var fromArea=res.cookie.fromArea;
-    var toArea=res.cookie.toArea;
+    var fromArea=req.session.fromArea;
+    var toArea=req.session.toArea;
     var q_fromArea=req.body.from_area;
     var q_toArea=req.body.to_area;
     if(q_fromArea!=undefined&&q_toArea!=undefined){
-        res.cookie.fromArea=q_fromArea;
-        res.cookie.toArea=q_toArea;
+        req.session.fromArea=q_fromArea;
+        req.session.toArea=q_toArea;
         //if(q_customize_area==undefined){
         //    res.cookie.customizeArea="false";
         //}else{
-        res.cookie.customizeArea="true";
+        req.session.customizeArea="true";
         //}
         if(q_fromArea==""){
             if(q_toArea!=""){
@@ -593,7 +617,7 @@ router.post("/detail",(req,res)=>{
         sql1+=" and 1=1";
     }
     //楼层
-    var floor=res.cookie.floor;
+    var floor=req.session.floor;
     //var q_floor=req.query.floor;
     // if(q_floor!=undefined){
     //     res.cookie.floor=q_floor;
@@ -618,19 +642,19 @@ router.post("/detail",(req,res)=>{
         sql1+=" and 1=1";
     }
     //售价
-    var fromPrice=res.cookie.fromPrice;
-    var toPrice=res.cookie.toPrice;
+    var fromPrice=req.session.fromPrice;
+    var toPrice=req.session.toPrice;
     var q_fromPrice=req.body.from_price;
     var q_toPrice=req.body.to_price;
     //console.log(req.body.from_price);
     //console.log(req.body.to_price);
     if(q_fromPrice!=undefined&&q_toPrice!=undefined){
-        res.cookie.fromPrice=q_fromPrice;
-        res.cookie.toPrice=q_toPrice;
+        req.session.fromPrice=q_fromPrice;
+        req.session.toPrice=q_toPrice;
         //if(q_customize_price==undefined){
         //    res.cookie.customizePrice="false";
         //}else{
-        res.cookie.customizePrice="true";
+        req.session.customizePrice="true";
         //}
         if(q_fromPrice==""){
             if(q_toPrice!=""){
@@ -678,7 +702,7 @@ router.post("/detail",(req,res)=>{
         sql1+=" and 1=1";
     }
     //区域
-    var district=res.cookie.district;
+    var district=req.session.district;
     //var q_district=req.query.district;
     //console.log(q_district=="");全部✔
     // if(q_district!=undefined){
@@ -716,79 +740,79 @@ router.post("/detail",(req,res)=>{
         totalPage=Math.ceil(result[0].count/60);
         //console.log(totalPage);
         pool.query(sql1,null,(err,result)=>{
-            var cookie_layout=res.cookie.layout;
-            var cookie_fromArea=res.cookie.fromArea;
-            var cookie_toArea=res.cookie.toArea;
-            var cookie_floor=res.cookie.floor;
-            var cookie_fromPrice=res.cookie.fromPrice;
-            var cookie_toPrice=res.cookie.toPrice;
-            var cookie_district=res.cookie.district;
+            var session_layout=req.session.layout;
+            var session_fromArea=req.session.fromArea;
+            var session_toArea=req.session.toArea;
+            var session_floor=req.session.floor;
+            var session_fromPrice=req.session.fromPrice;
+            var session_toPrice=req.session.toPrice;
+            var session_district=req.session.district;
             var price_selected="";
             var area_selected="";
             var district_selected="";
             var floor_selected="";
             var layout_selected="";
-            if(cookie_layout==""||cookie_layout==undefined){
+            if(session_layout==""||session_layout==undefined){
                 layout_selected="全部";
-            }else if(cookie_layout=="1室1厅"){
+            }else if(session_layout=="1室1厅"){
                 layout_selected="一室";
-            }else if(cookie_layout=="2室1厅"){
+            }else if(session_layout=="2室1厅"){
                 layout_selected="二室";
-            }else if(cookie_layout=="3室1厅"){
+            }else if(session_layout=="3室1厅"){
                 layout_selected="三室";
-            }else if(cookie_layout=="4室1厅"){
+            }else if(session_layout=="4室1厅"){
                 layout_selected="四室";
-            }else if(cookie_layout=="5室1厅"){
+            }else if(session_layout=="5室1厅"){
                 layout_selected="五室";
-            }else if(cookie_layout=="5室1厅以上"){
+            }else if(session_layout=="5室1厅以上"){
                 layout_selected="五室以上";
             }
-            if(cookie_floor==""||cookie_floor==undefined){
+            if(session_floor==""||session_floor==undefined){
                 floor_selected="全部";
-            }else if(cookie_floor=="中层(共6层)"){
+            }else if(session_floor=="中层(共6层)"){
                 floor_selected="6层以下";
-            }else if(cookie_floor=="中高层(共12层)"){
+            }else if(session_floor=="中高层(共12层)"){
                 floor_selected="6-12层";
-            }else if(cookie_floor=="高层(12层以上)"){
+            }else if(session_floor=="高层(12层以上)"){
                 floor_selected="12层以上";
             }
-            if(cookie_district==""||cookie_district==undefined){
+            if(session_district==""||session_district==undefined){
                 district_selected="全部";
             }else{
-                district_selected=cookie_district;
+                district_selected=session_district;
             }
-            if(res.cookie.customizeArea=="true"){
+            if(req.session.customizeArea=="true"){
                 area_selected="其他";
             }else{
-                if(cookie_fromArea==""&&cookie_toArea==""||cookie_fromArea==undefined&&cookie_toArea==undefined){
+                if(session_fromArea==""&&session_toArea==""||session_fromArea==undefined&&session_toArea==undefined){
                     area_selected="全部";
-                }else if(cookie_fromArea==""){
-                    area_selected=cookie_toArea+"m²以下";
-                }else if(cookie_toArea==""){
-                    area_selected=cookie_fromArea+"m²以上";
+                }else if(session_fromArea==""){
+                    area_selected=session_toArea+"m²以下";
+                }else if(session_toArea==""){
+                    area_selected=session_fromArea+"m²以上";
                 }else{
-                    area_selected=cookie_fromArea+"-"+cookie_toArea+"m²";
+                    area_selected=session_fromArea+"-"+session_toArea+"m²";
                 }
             }
-            if(res.cookie.customizePrice=="true"){
+            if(req.session.customizePrice=="true"){
                 price_selected="其他";
             }else{
-                if(cookie_fromPrice==""&&cookie_toPrice==""||cookie_fromPrice==undefined&&cookie_toPrice==undefined){
+                if(session_fromPrice==""&&session_toPrice==""||session_fromPrice==undefined&&session_toPrice==undefined){
                     price_selected="全部";
-                }else if(cookie_fromPrice==""){
-                    price_selected=cookie_toPrice+"万以下";
-                }else if(cookie_toPrice==""){
-                    price_selected=cookie_fromPrice+"万以上";
+                }else if(session_fromPrice==""){
+                    price_selected=session_toPrice+"万以下";
+                }else if(session_toPrice==""){
+                    price_selected=session_fromPrice+"万以上";
                 }else{
-                    price_selected=cookie_fromPrice+"-"+cookie_toPrice+"万";
+                    price_selected=session_fromPrice+"-"+session_toPrice+"万";
                 }
             }
             if(pageNow<=4){
                 if(totalPage>7){
                     res.render('list',{pagingNumber:[1,2,3,4,5,6,7],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -799,8 +823,8 @@ router.post("/detail",(req,res)=>{
                         pagingNumber[i]=i+1;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -809,8 +833,8 @@ router.post("/detail",(req,res)=>{
                 if(totalPage>8){
                     res.render('list',{pagingNumber:[1,2,3,4,5,6,7,8],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -821,8 +845,8 @@ router.post("/detail",(req,res)=>{
                     pagingNumber[i]=i+1;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -833,8 +857,8 @@ router.post("/detail",(req,res)=>{
                     pagingNumber[j]=i;
                 res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
                     district_list:district_list,district_selected:district_selected,
-                    price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                    area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                    price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                    area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                     layout_list:layout_list,layout_selected:layout_selected,
                     floor_list:floor_list,floor_selected:floor_selected
                 });
@@ -845,8 +869,8 @@ router.post("/detail",(req,res)=>{
                         pagingNumber[j]=i;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
@@ -856,8 +880,8 @@ router.post("/detail",(req,res)=>{
                         pagingNumber[j]=i;
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
                         district_list:district_list,district_selected:district_selected,
-                        price_list:price_list,price_selected:price_selected,price_from:cookie_fromPrice,price_to:cookie_toPrice,
-                        area_list:area_list,area_selected:area_selected,area_from:cookie_fromArea,area_to:cookie_toArea,
+                        price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
+                        area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
                         floor_list:floor_list,floor_selected:floor_selected
                     });
