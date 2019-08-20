@@ -1,6 +1,7 @@
 const express=require("express");
 const bodyParser=require("body-parser");
 const listRouter=require("./router/list.js");
+const viewRouter=require("./router/view.js");
 const cookieParser=require("cookie-parser");
 //const session=require("express-session");
 //const cookieSession=require("cookie-session");
@@ -29,4 +30,5 @@ server.use(cookieParser());
 // 	}
 // }));
 server.use("/list",listRouter);
+server.use("/view",viewRouter);
 //server.use("/user",demoRouter);
