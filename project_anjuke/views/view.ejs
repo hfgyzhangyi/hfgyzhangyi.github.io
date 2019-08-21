@@ -277,7 +277,84 @@
                                         <img src="/images/view/next.png" class="next"/>
                                         <span id="next-title">室内图片</span>
                                     </div>
-                                    <div class="switch_wrap" id="switch_wrap" style="left:-1105px;"></div>
+                                    <div class="switch_wrap" id="switch_wrap" style="margin-left:0">
+                                        <ul class="switch_list active" style="width:6000px;">
+                                            <li><img src="/images/view/switch_1_1.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_2.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_3.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_4.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_5.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_6.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_7.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_8.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_9.jpg"/></li>
+                                            <li><img src="/images/view/switch_1_10.jpg"/></li>
+                                        </ul>
+                                        <ul class="switch_list" style="width:600px;">
+                                            <li><img src="/images/view/switch_2_1.png"/></li>
+                                        </ul>
+                                        <ul class="switch_list" style="width:600px;">
+                                            <li><img src="/images/view/switch_3_1.jpg"/></li>
+                                        </ul>
+                                        <ul class="switch_list" style="width:6000px;">
+                                            <li><img src="/images/view/switch_4_1.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_2.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_3.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_4.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_5.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_6.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_7.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_8.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_9.jpg"/></li>
+                                            <li><img src="/images/view/switch_4_10.jpg"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="switch_tab_wrap qj-720-tab">
+                                <a class="switch_tag switch_tag_now" href="javascript:;" data-track="pc_fydy_switch_snt" id="room_tab">
+                                    <img src="/images/view/tag_1_2.png"/>
+                                    <em class="title">室内图(10)</em>
+                                </a>
+                                <a class="switch_tag" href="javascript:;" data-track="pc_fydy_switch_qj" id="panoramaTab">
+                                    <img src="/images/view/tag_2_1.png"/>
+                                    <em class="title"><span class="num">全景看房(1)</span></em>
+                                </a>
+                                <a class="switch_tag" href="javascript:;" data-track="pc_fydy_switch_hxt" id="hx_tab">
+                                    <img src="/images/view/tag_3_1.png"/>
+                                    <em class="title">户型图<span class="num">(1)</span></em>
+                                </a>
+                                <a class="switch_tag" href="javascript:;" data-track="pc_fydy_switch_hjt" id="surround_tab">
+                                    <img src="/images/view/tag_4_1.png"/>
+                                    <em class="title">环境图<span class="num">(10)</span></em>
+                                </a>
+                                <a class="switch_tag" href="javascript:;" data-track="pc_fydy_switch_dt" id="map_tab" style="height: 88px;">
+                                    <img src="/images/view/tag_5_1.png"/>
+                                    <em class="title">周边地图</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-rg clearfix">
+                        <div class="block-wrap block-nocopy brokerInfo_mod block-wrap-border">
+                            <div class="broker-wrap" id="broker-wrap2">
+                                <a href="javascript:;" class="safe-tip" target="_blank">
+                                    <img src="/images/view/7.png" alt="" class="tip-icon">
+                                    <span class="tip-text">已加入无忧交易保障</span>
+                                    <div class="icon"></div>
+                                </a>
+                                <div class="img-box system-link-track">
+                                    <a href="javascript:;" target="_blank">
+                                        <img class="brokercard-img" src="/images/view/8.jpg" title="轩德地产吴晓莉">
+                                    </a>
+                                    <div class="broker-tagdiv clearfix">
+                                        <div class="brokercard-name">
+                                            吴晓莉
+                                            <div class="qr-wrap">
+                                                <img src="/images/view/9.png"/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -288,6 +365,8 @@
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script>
             (function(){
+                var lis_1=$(".switch_list:eq(0)").children("li");
+                var lis_2=$(".switch_list:eq(3)").children("li");
                 $(".cur_citynew").mouseover(function(){
                     $("#city-panel").show();
                 });
@@ -324,6 +403,63 @@
                     $(this).children("img").attr("src","/images/view/6_2.png");
                 },function(){
                     $(this).children("img").attr("src","/images/view/6_1.png");
+                });
+                $(".switch_tag").hover(function(){
+                    $(this).children("img").attr("src","/images/view/tag_"+($(this).index()+1)+"_2.png");
+                    $(this).addClass("switch_tag_hover");
+                },function(){
+                    if(!$(this).hasClass("switch_tag_now")){
+                        $(this).children("img").attr("src","/images/view/tag_"+($(this).index()+1)+"_1.png");
+                        $(this).removeClass("switch_tag_hover");
+                    }else{
+                        $(this).removeClass("switch_tag_hover");
+                    }
+                });
+                $(".switch_tag").click(function(){
+                    if(!$(this).hasClass("switch_tag_now")){
+                        var index_now=$(".switch_tag_now").index();
+                        var index_click=$(this).index();
+                        $(".switch_tag_now").children("img").attr("src","/images/view/tag_"+($(".switch_tag_now").index()+1)+"_1.png");
+                        $(".switch_tag_now").removeClass("switch_tag_now");
+                        $(this).removeClass("switch_tag_hover");
+                        $(this).addClass("switch_tag_now");
+                        if(index_click!=4){
+                            if(index_click==0){
+                                $(".switch_list:eq("+index_click+")").empty();
+                                $(".switch_list:eq("+index_click+")").append(lis_1);
+                            }
+                            if(index_click==3){
+                                $(".switch_list:eq("+index_click+")").empty();
+                                $(".switch_list:eq("+index_click+")").append(lis_2);
+                            }
+                            $(".switch_list:eq("+index_now+")").removeClass("active");
+                            $(".switch_list:eq("+index_click+")").addClass("active");
+                        }
+                    }
+                });
+                $(".switch_left_mask").click(function(){
+                    if(!$(".active").is(":animated")){
+                        if($(".active").children("li").length>1){
+                            $(".active").animate({marginLeft:"-600px"},1000,function(){
+                                var li0=$(this).children("li:eq(0)");
+                                li0.remove();
+                                $(this).append(li0);
+                                $(this).animate({marginLeft:"0"},0);
+                            });
+                        }
+                    }
+                });
+                $(".switch_right_mask").click(function(){
+                    if(!$(".active").is(":animated")){
+                        if($(".active").children("li").length>1){
+                            $(".active").animate({marginLeft:"-600px"},0,function(){
+                                var li0=$(this).children("li:eq(-1)");
+                                li0.remove();
+                                $(this).prepend(li0);
+                                $(this).animate({marginLeft:"0"},1000);
+                            });
+                        }
+                    }
                 });
             })();
         </script>
