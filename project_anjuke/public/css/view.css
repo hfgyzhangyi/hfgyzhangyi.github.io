@@ -707,4 +707,500 @@ img{
     margin-left: 8px;
     cursor: default;
     vertical-align: -1px;
+    position: relative;
+}
+.broker-wrap .broker-qrimg{
+    display: none;
+    top: 38px;
+    left: -26px;
+    width: 112px;
+    height: 128px;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    text-align: center;
+    z-index: 11;
+}
+.broker-wrap .broker-qrimg .arr-up, .broker-wrap .broker-qrimg .arr-up i{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    top: -10px;
+    left: 21px;
+    position: absolute;
+    border-bottom: 10px solid #d8d8d8;
+    border-left: 10px dashed transparent;
+    border-right: 10px dashed transparent;
+}
+.broker-wrap .broker-qrimg .arr-up i{
+    top: 1px;
+    left: -10px;
+    border-bottom: 10px solid #fff;
+}
+.broker-wrap .broker-qrimg p{
+    color: #666;
+    font-size: 1.166666rem;
+}
+.broker-wrap .broker-qrimg img{
+    width: 70px;
+    height: 70px;
+    margin-top: 20px;
+}
+.broker-wrap .broker-morehouse{
+    display: inline-block;
+    font-size: 1rem;
+    color: #1f64b2;
+    line-height: 36px;
+    margin-top: 6px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    border: 0;
+}
+.broker-wrap .broker-morehouse:hover{
+    text-decoration: underline;
+}
+.broker-level{
+    position: relative;
+    z-index: 10;
+    height: 39px;
+    line-height: 39px;
+    font-size: 14px;
+}
+.broker-level{
+    padding-top: 4px;
+    margin-left: 20px;
+    line-height: 32px;
+    height: 32px;
+}
+.wrapper-rg .broker-level{
+    width: initial;
+}
+.brokercard-scoretitle, .stars-title{
+    margin-right: 6px;
+}
+.broker-level .stars-title{
+    float: left;
+    margin-top: 1px;
+    font-size: 12px;
+    color: #999;
+}
+.stars-wrap-bk{
+    float: left;
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+    display: inline-block;
+    margin-top: 3px;
+}
+.broker-level .tip-box{
+    display: none;
+    position: absolute;
+    bottom: 36px;
+    left: 7px;
+    padding: 0 10px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    white-space: nowrap;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+.broker-level .tip-box p{
+    color: #666;
+    height: 32px;
+    line-height: 32px;
+}
+.broker-level .tip-box .icon-arrow{
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 35px;
+    top: 47px;
+    margin-top: -14px;
+    border-top: 6px solid #e6e6e6;
+    border-left: 6px dashed transparent;
+    border-right: 6px dashed transparent;
+}
+.broker-level .tip-box .icon-arrow span{
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: -6px;
+    top: -8px;
+    border-top: 6px solid #fff;
+    border-left: 6px dashed transparent;
+    border-right: 6px dashed transparent;
+}
+.brokercard-scorewrap{
+    display: inline-block;
+    cursor: pointer;
+}
+.brokercard-scorewrap{
+    padding: 5px 0 4px;
+    margin: 0 0 0 20px;
+    display: block;
+    line-height: 22px;
+}
+.brokercard-scoretitle, .stars-title{
+    margin-right: 6px;
+}
+.brokercard-scorewrap .brokercard-scoretitle{
+    float: left;
+    font-size: 1rem;
+    color: #999;
+}
+.brokercard-scorewrap .brokercard-scoretitle{
+}
+.brokercard-scorewrap .brokercard-scoredetail{
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+.brokercard-scorewrap .brokercard-scoredetail{
+}
+.no-pd-left{
+    padding-left: 0!important;
+}
+.brokercard-scoredetail .brokercard-sd-cont span{
+    float: left;
+    padding: 0 18px;
+    color: #999;
+    border-right: 1px solid #e6e6e6;
+}
+.brokercard-scoredetail .brokercard-sd-cont span{
+    padding: 0 10px;
+}
+.brokercard-scoredetail .brokercard-sd-cont em{
+    float: left;
+    line-height: 22px;
+    font-size: 1rem;
+}
+.brokercard-scoredetail .brokercard-sd-cont .score-num{
+    float: left;
+    line-height: 22px;
+    font-size: 1rem;
+}
+.brokercard-scoredetail .score-up .score-num{
+    color: #e54b00;
+}
+.brokercard-scoredetail .brokercard-sd-tip{
+    display: none;
+    position: absolute;
+    padding: 7px 14px;
+    font-size: 1rem;
+    line-height: 26px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 11;
+    bottom: 35px;
+    left: -22px;
+    color: #666;
+}
+.brokercard-scoredetail .brokercard-sd-tip .arr-down, .brokercard-scoredetail .brokercard-sd-tip .arr-down i{
+    width: 0;
+    height: 0;
+    top: 93px;
+    left: 21px;
+    position: absolute;
+    border-top: 10px solid #e6e6e6;
+    border-left: 10px dashed transparent;
+    border-right: 10px dashed transparent;
+}
+.brokercard-scoredetail .brokercard-sd-tip .arr-down i{
+    top: -11px;
+    left: -10px;
+    border-top: 10px solid #fff;
+}
+.brokercard-scoredetail .brokercard-sd-tip div{
+    white-space: nowrap;
+}
+.brokercard-scoredetail .brokercard-sd-tip .mg-r{
+    padding-right: 20px;
+    display: inline-block;
+    width: 93px;
+    position: relative;
+}
+.brokercard-scoredetail .mg-r .score-tag{
+    display: inline-block;
+    position: absolute;
+    right: 12px;
+    vertical-align: top;
+    font-style: normal;
+    margin: 6px 0 0 3px;
+    width: 14px;
+    height: 14px;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 2px;
+}
+.brokercard-scoredetail .score-up .score-tag{
+    background-image: url("/images/view/12.png");
+    background-size: 14px 14px;
+}
+.broker-wrap .brokercard-medal{
+    padding-left: 20px;
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    height: 32px;
+    line-height: 32px;
+}
+.brokercard-medal .jjr-medal{
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.broker-wrap .broker-company{
+    font-size: 1.166666rem;
+    line-height: 32px;
+    padding: 0 20px;
+}
+.broker-wrap .broker-company p{
+    color: #999;
+    font-size: 1rem;
+}
+.broker-wrap .broker-company a{
+    color: #2666b2;
+    font-size: 1rem;
+    max-width: 168px;
+    margin: -2px 5px 0 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.broker-wrap .broker-company a:hover{
+    text-decoration: underline;
+}
+.text-overflow{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.broker-wrap .card-text{
+    line-height: 32px;
+}
+.broker-wrap .broker-company p{
+    color: #999;
+    font-size: 12px;
+}
+.chat-card{
+    width: 100%;
+    text-align: center;
+}
+.chat-card.show{
+    display: block;
+}
+.chat-card .chat-img{
+    width: 115px;
+    padding-top: 16px;
+}
+.chat-card .chat-word{
+    line-height: 20px;
+    padding-top: 19px;
+    font-size: 1.333333rem;
+    color: #333;
+}
+#propSimilarBox{
+    margin-bottom: 14px;
+}
+.recbox .ajax_prop{
+    padding-top: 10px;
+}
+.wrapper-rg .fix_con .ajax_prop{
+    border: 1px solid #e6e6e6;
+    margin-top: 20px;
+}
+.ajax_prop .title{
+    position: relative;
+}
+.ajax_prop .title h4{
+    padding-bottom: 2px;
+}
+.fix_con .ajax_prop .title h4{
+    height: 32px;
+    margin-top: 7px;
+    font-size: 1.333333rem;
+    text-indent: 20px;
+    line-height: 32px;
+    font-weight: normal;
+}
+.fix_con .ajax_prop .box{
+    padding: 0;
+    border: 0;
+}
+.cf{
+    zoom: 1;
+}
+.fix_con .ajax_prop ul{
+    width: 200px;
+}
+.fix_con .ajax_prop ul{
+    margin: 0 0 0 24px;
+}
+.rec_common_con{
+    width: 210px;
+    display: block;
+    font-size: 1rem;
+    line-height: 12px;
+    position: relative;
+    margin-left: 20px;
+}
+.ajax_prop ul li{
+    float: left;
+}
+.fix_con .ajax_prop ul li{
+    position: relative;
+    margin: 0 auto 24px;
+}
+.fix_con .ajax_prop ul li{
+    margin-bottom: 24px;
+}
+.rec_common_con .rec_common_img{
+    width: 210px;
+    height: 162px;
+    display: block;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.rec_common_con a.rec_common_title{
+    color: #333;
+    width: 210px;
+    overflow: hidden;
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 1.166666rem;
+    margin-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rec_common_con .rec_common_price{
+    color: #e54b00;
+    float: left;
+    height: 22px;
+    font-size: 1.166666rem;
+    line-height: 22px;
+}
+.rec_common_con .rec_common_info{
+    float: right;
+    color: #737373;
+    line-height: 22px;
+}
+.rec_common_con .rec_common_name{
+    z-index: 1;
+    top: 132px;
+    left: 0;
+    height: 30px;
+    color: #fff;
+    width: 100%;
+    display: block;
+    font-size: 1.166666rem;
+    overflow: hidden;
+    position: absolute;
+    line-height: 30px;
+    text-indent: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rec_common_con .name-bg{
+    width: 100%;
+    height: 30px;
+    top: 132px;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    background-color: #333;
+}
+.rec_common_title:hover{
+    text-decoration: underline;
+}
+.esf-axf{
+    z-index: 10;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+    height: 18px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    line-height: 18px;
+    font-size: 12px;
+    background: #62ab00;
+    color: #fff;
+    text-align: center;
+}
+.ifx-xinfang-wrap{
+    border: 1px solid #e6e6e6;
+    margin-top: 20px;
+}
+.recommend-wrap{
+    padding: 7px 0 14px 24px;
+}
+.kfs-recommend{
+    margin-bottom: 10px;
+}
+.recommend-wrap .recommend-title{
+    height: 32px;
+    font-size: 1.333333rem;
+    line-height: 32px;
+    margin-top: 9px;
+}
+.recommend-wrap ul li{
+    width: 210px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: relative;
+}
+.recommend-wrap ul li .img-wrap{
+    position: relative;
+    display: block;
+}
+.recommend-wrap ul li .commu-desc{
+    font-size: 1.166666rem;
+    overflow: hidden;
+    text-indent: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 132px;
+    left: 0;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    width: 100%;
+    z-index: 2;
+}
+.recommend-wrap ul li .commu-bg{
+    width: 100%;
+    height: 30px;
+    top: 132px;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    background-color: #333;
+}
+.recommend-wrap ul li .commu-info{
+    height: 20px;
+    line-height: 20px;
+}
+.recommend-wrap ul li .commu-info em{
+    float: left;
+    color: #f60;
+    font-size: 1.166666rem;
+}
+.recommend-wrap ul li .commu-info span{
+    color: #666;
+    float: right;
+    margin-right: 8px;
+}
+.recommend-wrap ul li .commu-info .commu-area{
+    margin-right: 4px;
+}
+.recommend-wrap ul li img{
+    width: 210px;
+    height: 162px;
 }

@@ -1,7 +1,7 @@
 html{
     font-size: 12px;
 }
-body,div,ul,li,input,dt,dd,dl,img,form,p,h1,h2,h3,h4,h5,h6,span,a,i{
+body,div,ul,li,input,dt,dd,dl,img,form,p,h1,h2,h3,h4,h5,h6,span,a,i,em{
     margin: 0;
     padding: 0;
 }
