@@ -1204,3 +1204,66 @@ img{
     width: 210px;
     height: 162px;
 }
+/*房屋信息*/
+.block-title{
+    font-size: 1.666666rem;
+    font-weight: bold;
+    line-height: 44px;
+    margin-top: 39px;
+    padding-bottom: 2px;
+    overflow: hidden;
+}
+.houseInfo-title{
+    margin: 25px 0 16px;
+    border-bottom: 1px solid #e6e6e6;
+    overflow: inherit;
+}
+.houseInfo-title .house-encode{
+    float: right;
+    font-size: 1rem;
+    margin-top: 3px;
+    font-weight: normal;
+    color: #999;
+}
+.no-bd-top{
+    border-top-width: 0;
+}
+.houseInfo-detail-list{
+    font-size: 1.166666rem;
+}
+.houseInfo-detail-item{
+    float: left;
+    line-height: 21px;
+    height: 21px;
+    margin-bottom: 7px;
+    width: 300px;
+}
+.houseInfo-detail-item:nth-child(3n+1){
+    width: 410px;
+}
+.text-overflow{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.houseInfo-detail-item .houseInfo-label{
+    float: left;
+    padding-right: 4px;
+    color: #999;
+}
+.houseInfo-detail-item:nth-child(3n+2){
+    width: 235px;
+}
+.houseInfo-detail-item:nth-child(3n){
+    width: 240px;
+}
+.houseInfo-detail-item:nth-child(3n+1) .loc-text{
+    max-width: 300px;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.houseInfo-wrap a:hover{
+    text-decoration: underline;
+}
