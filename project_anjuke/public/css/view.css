@@ -1267,3 +1267,365 @@ img{
 .houseInfo-wrap a:hover{
     text-decoration: underline;
 }
+.houseInfo-desc{
+    overflow: hidden;
+    margin-top: 20px;
+}
+.houseInfoBox .houseInfo-desc{
+    margin: 20px 27px 10px 0;
+}
+.houseInfo-item{
+    margin-bottom: 10px;
+}
+.houseInfo-item-title{
+    position: relative;
+    font-size: 16px;
+    line-height: 37px;
+    color: #62ab00;
+    border-bottom: 1px dotted #e6e6e6;
+    margin-bottom: 11px;
+}
+.houseInfo-item-desc{
+    font-size: 1.166666rem;
+    line-height: 32px;
+    padding-right: 50px;
+}
+.js-house-explain{
+    overflow: hidden;
+}
+.houseInfo-item .safe-intro{
+    margin-top: 25px;
+    line-height: 20px;
+    font-size: 1.166666rem;
+}
+.safe-intro .safe-icon{
+    height: 20px;
+    vertical-align: -4px;
+}
+.safe-intro .safe-word{
+    font-weight: 700;
+    color: #333;
+    padding-left: 11px;
+}
+.safe-intro .safe-link{
+    color: #1f64b2;
+    margin-left: 5px;
+}
+.safe-intro .safe-link:hover{
+    text-decoration: underline;
+}
+.houseInfo-detail-item a{
+    color: #2666b2;
+}
+.houseInfo-detail-item a:visited{
+    color: #1f64b2;
+}
+.houseInfo-item-tags{
+    margin-top: 20px;
+    margin-bottom: 11px;
+}
+.tags-service{
+    float: left;
+    padding: 4px 15px;
+    background: #f2f6ed;
+    font-size: 1rem;
+    line-height: 16px;
+    border-radius: 12px;
+    color: #799374;
+    margin-right: 10px;
+}
+.tags-money{
+    color: #eb8a74;
+    background: #fcf4f2;
+}
+.comm-intrest-house{
+    margin-top: -17px;
+}
+.comm-intrest-house .title{
+    padding-top: 35px;
+}
+.comm-intrest-house .title{
+    position: relative;
+}
+.comm-intrest-house .title h4{
+    font-size: 1.666666rem;
+    font-weight: bold;
+    line-height: 44px;
+    padding-bottom: 2px;
+}
+.cf{
+    zoom: 1;
+}
+.comm-intrest-house ul{
+    margin-left: -20px;
+}
+.comm-intrest-house ul li{
+    float: left;
+    margin-left: 20px;
+}
+.esf-axf{
+    z-index: 10;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+    height: 18px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    line-height: 18px;
+    font-size: 1rem;
+    background: #62ab00;
+    color: #fff;
+    text-align: center;
+}
+.rec_common_con .rec_common_img{
+    width: 210px;
+    height: 162px;
+    display: block;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.rec_common_con a.rec_common_title{
+    color: #333;
+    width: 210px;
+    overflow: hidden;
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 1.166666rem;
+    margin-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rec_common_con .rec_common_price{
+    color: #e54b00;
+    float: left;
+    height: 22px;
+    font-size: 1.166666rem;
+    line-height: 22px;
+}
+.rec_common_con .rec_common_info{
+    float: right;
+    color: #737373;
+    line-height: 22px;
+}
+.rec_common_con .rec_common_name{
+    z-index: 1;
+    top: 132px;
+    left: 0;
+    height: 30px;
+    color: #fff;
+    width: 100%;
+    display: block;
+    font-size: 1.166666rem;
+    overflow: hidden;
+    position: absolute;
+    line-height: 30px;
+    text-indent: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rec_common_con .name-bg{
+    width: 100%;
+    height: 30px;
+    top: 132px;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    background-color: #333;
+}
+.block-title{
+    font-size: 1.666666rem;
+    font-weight: bold;
+    line-height: 44px;
+    margin-top: 39px;
+    padding-bottom: 2px;
+    overflow: hidden;
+}
+.comm-jd-title a, .block-title .comm-jd-link2{
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+    margin-top: 4px;
+}
+.comm-jd-title .comm-jd-link2, .block-title .comm-jd-link2{
+    float: right;
+}
+.block-title .comm-jd-link2:hover{
+    text-decoration: underline;
+}
+.cmmmap-info{
+    width: 900px;
+    height: 84px;
+    background: #f7f7f7;
+    margin-top: 10px;
+    position: relative;
+    font-size: 1.166666rem;
+    overflow: hidden;
+}
+.commap-info-logo{
+    position: absolute;
+    left: 40px;
+    top: 15px;
+}
+.commap-info-intro{
+    float: left;
+    padding: 0 38px;
+    height: 36px;
+    border-right: 1px solid #e6e6e6;
+    margin-top: 24px;
+    z-index: 10;
+}
+.commap-info-fst{
+    margin-left: 92px;
+}
+.commap-info-intro p{
+    line-height: 30px;
+}
+.commap-info-intro .cminfo-title{
+    margin-top: -12px;
+    position: relative;
+}
+.commap-info-intro .info-normal{
+    font-weight: 400;
+    font-size: 1.166666rem;
+}
+.cmmmap-info .no-border-rg{
+    border-right-width: 0;
+}
+.commap-info-intro .info-bd{
+    font-weight: 700;
+    font-size: 1.333333rem;
+}
+.comm-jd-title .comm-jd-link1{
+    margin-left: 10px;
+}
+.comm-jd-title .comm-jd-link1:hover{
+    text-decoration: underline;
+}
+.experts-list{
+    border-top: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+.experts-list li{
+    margin-top: 19px;
+}
+.experts-list .comment-info{
+    float: left;
+    width: 730px;
+    padding: 0 60px 0 0;
+    border-right: 1px solid #f1f1f1;
+}
+.experts-list .info-character dt{
+    float: left;
+    width: 40px;
+    height: 100%;
+    margin-top: 6px;
+}
+.experts-list .good-character dd{
+    color: #666;
+    font-size: 1.166666rem;
+    line-height: 30px;
+    margin-left: 58px;
+}
+.experts-list .good-character dd{
+    margin: 0 0 3px 134px;
+}
+.experts-list .info-character dd label{
+    color: #333;
+}
+.experts-list .good-character dd label{
+    margin-left: -83px;
+}
+.experts-list .info-character dt span{
+    display: inline-block;
+    color: #fff;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+.experts-list .good-character dt span{
+    background-color: #62ab00;
+}
+.experts-list .bad-character dt span{
+    background-color: #aaa;
+}
+.experts-list .bad-character dd{
+    color: #666;
+}
+.experts-list .bad-character dd{
+    font-size: 1.166666rem;
+    line-height: 30px;
+    margin-left: 58px;
+}
+.experts-list .expert-info{
+    float: right;
+    width: 100px;
+    text-align: center;
+}
+.experts-list .expert-info .info-brokername{
+    color: #333;
+    font-size: 1.333333rem;
+    margin-top: 7px;
+    font-weight: 700;
+}
+.experts-list .expert-info .info-brokername img{
+    width: 14px;
+    vertical-align: -2px;
+}
+.experts-list .expert-info .info-img img{
+    width: 54px;
+    height: 72px;
+}
+/*悬浮条*/
+.topBar-wrap{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #62ab00;
+    z-index: 2000;
+    display: none;
+    opacity: 0.9;
+    position: fixed;
+}
+.topBar-wrap .topBar-cont{
+    color: #fff;
+    width: 1180px;
+    height: 100%;
+    margin: 0 auto;
+    line-height: 100%;
+}
+.topBar-wrap .topBar-cont .houseTitle{
+    float: left;
+    width: 590px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 70px;
+    margin-left: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.topBar-wrap .topBar-cont .brokerInfo{
+    float: right;
+    font-size: 1.333333rem;
+    line-height: 70px;
+    font-weight: bold;
+    margin-right: 13px;
+}
+.topBar-wrap #brokerInfoV2{
+    width: 217px;
+    text-align: center;
+    cursor: pointer;
+    background: #4a8200;
+    font-weight: 400;
+    height: 70px;
+    line-height: 70px;
+}
+.topBar-wrap .topBar-cont .houseInfo{
+    float: right;
+    font-size: 1.333333rem;
+    line-height: 70px;
+    margin-right: 54px;
+}

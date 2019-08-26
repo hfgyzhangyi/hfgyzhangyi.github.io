@@ -5,11 +5,6 @@
         <link rel="stylesheet" href="/css/global.css" type="text/css">
         <link rel="stylesheet" href="/css/view.css" type="text/css">
         <link rel="icon" href="/images/icon.ico">
-        <style type="text/css">
-            .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
-            .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
-        </style>
-        <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
     </head>
     <body>
         <div id="container">
@@ -241,8 +236,8 @@
                 <div class="clearfix title-guarantee">
                     <h3 class="long-title">繁华地段二村二期边套二居室，户型正气，自带权属车位，房东诚售  </h3>
                 </div>
+                <!--页面左侧-->
                 <div class="wrapper">
-                    <!--页面左侧-->
                     <div class="wrapper-lf">
                         <div class="clearfix">
                             <div class="basic-info clearfix">
@@ -333,7 +328,7 @@
                                     <img src="/images/view/tag_4_1.png"/>
                                     <em class="title">环境图<span class="num">(10)</span></em>
                                 </a>
-                                <a class="switch_tag" href="#ditu" data-track="pc_fydy_switch_dt" id="map_tab" style="height: 88px;">
+                                <a class="switch_tag" href="javascript:;" data-track="pc_fydy_switch_dt" id="map_tab" style="height: 88px;">
                                     <img src="/images/view/tag_5_1.png"/>
                                     <em class="title">周边地图</em>
                                 </a>
@@ -470,7 +465,6 @@
                         <div class="comm-intrest-house">
                             <div class="title"><h4>您可能感兴趣房源</h4></div>
                             <div class="box clearfix">
-                                <div id="ditu"></div>
                                 <ul class="cf clearfix">
                                     <li class="rec_common_con">
                                         <span class="esf-axf">安选</span>
@@ -525,75 +519,8 @@
                         </div>
                         <div class="comm-commoninfo">
                             <h4 class="block-title"><a href="javascript:;" target="_blank" class="comm-jd-link2">小区详情&gt;</a>小区概况</h4>
-                            <!--百度地图容器-->
-                            <div style="width:900px;height:360px;border:#ccc solid 1px;" id="dituContent"></div>
-                            <div class="cmmmap-info">
-                                <img src="/images/view/19.png" class="commap-info-logo"/>
-                                <div class="commap-info-intro commap-info-fst">
-                                    <p class="cminfo-title">总面积</p>
-                                    <p class="info-normal">暂无</p>    
-                                </div>
-                                <div class="commap-info-intro">
-                                    <p class="cminfo-title">总户数</p>
-                                    <p class="info-normal">暂无</p>    
-                                </div>
-                                <div class="commap-info-intro">
-                                    <p class="cminfo-title">容积率</p>
-                                    <p class="info-bd">1.3</p>    
-                                </div>
-                                <div class="commap-info-intro">
-                                    <p class="cminfo-title">停车位</p>
-                                    <p class="info-normal">暂无</p>    
-                                </div>
-                                <div class="commap-info-intro">
-                                    <p class="cminfo-title">绿化率</p>
-                                    <p class="info-bd">36%</p>    
-                                </div>
-                                <div class="commap-info-intro no-border-rg">
-                                    <p class="cminfo-title">物业费用</p>
-                                    <p class="info-bd">1.00元/m²</p>    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comm-jiedu">
-                            <h4 class="block-title comm-jd-title">
-                                <a href="javascript:;" target="_blank" class="comm-jd-link2">更多解读&gt;</a>
-                                专家解读
-                                <a href="javascript:;" target="_blank" class="comm-jd-link1">
-                                    如何出现在这
-                                    <img src="/images/view/20.png" style="vertical-align: -2px;"/>
-                                </a>
-                            </h4>
-                            <ul class="experts-list">
-                                <li class="clearfix">
-                                    <div class="comment-info">
-                                        <dl class="info-character good-character">
-                                            <dt><span>特色</span></dt>
-                                            <dd><label>【小区户型】</label>整个小区的户型都是比较通透的，一梯两户得房率很高，物业费很便宜，主推小户型，改成两房没问题，性价比高</dd>
-                                            <dd><label>【小区设施】</label>小区一个景观大桥，可以在桥上可以乘凉，观赏夏涟河的风景，可以钓鱼。</dd>
-                                            <dd><label>【房屋品质】</label>本小区由临港城投公司开发，10年精装修交房，装修标准分为3个档次，400.700.1000标准。</dd>
-                                            <dd><label>【生活配套】</label>小区门口联华超市，罗森超市，自贸优选，蟹黄汤包馆，宜浩大食堂等便民商店。在不远处有新天地购物街。</dd>
-                                            <dd><label>【附近学校】</label>对口的学区资源有，冰场田幼儿园，明珠小区，临港实验中学，上海中学东</dd>
-                                        </dl>
-                                        <dl class="info-character bad-character">
-                                            <dt><span>不足</span></dt>
-                                            <dd>小区不足地方是没有斜坡顶，顶楼容易漏水，卫生间防水做的不行，会有漏水现象</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="expert-info">
-                                        <a class="info-img clearfix" href="javascript:;">
-                                            <img src="/images/view/22.jpg">
-                                        </a>
-                                        <p class="info-brokername">
-                                            张国喜
-                                            <img src="/images/view/23.png">
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
-                    <!--页面右侧-->
                     <div class="wrapper-rg clearfix">
                         <div class="block-wrap block-nocopy brokerInfo_mod block-wrap-border">
                             <div class="broker-wrap" id="broker-wrap2">
@@ -831,23 +758,6 @@
                         </div>
                     </div>
                 </div>
-                <!--悬浮条-->
-                <div class="topBar-wrap">
-                    <div class="topBar-cont">
-                        <em class="houseTitle">位置很棒的，前后无遮挡，房东很诚心，价格可以商量，急急急</em>
-                        <p class="brokerInfo" id="brokerInfoV2">
-                            <img src="/images/view/18.png" style="vertical-align: middle;margin-right: 8px;"/>
-                            <span class="mobile">
-                                点击查看电话
-                            </span>
-                        </p>
-                        <p class="houseInfo">
-                            2室2厅1卫，
-                            83m²，
-                            198万
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
         <script src="/js/jquery-1.11.3.min.js"></script>
@@ -967,111 +877,7 @@
                 $(".brokercard-scoredetail").mouseout(function(){
                     $(".brokercard-sd-tip").hide();
                 });
-                $(".comm-jd-link1").hover(function(){
-                    $(".comm-jd-link1>img").attr("src","/images/view/21.png");
-                },function(){
-                    $(".comm-jd-link1>img").attr("src","/images/view/20.png");
-                });
-                /*窗口事件*/
-                window.addEventListener("scroll",function(){
-                    if(document.documentElement.scrollTop>=300){
-                        $(".topBar-wrap").show();
-                    }else{
-                        $(".topBar-wrap").hide();
-                    }
-                });
             })();
-        </script>
-        <script>
-            //创建和初始化地图函数：
-            function initMap(){
-                createMap();//创建地图
-                setMapEvent();//设置地图事件
-                addMapControl();//向地图添加控件
-                addMarker();//向地图中添加marker
-            }
-            //创建地图函数：
-            function createMap(){
-                var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-                var point = new BMap.Point(121.921664,30.906869);//定义一个中心点坐标
-                map.centerAndZoom(point,15);//设定地图的中心点和坐标并将地图显示在地图容器中
-                window.map = map;//将map变量存储在全局
-            }
-            //地图事件设置函数：
-            function setMapEvent(){
-                map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
-                //map.enableScrollWheelZoom();//启用地图滚轮放大缩小
-                map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
-                map.enableKeyboard();//启用键盘上下左右键移动地图
-            }
-            //地图控件添加函数：
-            function addMapControl(){
-                //向地图中添加缩放控件
-                var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-                map.addControl(ctrl_nav);
-                //向地图中添加缩略图控件
-                var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-                map.addControl(ctrl_ove);
-                //向地图中添加比例尺控件
-                var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-                map.addControl(ctrl_sca);
-            }
-            //标注点数组
-            var markerArr = [{title:"小区定位",content:"宜浩佳园",point:"121.917676|30.907613",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-                ];
-            //创建marker
-            function addMarker(){
-                for(var i=0;i<markerArr.length;i++){
-                    var json = markerArr[i];
-                    var p0 = json.point.split("|")[0];
-                    var p1 = json.point.split("|")[1];
-                    var point = new BMap.Point(p0,p1);
-                    var iconImg = createIcon(json.icon);
-                    var marker = new BMap.Marker(point,{icon:iconImg});
-                    var iw = createInfoWindow(i);
-                    var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-                    marker.setLabel(label);
-                    map.addOverlay(marker);
-                    label.setStyle({
-                        borderColor:"#808080",
-                        color:"#333",
-                        cursor:"pointer"
-                    });
-                    (function(){
-                        var index = i;
-                        var _iw = createInfoWindow(i);
-                        var _marker = marker;
-                        _marker.addEventListener("click",function(){
-                            this.openInfoWindow(_iw);
-                        });
-                        _iw.addEventListener("open",function(){
-                            _marker.getLabel().hide();
-                        })
-                        _iw.addEventListener("close",function(){
-                            _marker.getLabel().show();
-                        })
-                        label.addEventListener("click",function(){
-                            _marker.openInfoWindow(_iw);
-                        })
-                        if(!!json.isOpen){
-                            label.hide();
-                            _marker.openInfoWindow(_iw);
-                        }
-                    })()
-                }
-            }
-            //创建InfoWindow
-            function createInfoWindow(i){
-                var json = markerArr[i];
-                var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-                return iw;
-            }
-            //创建一个Icon
-            function createIcon(json){
-                var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-                return icon;
-            }
-            initMap();//创建和初始化地图
         </script>
     </body>
 </html>
