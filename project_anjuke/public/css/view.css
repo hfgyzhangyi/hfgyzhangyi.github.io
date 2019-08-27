@@ -1577,6 +1577,213 @@ img{
     width: 54px;
     height: 72px;
 }
+.block-title-bd-bto{
+    border-bottom: 1px solid #e6e6e6;
+}
+.comm-qa-list li a{
+    display: block;
+    width: 730px;
+    color: #333;
+}
+.comm-qa-list dl{
+    margin-left: 55px;
+}
+.comm-qa-list dl dt{
+    float: left;
+    width: 40px;
+    height: 100%;
+}
+.comm-qa-list dl dt{
+    float: left;
+    margin-left: -54px;
+}
+.comm-qa-list .qa-item-q dt{
+    margin-top: 3px;
+}
+.comm-qa-list dl dt span{
+    display: inline-block;
+    color: #fff;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+.comm-qa-list .qa-item-q dt span{
+    background-color: #f60;
+}
+.comm-qa-list .qa-item-q dd{
+    line-height: 24px;
+    font-size: 1.333333rem;
+    font-weight: 700;
+}
+.comm-qa-list .qa-item-q .qa-item-txt{
+    float: left;
+    max-width: 595px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.comm-qa-list .qa-item-q .qa-time{
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #666;
+    float: left;
+    font-weight: 400;
+}
+.comm-qa-list .qa-item-a{
+    margin-top: 10px;
+}
+.comm-qa-list .qa-item-a dd{
+    line-height: 32px;
+    font-size: 1.166666rem;
+    max-height: 64px;
+    overflow: hidden;
+    color: #666;
+}
+.qa-brokername{
+    color: #1f64b2;
+}
+.qa-item-linkto{
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    font-size: 1.166666rem;
+    color: #999;
+}
+.comm-qa-list .qa-item-a dd{
+    line-height: 32px;
+    font-size: 1.166666rem;
+    max-height: 64px;
+    overflow: hidden;
+    color: #666;
+}
+.comm-qa-list li{
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+.qa-light{
+    text-decoration: underline;
+    color: #f60 !important;
+}
+.comm-btn-group{
+    margin-top: 20px;
+}
+.comm-btn-group a{
+    float: left;
+    width: 110px;
+    height: 36px;
+    text-align: center;
+    font-size: 1.166666rem;
+    color: #fff;
+    line-height: 36px;
+    border-radius: 4px;
+    background: #62ab00;
+    margin-right: 10px;
+}
+.comm-btn-group a:hover{
+    background-color: #528E01;
+    color: white !important;
+}
+.areaPriceRecommendProp{
+    margin-top: 0 !important;
+}
+.price-trend-mod{
+    border: 1px solid #ebebeb;
+}
+.icon-community{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #E4705F;
+    vertical-align: -3px;
+}
+.icon-area{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #6C88C7;
+    vertical-align: -3px;
+}
+.price-trend-mod .header{
+    height: auto;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ebebeb;
+}
+.price-trend-mod .item{
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    height: 85px;
+    padding-left: 30px;
+}
+.price-trend-mod .first-item{
+    width: 31%;
+    border-right: 1px solid #ebebeb;
+    background: #fff;
+    padding-left: 20px;
+}
+.price-trend-mod .item .t-content{
+    top: 20px;
+    min-height: 10px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.price-trend-mod .t-content .label{
+    font-weight: normal;
+    vertical-align: top;
+    display: inline-block;
+    zoom: 1;
+    margin-right: 20px;
+    font-size: 1.166666rem;
+    background-position: left -1px;
+    background-repeat: no-repeat;
+    height: 18px;
+    line-height: 18px;
+}
+.price-trend-mod .first-item .label{
+    color: #5f5f5f;
+}
+.price-trend-mod .price-desc{
+    margin-top: 5px;
+    font-size: 1.5rem;
+    color: #333;
+    font-family: arial,"Microsoft YaHei";
+}
+.price-trend-mod .avg{
+    margin-left: 5px;
+}
+.price-trend-mod .price-stat{
+    font-size: 1rem;
+    color: #62ab00;
+}
+.price-trend-mod .price-stat{
+    margin-left: 10px;
+}
+.price-trend-mod .price-stat.up{
+    color: #ff5c00;
+}
+.price-trend-mod .price-stat .status{
+    vertical-align: 1px;
+}
+.price-trend-mod .icon-vs{
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: url("/images/view/25.png") no-repeat;
+    left: -24px;
+    top: 22px;
+}
+.label a{
+    color: #333;
+}
+.label a:hover{
+    color: #333 !important;
+    text-decoration: underline;
+}
 /*悬浮条*/
 .topBar-wrap{
     top: 0;
