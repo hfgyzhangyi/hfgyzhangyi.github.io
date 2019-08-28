@@ -239,16 +239,16 @@
                     <a href="https://shanghai.anjuke.com/community/view/6947">申莘二村</a>
                 </div>
                 <div class="clearfix title-guarantee">
-                    <h3 class="long-title">繁华地段二村二期边套二居室，户型正气，自带权属车位，房东诚售  </h3>
+                    <h3 class="long-title"><%=item.title%></h3>
                 </div>
                 <div class="wrapper">
                     <!--页面左侧-->
                     <div class="wrapper-lf">
                         <div class="clearfix">
                             <div class="basic-info clearfix">
-                                <span class="light info-tag"><em>229</em>万</span>
+                                <span class="light info-tag"><em><%=item.total_price%></em>万</span>
                                 <span class="info-tag"><em>2</em>室<em>1</em>厅</span>
-                                <span class="info-tag"><em>69.4</em>平方米</span>
+                                <span class="info-tag"><em><%=item.area%></em>平方米</span>
                                 <span class="info-tag no-border tag-cal">
                                     <img src="/images/view/3.png"/>房贷计算
                                 </span>
@@ -353,33 +353,33 @@
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">所属小区：</div>
                                             <div class="houseInfo-content">
-                                                <a href="javascript:;" target="_blank">宜浩佳园</a>
+                                                <a href="javascript:;" target="_blank"><%=item.estate_name%></a>
                                             </div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">房屋户型：</div>
                                             <div class="houseInfo-content">
-                                                2室2厅1卫
+                                                <%=item.layout%>
                                             </div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">房屋单价：</div>
-                                            <div class="houseInfo-content">23855 元/m²</div>
+                                            <div class="houseInfo-content"><%=item.univalence%> 元/m²</div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">所在位置：</div>
                                             <div class="houseInfo-content">
                                                 <p class="loc-text">
-                                                    <a href="javascript:;" target="_blank" _soj="propview">浦东</a>－
+                                                    <a href="javascript:;" target="_blank" _soj="propview"><%=item.district%></a>－
                                                     <a href="javascript:;" target="_blank" _soj="propview">临港新城</a>
-                                                    －竹柏路100弄,竹柏路366弄,竹柏路111弄,竹柏...
+                                                    －<%=item.address%>
                                                 </p>
                                                 <img src="/images/view/17.png" style="vertical-align: -3px;margin-left: 4px;cursor: pointer;"/>
                                             </div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">建筑面积：</div>
-                                            <div class="houseInfo-content">83平方米</div>
+                                            <div class="houseInfo-content"><%=item.area%>平方米</div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">参考首付：</div>
@@ -387,7 +387,7 @@
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">建造年代：</div>
-                                            <div class="houseInfo-content">2011年</div>
+                                            <div class="houseInfo-content"><%=item.time.slice(0,4)%>年</div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">房屋朝向：</div>
@@ -405,7 +405,7 @@
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">所在楼层：</div>
-                                            <div class="houseInfo-content">共4层</div>
+                                            <div class="houseInfo-content"><%=item.floor%></div>
                                         </li>
                                         <li class="houseInfo-detail-item">
                                             <div class="houseInfo-label text-overflow">装修程度：</div>
@@ -837,6 +837,189 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="monthbox">
+                            <h4 class="block-title">房贷计算</h4>
+                            <div class="block-wrap">
+                                <div class="monthpay">
+                                    <div class="litem">
+                                        <p class="desc">默认为参考首付和参考贷款，您可以更换下面选项获得自己的专属贷款详情</p>
+                                        <div class="p_phrase" style="z-index: 9;">
+                                            <div class="phrase_title">贷款类别:</div>
+                                            <div class="phrase_cont">
+                                                <div class="selectstyle" id="j-loanclass" data-track="pc_fydy_ckyg" style="z-index: 4;">
+                                                    <select id="paies" class="ele-hide">
+                                                        <option value="1" selected="selected">商业贷款</option>
+                                                        <option value="2">公积金贷款</option>
+                                                    </select>
+                                                    <div class="exia-box" style="height:28px" index="1"><div class="sol-label"><span data-val="1" style="height:28px">商业贷款</span><i style="top:11px" class="icon icon-seldown"></i></div><ul style="width: 148px; top: 28px; display: none;"><li style="height:30px;line-height:30px;" data-val="1" class="li-static">商业贷款</li><li style="height:30px;line-height:30px;" data-val="2" class="">公积金贷款</li></ul></div>
+                                                </div>
+                                                <img src="/images/view/20.png" style="margin-left: 10px;"/>
+                                            </div>
+                                            <div class="p_arowCon commerce" style="display: none;">
+                                                <p>商业贷款是以银行信贷资金为来源向购房者个人发放的贷款。</p>
+                                                <em class="p_arw" style="left:15px;bottom:-10px;"></em>
+                                                <em class="p_arw-up" style="left:16px;bottom:-9px;"></em>
+                                            </div>
+                                            <div class="p_arowCon fund">
+                                                <p>公积金贷款是指缴存住房公积金的职工享受的贷款，国家规定，凡是缴存公积金的职工均可按公积金贷款的相关规定申请公积金贷款。</p>
+                                                <em class="p_arw" style="left:15px;bottom:-10px;"></em>
+                                                <em class="p_arw-up" style="left:16px;bottom:-9px"></em>
+                                            </div>
+                                        </div>
+                                        <div class="p_phrase" style="z-index: 8;">
+                                            <div class="phrase_title">按揭成数:</div>
+                                            <div class="phrase_cont">
+                                                <div class="selectstyle" id="j-loanclass" data-track="pc_fydy_ckyg" style="z-index: 4;">
+                                                    <select id="pointes" class="ele-hide">
+                                                        <option value="9" selected="selected">9成</option>
+                                                        <option value="8">8成</option>
+                                                        <option value="7">7成</option>
+                                                        <option value="6" selected="selected">6成</option>
+                                                        <option value="5">5成</option>
+                                                        <option value="4">4成</option>
+                                                        <option value="3">3成</option>
+                                                        <option value="2">2成</option>
+                                                        <option value="1">1成</option>
+                                                    </select>
+                                                    <div class="exia-box" style="height:28px" index="1">
+                                                        <div class="sol-label">
+                                                            <span data-val="1" style="height:28px">9成</span>
+                                                            <i style="top:11px" class="icon icon-seldown"></i>
+                                                        </div>
+                                                        <ul style="width: 148px; top: 28px; display: none;"><li style="height:30px;line-height:30px;" data-val="9" class="li-static">9成</li><li style="height:30px;line-height:30px;" data-val="8">8成</li><li style="height:30px;line-height:30px;" data-val="7">7成</li><li style="height:30px;line-height:30px;" data-val="6">6成</li><li style="height:30px;line-height:30px;" data-val="5">5成</li><li style="height:30px;line-height:30px;" data-val="4">4成</li><li style="height:30px;line-height:30px;" data-val="3">3成</li><li style="height:30px;line-height:30px;" data-val="2">2成</li><li style="height:30px;line-height:30px;" data-val="1">1成</li></ul>
+                                                    </div>
+                                                </div>
+                                                <img src="/images/view/20.png" style="margin-left: 10px;"/>
+                                            </div>
+                                            <div class="p_arowCon ratio">
+                                                <p>是指所贷款的额度总额占房款总额的比例。按揭成数=贷款的额度/房款总额</p>
+                                                <em class="p_arw p_arw_b" style="left:15px;bottom:-11px;"></em>
+                                                <em class="p_arw-up" style="left:16px;bottom:-9px"></em>
+                                            </div>
+                                        </div>
+                                        <div class="p_phrase" style="z-index: 7;">
+                                            <div class="phrase_title">贷款时间:</div>
+                                            <div class="phrase_cont">
+                                                <div class="selectstyle" id="j-loanclass" data-track="pc_fydy_ckyg" style="z-index: 4;">
+                                                    <select id="yeares" class="ele-hide">
+                                                        <option value="0.5">6个月</option>
+                                                        <option value="1">1年</option>
+                                                        <option value="2">2年</option>
+                                                        <option value="3">3年</option>
+                                                        <option value="4">4年</option>
+                                                        <option value="5">5年</option>
+                                                        <option value="6">6年</option>
+                                                        <option value="7">7年</option>
+                                                        <option value="8">8年</option>
+                                                        <option value="9">9年</option>
+                                                        <option value="10">10年</option>
+                                                        <option value="11">11年</option>
+                                                        <option value="12">12年</option>
+                                                        <option value="13">13年</option>
+                                                        <option value="14">14年</option>
+                                                        <option value="15">15年</option>
+                                                        <option value="16">16年</option>
+                                                        <option value="17">17年</option>
+                                                        <option value="18">18年</option>
+                                                        <option value="19">19年</option>
+                                                        <option value="20" selected="selected">20年</option>
+                                                        <option value="21">21年</option>
+                                                        <option value="22">22年</option>
+                                                        <option value="23">23年</option>
+                                                        <option value="24">24年</option>
+                                                        <option value="25">25年</option>
+                                                        <option value="26">26年</option>
+                                                        <option value="27">27年</option>
+                                                        <option value="28">28年</option>
+                                                        <option value="29">29年</option>
+                                                        <option value="30">30年</option>
+                                                    </select>
+                                                    <div class="exia-box" style="height:28px" index="1">
+                                                        <div class="sol-label">
+                                                            <span data-val="1" style="height:28px">20年</span>
+                                                            <i style="top:11px" class="icon icon-seldown"></i>
+                                                        </div>
+                                                        <ul style="width: 148px; top: 28px; display: none;"><li style="height:30px;line-height:30px;" data-val="0.5" class="">6个月</li><li style="height:30px;line-height:30px;" data-val="1">1年</li><li style="height:30px;line-height:30px;" data-val="2">2年</li><li style="height:30px;line-height:30px;" data-val="3">3年</li><li style="height:30px;line-height:30px;" data-val="4">4年</li><li style="height:30px;line-height:30px;" data-val="5">5年</li><li style="height:30px;line-height:30px;" data-val="6">6年</li><li style="height:30px;line-height:30px;" data-val="7">7年</li><li style="height:30px;line-height:30px;" data-val="8">8年</li><li style="height:30px;line-height:30px;" data-val="9">9年</li><li style="height:30px;line-height:30px;" data-val="10">10年</li><li style="height:30px;line-height:30px;" data-val="11">11年</li><li style="height:30px;line-height:30px;" data-val="12">12年</li><li style="height:30px;line-height:30px;" data-val="13">13年</li><li style="height:30px;line-height:30px;" data-val="14">14年</li><li style="height:30px;line-height:30px;" data-val="15">15年</li><li style="height:30px;line-height:30px;" data-val="16">16年</li><li style="height:30px;line-height:30px;" data-val="17">17年</li><li style="height:30px;line-height:30px;" data-val="18">18年</li><li style="height:30px;line-height:30px;" data-val="19">19年</li><li style="height:30px;line-height:30px;" data-val="20" class="li-static">20年</li><li style="height:30px;line-height:30px;" data-val="21">21年</li><li style="height:30px;line-height:30px;" data-val="22">22年</li><li style="height:30px;line-height:30px;" data-val="23">23年</li><li style="height:30px;line-height:30px;" data-val="24">24年</li><li style="height:30px;line-height:30px;" data-val="25">25年</li><li style="height:30px;line-height:30px;" data-val="26">26年</li><li style="height:30px;line-height:30px;" data-val="27">27年</li><li style="height:30px;line-height:30px;" data-val="28">28年</li><li style="height:30px;line-height:30px;" data-val="29">29年</li><li style="height:30px;line-height:30px;" data-val="30">30年</li></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="desc-wrap">
+                                                <p class="desc-bottom text-mute">备注：本房为满二唯一，免收营业税（如非普通住宅，需收取营业税）和个人所得税。税费由营业税、个人所得税、契税等构成。具体税费因房源不同有差异，详情请咨询经纪人。</p>
+                                            </div>
+                                            <a target="_blank" class="btncounter" href="javascript:;">计算您的贷款详情</a>
+                                        </div>
+                                    </div>
+                                    <div class="ritem">
+                                        <img src="/images/view/27.png" style="margin: 21.5px 0 0 44px;"/>
+                                        <div class="legend-container">
+                                            <ul>
+                                                <li id="firstpay" class=""><i class="firstpay"></i>参考首付：<span>16.70</span>万&nbsp;(&nbsp;<span>1成</span>&nbsp;)</li>
+                                                <li id="repayed" class=""><i class="repayed"></i>贷款金额：<span>150.30</span>万&nbsp;(&nbsp;<span>9成</span>&nbsp;)</li>
+                                                <li id="payedpoint" class=""><i class="payedpoint"></i>支付利息：<span>85</span>万&nbsp;(&nbsp;利率<span>4.90</span>%&nbsp;)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comm-intrest-house areaPriceRecommendProp">
+                            <div class="title"><h4>看了又看</h4></div>
+                            <div class="box clearfix">
+                                <div id="ditu"></div>
+                                <ul class="cf clearfix">
+                                    <li class="rec_common_con">
+                                        <span class="esf-axf">安选</span>
+                                        <img class="rec_common_img" title="位置很棒的，前后无遮挡，房东很诚心，价格可以商量，急急急" width="180" height="135" src="/images/view/interest_1.jpg">
+                                        <a target="_blank" title="位置很棒的，前后无遮挡，房东很诚心，价格可以商量，急急急" class="rec_common_title" href="javascript:;">位置很棒的，前后无遮挡，房东很诚心，价格可以商量，急急急</a>
+                                        <p class="rec_common_price">
+                                            198
+                                            <span>万</span>
+                                        </p>
+                                        <p class="rec_common_info">2室2厅，83平米</p>
+                                        <p class="rec_common_name">宜浩佳园</p>
+                                        <div class="name-bg"></div>
+                                    </li>
+                                    <li class="rec_common_con">
+                                        <span class="esf-axf">安选</span>
+                                        <img class="rec_common_img" title="临港新片区经典住宅，16号地铁延伸线，配套齐全现房出售" width="180" height="135" src="/images/view/interest_2.jpg">
+                                        <a target="_blank" title="临港新片区经典住宅，16号地铁延伸线，配套齐全现房出售" class="rec_common_title" href="javascript:;">临港新片区经典住宅，16号地铁延伸线，配套齐全现房出售</a>
+                                        <p class="rec_common_price">
+                                            178
+                                            <span>万</span>
+                                        </p>
+                                        <p class="rec_common_info">2室2厅，81平米</p>
+                                        <p class="rec_common_name">同润金色橘苑</p>
+                                        <div class="name-bg"></div>
+                                    </li>
+                                    <li class="rec_common_con">
+                                        <span class="esf-axf">安选</span>
+                                        <img class="rec_common_img" title="绿地，16号地铁，对口建平学區，低于市场价，业主诚心出售" width="180" height="135" src="/images/view/interest_3.jpg">
+                                        <a target="_blank" title="绿地，16号地铁，对口建平学區，低于市场价，业主诚心出售" class="rec_common_title" href="javascript:;">绿地，16号地铁，对口建平学區，低于市场价，业主诚心出售</a>
+                                        <p class="rec_common_price">
+                                            170
+                                            <span>万</span>
+                                        </p>
+                                        <p class="rec_common_info">2室2厅，87平米</p>
+                                        <p class="rec_common_name">绿地东岸涟城</p>
+                                        <div class="name-bg"></div>
+                                    </li>
+                                    <li class="rec_common_con">
+                                        <span class="esf-axf">安选</span>
+                                        <img class="rec_common_img" title="实房实价实图！外冈新苑南区，景观大2房！" width="180" height="135" src="/images/view/interest_4.jpg">
+                                        <a target="_blank" title="实房实价实图！外冈新苑南区，景观大2房！" class="rec_common_title" href="javascript:;">实房实价实图！外冈新苑南区，景观大2房！</a>
+                                        <p class="rec_common_price">
+                                            170
+                                            <span>万</span>
+                                        </p>
+                                        <p class="rec_common_info">2室2厅，93平米</p>
+                                        <p class="rec_common_name">外冈新苑(南区)</p>
+                                        <div class="name-bg"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <!--页面右侧-->
                     <div class="wrapper-rg clearfix">
@@ -1079,7 +1262,7 @@
                 <!--悬浮条-->
                 <div class="topBar-wrap">
                     <div class="topBar-cont">
-                        <em class="houseTitle">位置很棒的，前后无遮挡，房东很诚心，价格可以商量，急急急</em>
+                        <em class="houseTitle"><%=item.title%></em>
                         <p class="brokerInfo" id="brokerInfoV2">
                             <img src="/images/view/18.png" style="vertical-align: middle;margin-right: 8px;"/>
                             <span class="mobile">
@@ -1087,10 +1270,690 @@
                             </span>
                         </p>
                         <p class="houseInfo">
-                            2室2厅1卫，
-                            83m²，
-                            198万
+                            <%=item.layout%>，
+                            <%=item.area%>m²，
+                            <%=item.total_price%>万
                         </p>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="footer-mod">
+                <div id="footer-bottom-tip" style="width: 1180px; margin: 0 auto;">
+                    <p align="left" style="width: 100%; color: #999999; margin-bottom: 12px; line-height:1.5;">
+                        友情提醒：使用本网站的用户须接受并遵守用户协议和免责声明。
+                        <br>声明：本网站所刊载的内容来源于物业顾问；该等物业信息不包含购买要约意图，文字、图片信息不构成物业交付标准或配套；
+                        相关物业信息供参考，请致电物业顾问了解详情，请以物业顾问提供信息为准。
+                    </p>
+                </div>
+                <div style="width:1155px; margin:0 auto; COLOR: #999; LINE-HEIGHT: 2em;  TEXT-ALIGN: left; padding-left: 25px;">
+                    真实二手房信息尽在安居客<a href="javascript:;" style="color: #999" class="footer_link">上海二手房</a>价格信息。
+                </div>
+                <div id="seo-box">
+                    <ul class="parent-1">
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border first-border btn-show cur" href="javascript:void(0)" target="_blank">二手房区域</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">小区单页</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">推荐导航</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">移动小区单页</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">热门房产网</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">热门新房</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">省份历史房价</a>
+                        </li>
+                        <li class="tab-1 has-subitem">
+                            <a class="but-border btn-show" href="javascript:void(0)" target="_blank">全国年份房价</a>
+                        </li>
+                        <li class="border">
+                            <ul class="parent-2 btn-show"><li class="tab-2"><a class="" href="javascript:;" target="_blank">浦东二手房</a></li><li class="tab-2"><a class="" href="https://shanghai.anjuke.com/sale/minhang/" target="_blank">闵行二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">宝山二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">徐汇二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">松江二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">嘉定二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">静安二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">普陀二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">杨浦二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">虹口二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">长宁二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">黄浦二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">青浦二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">奉贤二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">金山二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">崇明二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">上海周边二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">陆家嘴二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">周浦二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">金桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">川沙二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">北蔡二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">三林二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">张江二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">惠南二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">高行二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">金杨二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">杨思二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">世纪公园二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">塘桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">航头二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">康桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">外高桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">源深二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">临港新城二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">洋泾二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">曹路二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">唐镇二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">御桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">联洋二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">花木二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">潍坊二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">碧云二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">南码头二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">三林南二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">高东二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">泥城二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">杨东二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">新场二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">张江(东)二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">孙桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">宣桥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">书院二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">合庆二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">芦潮港二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">浦东机场二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">世博二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">大团二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">万祥二手房</a></li><li class="tab-2"><a class="" href="javascript:;" target="_blank">老港二手房</a></li></ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">东海二村</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">海汇听涛苑</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">保利蔚蓝林语(别墅)</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">龙吟一邨</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">龙吟一邨芦商</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">龙吟路60弄小区</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">宜浩佳园</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">滴水湖馨苑</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">东宸源著</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">海上风华</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">陆家嘴滴水涟岸(公寓)</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">中建锦绣熙岸</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">陆家嘴滴水涟岸(别墅)</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">颐景园江南院(别墅)</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">颐景园江南院(公寓)</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">临港17区</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">艾森公馆</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">海滨时代</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">亭园新村</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">绿地临港家园海洋小区</a></li>
+                            </ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海房产网</a></li>
+                            </ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">大华伊斐墅</a></li>
+                            </ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">青岛房产网</a></li>
+                            </ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">上海新房</a></li>
+                            </ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">安徽历史房价</a></li>
+                            </ul>
+                            <ul class="parent-2">
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                                <li class="tab-2"><a href="javascript:;" target="_blank">2019年全国房价</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="footer" class="footer">
+                    <ul class="links">
+                        <li>
+                            <a href="javascript:;">关于安居客</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">联系我们</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">用户协议</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">房贷计算器</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">最新问答</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">网站地图</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">最新房源</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">其它城市</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">友情链接</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">放心搜</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">推广服务</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">渠道招商</a>
+                            <em class="spe-lines">|</em>
+                        </li>
+                        <li>
+                            <a href="javascript:;">58车</a>
+                        </li>
+                    </ul>
+                    <div id="loan_link" class="show-mod loan-link">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">房贷计算器</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">提前还款计算器</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">购房能力评估计算器</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">公积金贷款计算器</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="seo_qa" class="show-mod map-link">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">按时间查找房产问答</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">按城市查找上海房产问答</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版按时间查找房产问题</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版按城市查找上海房产问答</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="map_link" class="show-mod map-link">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">二手房地图</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版二手房地图</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">新房楼盘大全</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版新房地图</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">新房地图</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">二手房小区大全</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">租房小区大全</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版小区大全</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海小区</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海新房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海租房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海房价</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海别墅出售</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海公寓出售</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海公寓出租</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海合租房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海个人租房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海别墅出租</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海租房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海房价</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海问答</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="house_link" class="show-mod house-link">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">租房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">商铺出售</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">商铺出租</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">写字楼出售</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">写字楼出租</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机版租房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">新房</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="other_city" class="show-mod other-city">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">上海房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">广州房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">广州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">深圳房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">深圳二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">北京房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">北京二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">成都房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">成都二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">南京房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">南京二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">天津房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">天津二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">杭州房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">杭州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">苏州房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">苏州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">重庆房产网</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">重庆二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">三亚二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">厦门二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">珠海二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">惠州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">深圳二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">海口二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">北京二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">石家庄二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">杭州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">广州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">苏州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">南京二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">天津二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">昆山二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">东莞二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">长春二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">郑州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">哈尔滨二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">太原二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">大连二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">南宁二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">合肥二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">福州二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">青岛二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">济南二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">昆明二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">武汉二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">长沙二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">重庆二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">沈阳二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">西安二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">佛山二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">南昌二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">无锡二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">成都二手房</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">北京公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">成都公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">广州公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">杭州公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">南京公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上海公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">深圳公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">苏州公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">天津公积金</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">重庆公积金</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cp-mod">
+                        <a href="javascript:;">客户服务中心</a>
+                        &ensp;&ensp;&ensp;违法信息举报：&ensp;4006209008&ensp;
+                        <a href="javascript:;">service@58.com</a>
+                        &ensp;&ensp;&ensp;Copyright&ensp;©&ensp;2007-2019&ensp;www.anjuke.com&ensp;All Rights Reserved&ensp;&ensp;&ensp;
+                        <a href="javascript:;">ICP号：沪 B2-20090008</a>
                     </div>
                 </div>
             </div>
@@ -1098,6 +1961,12 @@
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script>
             (function(){
+                jQuery.fn.isChildOf=function(b){
+                    return (this.parents(b).length>0);
+                };
+                jQuery.fn.isChildAndSelfOf=function(b){
+                    return (this.closest(b).length>0);
+                };
                 var lis_1=$(".switch_list:eq(0)").children("li");
                 var lis_2=$(".switch_list:eq(3)").children("li");
                 $(".cur_citynew").mouseover(function(){
@@ -1237,6 +2106,104 @@
                 });
                 $(".qa-item-linkto").mouseout(function(){
                     $(this).removeClass("qa-light");
+                });
+                $(".exia-box").mouseover(function(){
+                    $(this).find("ul").show();
+                });
+                $(".exia-box").mouseout(function(){
+                    $(this).find("ul").hide();
+                });
+                $(".exia-box>ul>li").click(function(){
+                    var li_text=$(this).text();
+                    $(this).parent().siblings(".sol-label").children("span").text(li_text);
+                    $(this).parent().hide();
+                });
+                $(".phrase_cont img").mouseover(function(){
+                    $(this).attr("src","/images/view/21.png");
+                });
+                $(".phrase_cont img").mouseout(function(){
+                    $(this).attr("src","/images/view/20.png");
+                    $(".p_arowCon").hide();
+                    var text=$(this).parent().find(".exia-box").find("span").text();
+                    if(text!="商业贷款"&&text!="公积金贷款"){
+                        $(this).parent().parent().css("zIndex","8");
+                    }
+                });
+                $(".phrase_cont>img").mouseover(function(){
+                    var text=$(this).parent().find(".exia-box").find("span").text();
+                    if(text=="商业贷款"){
+                        $(".commerce").show();
+                    }else if(text=="公积金贷款"){
+                        $(".fund").show();
+                    }else{
+                        $(this).parent().parent().css("zIndex","10");
+                        $(".ratio").show();
+                    }
+                });
+                $(".tab-1>a").mouseover(function(){
+                    if(!$(this).hasClass("cur")){
+                        $(".cur").removeClass("cur");
+                        $(this).addClass("cur");
+                    }
+                });
+                $(".tab-1").mouseover(function(){
+                    $(".btn-show").removeClass("btn-show");
+                    $(".parent-2:eq("+$(this).index()+")").addClass("btn-show");
+                });
+                $(".links>li>a").click(function(){
+                    if($(this).text()==="房贷计算器"){
+                        $("#loan_link").show();
+                    }else if($(this).text()==="最新问答"){
+                        $("#seo_qa").show();
+                    }else if($(this).text()==="网站地图"){
+                        $("#map_link").show();
+                    }else if($(this).text()==="最新房源"){
+                        $("#house_link").show();
+                    }else if($(this).text()==="其它城市"){
+                        $("#other_city").show();
+                    }
+                });
+                $("body").click(function(e){
+                    if($("#loan_link").css("display")==="block"){
+                        if(e.target.textContent!=="房贷计算器" && !$(e.target).isChildAndSelfOf("#loan_link")){
+                            $("#loan_link").hide();
+                        }
+                    }
+                    if($("#seo_qa").css("display")==="block"){
+                        if(e.target.textContent!=="最新问答" && !$(e.target).isChildAndSelfOf("#seo_qa")){
+                            $("#seo_qa").hide();
+                        }
+                    }
+                    if($("#map_link").css("display")==="block"){
+                        if(e.target.textContent!=="网站地图" && !$(e.target).isChildAndSelfOf("#map_link")){
+                            $("#map_link").hide();
+                        }
+                    }
+                    if($("#house_link").css("display")==="block"){
+                        if(e.target.textContent!=="最新房源" && !$(e.target).isChildAndSelfOf("#house_link")){
+                            $("#house_link").hide();
+                        }
+                    }
+                    if($("#other_city").css("display")==="block"){
+                        if(e.target.textContent!=="其它城市" && !$(e.target).isChildAndSelfOf("#other_city")){
+                            $("#other_city").hide();
+                        }
+                    }
+                });
+                $("#loan_link").mouseleave(function(){
+                    $("#loan_link").hide();
+                });
+                $("#seo_qa").mouseleave(function(){
+                    $("#seo_qa").hide();
+                });
+                $("#map_link").mouseleave(function(){
+                    $("#map_link").hide();
+                });
+                $("#house_link").mouseleave(function(){
+                    $("#house_link").hide();
+                });
+                $("#other_city").mouseleave(function(){
+                    $("#other_city").hide();
                 });
                 /*窗口事件*/
                 window.addEventListener("scroll",function(){

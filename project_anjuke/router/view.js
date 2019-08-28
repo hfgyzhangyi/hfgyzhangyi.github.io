@@ -2,7 +2,11 @@ const pool=require("../pool.js");
 const express=require("express");
 var router=express.Router();
 router.get("/",(req,res)=>{
-    console.log(req.query.id);
-    res.render("view");
+    var id=req.query.id;
+    var sql=`select title,layout,area,floor,time,estate_name,address,total_price,
+    univalence,district from ershoufang_list where id=?`;
+    pool.query(sql,[id],(err,result)=>{
+        res.render("view",{item:result[0]});
+    });
 });
 module.exports=router;

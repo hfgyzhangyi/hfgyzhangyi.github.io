@@ -36,6 +36,9 @@ img{
     border: 0;
     display: inline-block;
 }
+body, button, input, select, textarea{
+    font: 12px/1.5 Arial,"Microsoft YaHei","Hiragino Sans GB","STHeiti",SimSun;
+}
 /*container*/
 #header{
     width: 100%;
@@ -1784,6 +1787,232 @@ img{
     color: #333 !important;
     text-decoration: underline;
 }
+.monthpay{
+    position: relative;
+    padding: 0 0 29px 30px;
+    height: 311px;
+}
+.monthbox .monthpay{
+    padding-left: 0;
+}
+.litem{
+    float: left;
+    width: 525px;
+    height: 100%;
+}
+.monthpay .desc{
+    line-height: 21px;
+    font-size: 1.166666rem;
+    color: #333;
+    margin-top: 24px;
+    margin-bottom: 11px;
+}
+.monthpay .p_phrase{
+    height: 46px;
+    line-height: 46px;
+    font-size: 1.166666rem;
+    color: #333;
+    position: relative;
+}
+.monthpay .p_phrase .phrase_title{
+    color: #333;
+    float: left;
+}
+.monthpay .p_phrase .phrase_cont{
+    margin-left: 9px;
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 46px;
+}
+.monthpay .selectstyle{
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-top: 8px;
+}
+.ele-hide{
+    display: none;
+}
+.exia-box{
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+}
+.exia-box .sol-label{
+    height: 100%;
+}
+.exia-box .sol-label span{
+    display: block;
+    padding-left: 13px;
+    height: 100%;
+}
+.monthpay .icon-seldown{
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 5px solid #999;
+}
+.exia-box .sol-label i{
+    line-height: 0;
+    display: inline-block;
+    position: absolute;
+    right: 13px;
+}
+.exia-box ul{
+    display: none;
+    margin: 0;
+    padding: 0;
+    left: -1px;
+    z-index: 99;
+    list-style: none;
+    position: absolute;
+    max-height: 320px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+.monthpay .exia-box ul{
+    background: #fff;
+    max-height: 180px;
+}
+.exia-box ul li{
+    cursor: pointer;
+    padding-left: 13px;
+}
+.exia-box ul .li-static{
+    background-color: #e4e4e4;
+}
+.monthpay ul .li-static{
+    background-color: #fff;
+}
+.exia-box ul li:hover{
+    color: #f60;
+    text-decoration: underline;
+}
+.monthpay .p_arowCon{
+    position: absolute;
+    padding: 15px 20px;
+    font-size: 1.166666rem;
+    color: #333;
+    width: 310px;
+    left: 213px;
+    display: none;
+    z-index: 100;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.monthpay .p_arowCon.commerce, .monthpay .p_arowCon.fund{
+    bottom: 42px;
+}
+.monthpay .p_arowCon p{
+    font-size: 1.166666rem;
+    line-height: 24px;
+}
+.monthpay .p_arw{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ccc;
+}
+.monthpay .p_arowCon em{
+    bottom: -9px;
+    left: 22px;
+}
+.monthpay .p_arw-up{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #fff;
+}
+.monthpay .p_arowCon.ratio{
+    bottom: 42px;
+}
+.monthpay .desc-wrap{
+    height: 42px;
+    margin-top: 14px;
+}
+.monthbox .monthpay .desc-wrap{
+    height: auto;
+}
+.monthpay .desc-bottom{
+    color: #999;
+    font-size: 1rem;
+    line-height: 22px;
+}
+.monthpay .btncounter{
+    display: inline-block;
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.333333rem;
+    color: #62ab00;
+    border: 1px solid #62ab00;
+    background: #fff;
+    text-align: center;
+    margin-top: 30px;
+}
+.monthpay .btncounter:hover{
+    background-color: #62AB00;
+    color: #fff !important;
+}
+.ritem{
+    float: right;
+    width: 300px;
+    height: 100%;
+}
+.monthpay .legend-container{
+    float: left;
+    margin: 0 0 0 61px;
+}
+.monthpay .legend-container ul li{
+    line-height: 24px;
+}
+.monthpay .legend{
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    margin-right: 10px;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+    font-size: 0.833333rem;
+}
+.firstpay{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #E88A78;
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 10px;
+}
+.repayed{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #6F8BC1;
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 10px;
+}
+.payedpoint{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #85C85D;
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 10px;
+}
 /*悬浮条*/
 .topBar-wrap{
     top: 0;
@@ -1835,4 +2064,160 @@ img{
     font-size: 1.333333rem;
     line-height: 70px;
     margin-right: 54px;
+}
+/*footer*/
+.footer-mod{
+    margin: 30px auto 0;
+}
+.footer_link:hover{
+    color: #999 !important;
+    text-decoration: underline;
+}
+#seo-box{
+    width: 1180px;
+    font-size: 1rem;
+    margin: 0 auto 30px;
+    font-family: Microsoft YaHei, "微软雅黑";
+}
+.parent-1{
+    font-size: 0;
+}
+.parent-2{
+    font-size: 1rem;
+}
+.tab-1{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.tab-1{
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.tab-1 a:link, .tab-1 a:visited, .tab-1 a:hover, .tab-1 a:active{
+    color: #454545 !important;
+    text-decoration: none;
+}
+.but-border{
+    display: inline-block;
+    border-top: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+}
+.first-border{
+    border-left: 1px solid #e6e6e6;
+}
+.btn-show{
+    display: block;
+}
+.cur{
+    background-color: #FFFFFF;
+    z-index: 2;
+    position: relative;
+    font-weight: bold;
+}
+.border{
+    border: 1px solid #e6e6e6;
+    margin-top: -1px;
+    position: relative;
+    width: 100%;
+}
+.parent-2{
+    display: none;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.btn-show{
+    display: block;
+}
+.tab-2, .tab-3{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.tab-2 a:link, .tab-2 a:visited, .tab-2 a:hover, .tab-2 a:active{
+    color: #999999 !important;
+}
+.tab-2 a:hover{
+    text-decoration: underline;
+}
+.footer{
+    clear: both;
+    border-top: 1px solid #e6e6e6;
+    padding: 15px 0 30px;
+    font-size: 1rem;
+    color: #333;
+}
+#footer{
+    margin: 30px auto 0;
+    width: 100%;
+}
+.footer .links{
+    width: 1180px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-size: 0;
+    text-align: center;
+}
+.footer .links li{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+.footer a{
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+}
+.footer .spe-lines{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 10px;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    vertical-align: -1px;
+}
+.footer .show-mod{
+    display: none;
+    border:1px solid #e6e6e6;
+    border-radius: 4px;
+    width: 730px;
+    padding: 3px 10px;
+    margin:0 auto 5px;
+    overflow: hidden;
+}
+.footer .show-mod li{
+    float: left;
+    margin-right: 22px;
+    line-height: 24px;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.footer .other-city ul{
+    width: 736px;
+}
+.footer .other-city li{
+    width: 76px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 16px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.footer .cp-mod{
+    text-align: center;
+    line-height: 20px;
 }
