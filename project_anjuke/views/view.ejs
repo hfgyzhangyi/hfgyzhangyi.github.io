@@ -247,7 +247,7 @@
                         <div class="clearfix">
                             <div class="basic-info clearfix">
                                 <span class="light info-tag"><em><%=item.total_price%></em>万</span>
-                                <span class="info-tag"><em>2</em>室<em>1</em>厅</span>
+                                <span class="info-tag"><em><%=item.layout.slice(0,1)%></em>室<em><%=item.layout.slice(2,3)%></em>厅</span>
                                 <span class="info-tag"><em><%=item.area%></em>平方米</span>
                                 <span class="info-tag no-border tag-cal">
                                     <img src="/images/view/3.png"/>房贷计算
