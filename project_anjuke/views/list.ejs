@@ -1523,6 +1523,54 @@
                 </div>
             </div>
         </div>
+        <!--侧边栏-->
+        <div class="sidebar" style="display: block; right: 0px;">
+            <div class="sidebar-mod sidebar-nav">
+                <a href="javascript:;" rel="nofollow" class="sid-nav" target="_blank">
+                    <img src="../images/sidebar_1_2.png"/>
+                    <p>客服</p>
+                    <em class="nav-arrow"></em>
+                    <div class="sidebar-nav-hover" style="width: 0px;">在线客服</div>
+                </a>
+                <a href="javascript:;" rel="nofollow" class="sid-nav" target="_blank">
+                    <img src="../images/sidebar_2_2.png"/>
+                    <p>卖房</p>
+                    <em class="nav-arrow"></em>
+                    <div class="sidebar-nav-hover" style="width: 0px;">房东卖房</div>
+                </a>
+                <a href="javascript:;" rel="nofollow" class="sid-nav" target="_blank">
+                    <img src="../images/sidebar_3_2.png"/>
+                    <p>帮助</p>
+                    <em class="nav-arrow"></em>
+                    <div class="sidebar-nav-hover">使用帮助</div>
+                </a>
+                <a href="javascript:;" id="sid_survey" class="sid-nav" target="_blank">
+                    <img src="../images/sidebar_4_2.png"/>
+                    <p>调研</p>
+                    <em class="nav-arrow"></em>
+                    <div class="sidebar-nav-hover">用户调研</div>
+                </a>
+                <a href="javascript:void(0);" class="sid-nav">
+                    <img src="../images/sidebar_5_2.png"/>
+                    <p>下载</p>
+                    <em class="nav-arrow nav-sao"></em>
+                    <div class="sidebar-nav-hover sidebar-sao">下载安居客APP</div>
+                </a>
+                <a href="javascript:;" class="sid-nav" target="_blank">
+                    <img src="../images/sidebar_6_2.png"/>
+                    <p>推广</p>
+                    <em class="nav-arrow"></em>
+                    <div class="sidebar-nav-hover">推广咨询</div>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar-mod sidebar-top" style="display: none;">
+            <a href="javascript:void(0);" class="sid-nav">
+                <img src="../images/sidebar_7_2.png"/>
+                <em class="nav-arrow"></em>
+                <div class="sidebar-nav-hover" style="width: 0px;">返回顶部</div>
+            </a>
+        </div>
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script>
             (function(){
@@ -1794,6 +1842,50 @@
                 });
                 $(".dropdown").mouseout(function(){
                     $(".js-headlogin-statuslist").hide();
+                });
+                /*侧边栏*/
+                $(".sidebar>.sidebar-mod>a").mouseenter(function(){
+                    var index=$(this).index();
+                    $(this).children("img").attr("src","../images/sidebar_"+(index+1)+".png")
+                    $(this).addClass("sidebar_a_hover");
+                    if(!$(this).children(".sidebar-nav-hover").is(":animated")){
+                        $(this).children(".nav-arrow").show();
+                        $(this).children(".sidebar-nav-hover").animate({width:"90px"},100);
+                    }
+                });
+                $(".sidebar>.sidebar-mod>a").mouseleave(function(){
+                    var index=$(this).index();
+                    $(this).children("img").attr("src","../images/sidebar_"+(index+1)+"_2.png")
+                    $(this).removeClass("sidebar_a_hover");
+                    $(this).children(".nav-arrow").hide();
+                    $(this).children(".sidebar-nav-hover").animate({width:"0px"},50);
+                });
+                $(".sidebar-top>.sid-nav").mouseenter(function(){
+                    $(this).children("img").attr("src","../images/sidebar_7.png");
+                    $(this).addClass("sidebar_a_hover");
+                    if(!$(this).children(".sidebar-nav-hover").is(":animated")){
+                        $(this).children(".nav-arrow").show();
+                        $(this).children(".sidebar-nav-hover").animate({width:"90px"},100);
+                    }
+                });
+                $(".sidebar-top>.sid-nav").mouseleave(function(){
+                    $(this).children("img").attr("src","../images/sidebar_7_2.png");
+                    $(this).removeClass("sidebar_a_hover");
+                    $(this).children(".nav-arrow").hide();
+                    $(this).children(".sidebar-nav-hover").animate({width:"0px"},50);
+                });
+                $(".sidebar-nav-hover").click(function(){
+                    var text=$(this).text();
+                    if(text=="返回顶部"){
+                        $("html").animate({scrollTop:"0px"},300);
+                    }
+                });
+                window.addEventListener("scroll",function(){
+                    if(document.documentElement.scrollTop>=300){
+                        $(".sidebar-top").show();
+                    }else{
+                        $(".sidebar-top").hide();
+                    }
                 });
             })();
         </script>

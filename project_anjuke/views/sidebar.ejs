@@ -1,0 +1,186 @@
+<style>
+/*侧边栏*/
+.sidebar{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 38px;
+    height: 100%;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 2px #999;
+    z-index: 1000;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑",tahoma,Arial,simhei;
+    background-color: white;
+}
+.sidebar-nav{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -98px;
+}
+.sidebar-mod .sid-nav{
+    position: relative;
+    display: block;
+    width: 38px;
+    height: 40px;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #333;
+    font-size: 0;
+}
+.sidebar-mod .sid-nav p{
+    font-size: 1rem;
+}
+.sidebar-mod .sid-nav img{
+    height: 20px;
+    display: inline-block;
+    margin-top: 2px;
+}
+.nav-arrow{
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-left: 4px solid #666;
+    border-right: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    display: none;
+}
+.sidebar-nav-hover{
+    position: absolute;
+    right: 38px;
+    top: 0;
+    width: 0;
+    height: 40px;
+    line-height: 40px;
+    background-color: #666;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    overflow: hidden;
+}
+.sidebar_a_hover{
+    background-color: #62AB00;
+}
+.sidebar_a_hover:hover{
+    color: white !important;
+    text-decoration: none;
+}
+.sidebar-top{
+    position: fixed;
+    display: none;
+    bottom: 30px;
+    right: 0;
+    z-index: 1000;
+}
+.sidebar-top a.sid-nav img{
+    height: 10px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.sidebar-top a.sid-nav{
+    margin-bottom: 0;
+}
+</style>
+<!--侧边栏-->
+<div class="sidebar" style="display: block; right: 0px;">
+    <div class="sidebar-mod sidebar-nav">
+        <a href="javascript:;" rel="nofollow" class="sid-nav" target="_blank">
+            <img src="../images/sidebar_1_2.png"/>
+            <p>客服</p>
+            <em class="nav-arrow"></em>
+            <div class="sidebar-nav-hover" style="width: 0px;">在线客服</div>
+        </a>
+        <a href="javascript:;" rel="nofollow" class="sid-nav" target="_blank">
+            <img src="../images/sidebar_2_2.png"/>
+            <p>卖房</p>
+            <em class="nav-arrow"></em>
+            <div class="sidebar-nav-hover" style="width: 0px;">房东卖房</div>
+        </a>
+        <a href="javascript:;" rel="nofollow" class="sid-nav" target="_blank">
+            <img src="../images/sidebar_3_2.png"/>
+            <p>帮助</p>
+            <em class="nav-arrow"></em>
+            <div class="sidebar-nav-hover">使用帮助</div>
+        </a>
+        <a href="javascript:;" id="sid_survey" class="sid-nav" target="_blank">
+            <img src="../images/sidebar_4_2.png"/>
+            <p>调研</p>
+            <em class="nav-arrow"></em>
+            <div class="sidebar-nav-hover">用户调研</div>
+        </a>
+        <a href="javascript:void(0);" class="sid-nav">
+            <img src="../images/sidebar_5_2.png"/>
+            <p>下载</p>
+            <em class="nav-arrow nav-sao"></em>
+            <div class="sidebar-nav-hover sidebar-sao">下载安居客APP</div>
+        </a>
+        <a href="javascript:;" class="sid-nav" target="_blank">
+            <img src="../images/sidebar_6_2.png"/>
+            <p>推广</p>
+            <em class="nav-arrow"></em>
+            <div class="sidebar-nav-hover">推广咨询</div>
+        </a>
+    </div>
+</div>
+<div class="sidebar-mod sidebar-top" style="display: none;">
+    <a href="javascript:void(0);" class="sid-nav">
+        <img src="../images/sidebar_7_2.png"/>
+        <em class="nav-arrow"></em>
+        <div class="sidebar-nav-hover" style="width: 0px;">返回顶部</div>
+    </a>
+</div>
+<script src="/js/jquery-1.11.3.min.js"></script>
+<script>
+    (function(){
+        /*侧边栏*/
+        $(".sidebar>.sidebar-mod>a").mouseenter(function(){
+            var index=$(this).index();
+            $(this).children("img").attr("src","../images/sidebar_"+(index+1)+".png")
+            $(this).addClass("sidebar_a_hover");
+            if(!$(this).children(".sidebar-nav-hover").is(":animated")){
+                $(this).children(".nav-arrow").show();
+                $(this).children(".sidebar-nav-hover").animate({width:"90px"},100);
+            }
+        });
+        $(".sidebar>.sidebar-mod>a").mouseleave(function(){
+            var index=$(this).index();
+            $(this).children("img").attr("src","../images/sidebar_"+(index+1)+"_2.png")
+            $(this).removeClass("sidebar_a_hover");
+            $(this).children(".nav-arrow").hide();
+            $(this).children(".sidebar-nav-hover").animate({width:"0px"},50);
+        });
+        $(".sidebar-top>.sid-nav").mouseenter(function(){
+            $(this).children("img").attr("src","../images/sidebar_7.png");
+            $(this).addClass("sidebar_a_hover");
+            if(!$(this).children(".sidebar-nav-hover").is(":animated")){
+                $(this).children(".nav-arrow").show();
+                $(this).children(".sidebar-nav-hover").animate({width:"90px"},100);
+            }
+        });
+        $(".sidebar-top>.sid-nav").mouseleave(function(){
+            $(this).children("img").attr("src","../images/sidebar_7_2.png");
+            $(this).removeClass("sidebar_a_hover");
+            $(this).children(".nav-arrow").hide();
+            $(this).children(".sidebar-nav-hover").animate({width:"0px"},50);
+        });
+        $(".sidebar-nav-hover").click(function(){
+            var text=$(this).text();
+            if(text=="返回顶部"){
+                $("html").animate({scrollTop:"0px"},300);
+            }
+        });
+        window.addEventListener("scroll",function(){
+            if(document.documentElement.scrollTop>=300){
+                $(".sidebar-top").show();
+            }else{
+                $(".sidebar-top").hide();
+            }
+        });
+    })();
+</script>
