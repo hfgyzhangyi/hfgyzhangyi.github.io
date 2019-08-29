@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>后台登录</title>
+        <link rel="stylesheet" href="/css/global.css" type="text/css">
+        <link rel="stylesheet" href="/css/backstageLogin.css" type="text/css">
+        <link rel="icon" href="/images/icon.ico">
+    </head>
+    <body>
+        <div class="login-wrap">
+            <div class="title">
+                <span>后台管理登录界面</span>
+            </div>
+            <div class="content">
+                <form method="POST" action="/backstage/list" id="form">
+                    <input type="text" name="username" maxlength="20" class="username" placeholder="username" autocomplete="off"/>
+                    <input type="password" name="password" maxlength="20" class="password" placeholder="password"/>
+                    <input type="submit" value="登录" class="submitBtn"/>
+                </form>
+            </div>
+        </div>
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script>
+            (function(){
+                $("#form").submit(function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        url:"/backstage/check",
+                        data:"username="+$(".username").val()+"&password="+$(".password").val(),
+                        type:"post",
+                        async:true,
+                        success:function(res){
+                            if(res=="ok"){
+                                form.submit();
+                            }else if(res=="err"){
+                                alert("用户名或密码错误");
+                            }
+                        }
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>

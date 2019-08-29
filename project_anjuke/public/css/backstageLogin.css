@@ -1,0 +1,45 @@
+body{
+    background-color: #4B2E4D;
+}
+.login-wrap{
+    width: 400px;
+    height: 300px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -200px;
+}
+.title{
+    height: 23px;
+    background: #6E4972;
+    padding: 20px 0 20px 20px;
+}
+.title span{
+    line-height: 23px;
+    color: #fff;
+    font-size: 1.5rem;
+    -moz-user-select: none;
+    user-select: none;
+}
+.content{
+    height: 191px;
+    background: #F8F8F8;
+    padding: 23px 22px 23px 22px;
+}
+.content .username, .content .password{
+    padding-left: 10px;
+    width: 344px;
+    height: 47px;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 20px;
+}
+.submitBtn{
+    width: 356px;
+    height: 47px;
+    background-color: #724C75;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+}
