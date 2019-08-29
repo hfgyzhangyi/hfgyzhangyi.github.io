@@ -13,7 +13,7 @@
                     <div class="glbListNavigation1180 nav-content">
                         <ul class="L_tabsnew">
                             <li class="first-child">
-                                <a href="http://localhost:3000/" class="a_navnew">首 页</a>
+                                <a href="http://localhost:3000/index" class="a_navnew">首 页</a>
                             </li>
                             <li>
                                 <a href="javascript:;" class="a_navnew">新 房</a>
@@ -46,10 +46,26 @@
                         <div class="R_user">
                             <div class="login_info">
                                 <div class="dropdown user-login l">
+                                    <%if(username!=null){%>
+                                    <div class="title m">
+                                        <a href="javascript:;" class="usr" title="<%=username%>"><%=username%></a>
+                                        <i class="triangle-down"></i>
+                                    </div>
+                                    <div class="js-headlogin-statuslist list" style="display: none;">
+                                        <ul>
+                                            <li><a href="javascript:;">我的消息</a></li>
+                                            <li><a href="javascript:;">我的问答</a></li>
+                                            <li><a href="javascript:;">看房记录</a></li>
+                                            <li class="hr sep"></li>
+                                            <li><a href="http://localhost:3000/list/logout?pageNow=1">退出</a></li>
+                                        </ul>
+                                    </div>
+                                    <%}else{%>
                                     <div class="title m">
                                         <a href="http://localhost:3000/login.html">登录</a>
                                         <a href="javascript:;">注册</a>
                                     </div>
+                                    <%}%>
                                 </div>
                             </div>
                         </div>
@@ -1772,6 +1788,12 @@
                     if(e.target.nodeName!="A"){
                         $(this).find("a")[0].click();
                     }
+                });
+                $(".dropdown").mouseover(function(){
+                    $(".js-headlogin-statuslist").show();
+                });
+                $(".dropdown").mouseout(function(){
+                    $(".js-headlogin-statuslist").hide();
                 });
             })();
         </script>

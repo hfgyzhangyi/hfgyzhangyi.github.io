@@ -105,7 +105,7 @@
                         </div>
                         <ul class="L_tabsnew">
                             <li class="li_single li_unselected">
-                                <a class="a_navnew" hidefocus="true" href="javascript:;">首 页</a>
+                                <a class="a_navnew" hidefocus="true" href="http://localhost:3000/index">首 页</a>
                             </li>
                             <li class="li_single li_unselected li_itemsnew">
                                 <a class="a_navnew" hidefocus="true" href="javascript:;">新 房</a>
@@ -208,12 +208,30 @@
                         </ul>
                         <div class="R_user" style="height: 48px;float:right;">
                             <div class="login_info">
-                                <div class="l" id="login_l">
+                                <%if(username!=null){%>
+                                <div class="dropdown user-login l" id="login_l">
+                                    <div class="title m">
+                                        <a href="javascript:;" class="usr" title="<%=username%>"><%=username%></a>
+                                        <i class="icon arrow-down up_down_usr"></i>
+                                    </div>
+                                    <div class="js-headlogin-statuslist list o_b" style="display: none;">
+                                        <ul>
+                                            <li><a href="javascript:;">我的消息</a></li>
+                                            <li><a href="javascript:;">我的问答</a></li>
+                                            <li><a href="javascript:;">看房记录</a></li>
+                                            <li class="hr sep"></li>
+                                            <li><a href="http://localhost:3000/view/logout?id=<%=id%>">退出</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%}else{%>
+                                <div class="l">
                                     <div class="m">
-                                        <a href="javascript:;" class="u_l">登录</a>
+                                        <a href="http://localhost:3000/login.html" class="u_l">登录</a>
                                         <a href="javascript:;" class="u_r">注册</a>
                                     </div>
                                 </div>
+                                <%}%>
                                 <div class="appContainer">
                                     <a class="downapp" href="javascript:;">
                                         <div class="apppic1"></div>
@@ -2204,6 +2222,12 @@
                 });
                 $("#other_city").mouseleave(function(){
                     $("#other_city").hide();
+                });
+                $(".dropdown").mouseover(function(){
+                    $(".js-headlogin-statuslist").show();
+                });
+                $(".dropdown").mouseout(function(){
+                    $(".js-headlogin-statuslist").hide();
                 });
                 /*窗口事件*/
                 window.addEventListener("scroll",function(){

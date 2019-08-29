@@ -64,7 +64,7 @@
                                     <input type="submit" class="submit-btn" value="立即登录"/>
                                 </form>
                                 <!--用户名密码登录-->
-                                <form action="" method="POST" class="none" id="pwdLoginForm">
+                                <form action="http://localhost:3000/login" method="POST" class="none" id="pwdLoginForm">
                                     <div class="item">
                                         <p class="hidden error">错误~</p>
                                         <div class="control-item-wrap">
@@ -82,7 +82,7 @@
                                             <div class="control-item">
                                                 <img src="./images/login_icon-lock.png" class="icon"/>
                                                 <i class="split">|</i>
-                                                <input class="ipt" type="text" name="password" placeholder="请输入密码" maxlength="40"/>
+                                                <input class="ipt" type="password" name="password" placeholder="请输入密码" maxlength="40"/>
                                             </div>
                                         </div>
                                     </div>
@@ -600,8 +600,28 @@
                 });
                 $("form").submit(function(e){
                     e.preventDefault();
-                    $(".frame-login-area").addClass("none");
-                    $(".login-success").removeClass("none");
+                    $.ajax({
+                        url:"http://localhost:3000/login",
+                        type:"post",
+                        data:"username="+$("#pwdLoginForm input[name=username]").val()+"&password="+$("#pwdLoginForm input[name=password]").val(),
+                        async:true,
+                        success:function(res){
+                            if(res=="ok"){
+                                $(".frame-login-area").addClass("none");
+                                $(".login-success").removeClass("none");
+                                setTimeout(() => {
+                                    window.location.href="http://localhost:3000/index";
+                                }, 3000);
+                            }else if(res=="err"){
+                                $("#pwdLoginForm input[name=username]").val("");
+                                $("#pwdLoginForm input[name=password]").val("");
+                                alert("用户名或密码错误");
+                            }
+                        }
+                    });
+                });
+                $(".success-btn-wrap").click(function(){
+                    window.location.href="http://localhost:3000/index";
                 });
                 $(".links>li>a").click(function(){
                     if($(this).text()==="房贷计算器"){

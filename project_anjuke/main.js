@@ -2,10 +2,13 @@ const express=require("express");
 const bodyParser=require("body-parser");
 const listRouter=require("./router/list.js");
 const viewRouter=require("./router/view.js");
+const loginRouter=require("./router/login.js");
+const indexRouter=require("./router/index.js");
 const cookieParser=require("cookie-parser");
 //const session=require("express-session");
 //const cookieSession=require("cookie-session");
 //const demoRouter=require("./router/demo.js");
+var session=require("express-session");
 var server=express();
 server.listen(3000);
 server.set('views',__dirname+"/views");
@@ -15,6 +18,12 @@ server.use(bodyParser.urlencoded({
 	extended:false
 }));
 server.use(cookieParser());
+server.use(session({
+    secret:'test secret',
+    resave:true,
+    saveUninitialized:true,
+    cookie:{maxAge:60*1000*30}
+}));
 // server.use(cookieSession({
 // 	keys:['aaa','bbb','ccc'],
 // 	maxAge:60*60,
@@ -31,4 +40,6 @@ server.use(cookieParser());
 // }));
 server.use("/list",listRouter);
 server.use("/view",viewRouter);
+server.use("/login",loginRouter);
+server.use("/index",indexRouter);
 //server.use("/user",demoRouter);

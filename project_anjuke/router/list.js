@@ -4,6 +4,8 @@ var router=express.Router();
 const session=require("express-session");
 router.use(session({
     secret:'test secret',
+    resave:true,
+    saveUninitialized:true,
     cookie:{maxAge:60*1000*30}
 }));
 const district_list=[
@@ -100,7 +102,8 @@ router.get("/",(req,res)=>{
                     price_list:price_list,price_selected:"全部",price_from:0,price_to:0,
                     area_list:area_list,area_selected:"全部",area_from:0,area_to:0,
                     layout_list:layout_list,layout_selected:"全部",
-                    floor_list:floor_list,floor_selected:"全部"
+                    floor_list:floor_list,floor_selected:"全部",
+                    username:req.session.username
                 });
             else{
                 var pagingNumber=[];
@@ -111,7 +114,8 @@ router.get("/",(req,res)=>{
                     price_list:price_list,price_selected:"全部",price_from:0,price_to:0,
                     area_list:area_list,area_selected:"全部",area_from:0,area_to:0,
                     layout_list:layout_list,layout_selected:"全部",
-                    floor_list:floor_list,floor_selected:"全部"
+                    floor_list:floor_list,floor_selected:"全部",
+                    username:req.session.username
                 });
             }
             /*}else if(pageNow==5){
@@ -141,6 +145,50 @@ router.get("/",(req,res)=>{
                     res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:true,rEllipsis:false,pageNow:pageNow,totalPage:totalPage});
                 }
             }*/
+        });
+    });
+});
+router.get("/logout",(req,res)=>{
+    req.session.layout=null;
+    req.session.fromArea=null;
+    req.session.toArea=null;
+    req.session.floor=null;
+    req.session.fromPrice=null;
+    req.session.toPrice=null;
+    req.session.district=null;
+    req.session.customizeArea=null;
+    req.session.customizePrice=null;
+    req.session.username=null;
+    var pageNow=parseInt(req.query.pageNow);
+    var pageSize=60;
+    var totalPage=0;
+    var sql1="select * from ershoufang_list limit "+(pageNow-1)*60+","+pageSize;
+    var sql2="select count(*) as count from ershoufang_list";
+    pool.query(sql2,null,(err,result)=>{
+        totalPage=Math.ceil(result[0].count/60);
+        pool.query(sql1,null,(err,result)=>{
+            if(totalPage>7)
+                res.render('list',{pagingNumber:[1,2,3,4,5,6,7],items:result,lEllipsis:false,rEllipsis:true,pageNow:pageNow,totalPage:totalPage,
+                    district_list:district_list,district_selected:"全部",
+                    price_list:price_list,price_selected:"全部",price_from:0,price_to:0,
+                    area_list:area_list,area_selected:"全部",area_from:0,area_to:0,
+                    layout_list:layout_list,layout_selected:"全部",
+                    floor_list:floor_list,floor_selected:"全部",
+                    username:req.session.username
+                });
+            else{
+                var pagingNumber=[];
+                for(var i=0;i<totalPage;i++)
+                    pagingNumber[i]=i+1;
+                res.render('list',{pagingNumber:pagingNumber,items:result,lEllipsis:false,rEllipsis:false,pageNow:pageNow,totalPage:totalPage,
+                    district_list:district_list,district_selected:"全部",
+                    price_list:price_list,price_selected:"全部",price_from:0,price_to:0,
+                    area_list:area_list,area_selected:"全部",area_from:0,area_to:0,
+                    layout_list:layout_list,layout_selected:"全部",
+                    floor_list:floor_list,floor_selected:"全部",
+                    username:req.session.username
+                });
+            }
         });
     });
 });
@@ -454,7 +502,8 @@ router.get("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
                 else{
@@ -466,7 +515,8 @@ router.get("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
             }else if(pageNow==5){
@@ -476,7 +526,8 @@ router.get("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
                 else{
@@ -488,7 +539,8 @@ router.get("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
             }else if(totalPage-pageNow>3){
@@ -500,7 +552,8 @@ router.get("/detail",(req,res)=>{
                     price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                     area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                     layout_list:layout_list,layout_selected:layout_selected,
-                    floor_list:floor_list,floor_selected:floor_selected
+                    floor_list:floor_list,floor_selected:floor_selected,
+                    username:req.session.username
                 });
             }else{
                 if(totalPage<=8){
@@ -512,7 +565,8 @@ router.get("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }else{
                     var pagingNumber=[];
@@ -523,7 +577,8 @@ router.get("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
             }
@@ -814,7 +869,8 @@ router.post("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
                 else{
@@ -826,7 +882,8 @@ router.post("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
             }else if(pageNow==5){
@@ -836,7 +893,8 @@ router.post("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
                 else{
@@ -848,7 +906,8 @@ router.post("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
             }else if(totalPage-pageNow>3){
@@ -860,7 +919,8 @@ router.post("/detail",(req,res)=>{
                     price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                     area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                     layout_list:layout_list,layout_selected:layout_selected,
-                    floor_list:floor_list,floor_selected:floor_selected
+                    floor_list:floor_list,floor_selected:floor_selected,
+                    username:req.session.username
                 });
             }else{
                 if(totalPage<=8){
@@ -872,7 +932,8 @@ router.post("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }else{
                     var pagingNumber=[];
@@ -883,7 +944,8 @@ router.post("/detail",(req,res)=>{
                         price_list:price_list,price_selected:price_selected,price_from:session_fromPrice,price_to:session_toPrice,
                         area_list:area_list,area_selected:area_selected,area_from:session_fromArea,area_to:session_toArea,
                         layout_list:layout_list,layout_selected:layout_selected,
-                        floor_list:floor_list,floor_selected:floor_selected
+                        floor_list:floor_list,floor_selected:floor_selected,
+                        username:req.session.username
                     });
                 }
             }

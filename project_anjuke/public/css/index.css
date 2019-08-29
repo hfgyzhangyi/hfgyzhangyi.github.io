@@ -286,6 +286,66 @@ img{
     cursor: pointer;
     margin-right: 12px;
 }
+.login_info .usr{
+    margin-left: 20px;
+    line-height: 48px;
+}
+.login_info .usr{
+    width: 70px;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.up_down_sc, .up_down_usr{
+    background: url("/images/2.png") no-repeat 0 -195px;
+    position: absolute;
+    top: 19px;
+    width: 10px;
+    height: 10px;
+}
+.up_down_usr{
+    left: 114px;
+}
+.o_b{
+    font-size: 1.166666rem;
+    position: absolute;
+    left: 0;
+    top: 48px;
+    border: 1px solid #d8d8d8;
+    background-color: #f9f9f9;
+    border-radius: 0 0 4px 4px;
+}
+.login_info .l .o_b{
+    padding-bottom: 15px;
+    width: 127px;
+}
+.o_b li{
+    margin: 15px 20px 0 10px;
+    padding-left: 16px;
+}
+.o_b li a:link, .o_b li a:visited, .o_b li a:active{
+    color: #666666;
+    text-decoration: none;
+}
+.login_info .l .o_b a{
+    font-size: 1rem;
+}
+.sep{
+    border-top: 1px solid #CCCCCC;
+    line-height: 0 !important;
+    height: 0;
+}
+.o_b li{
+    margin: 15px 20px 0 10px;
+    padding-left: 16px;
+}
+.usr{
+    color: #fff !important;
+}
+.js-headlogin-statuslist ul li a:hover{
+    color: #528E01 !important;
+}
 .m .u_l{
     color: white;
     margin-left: 23px;

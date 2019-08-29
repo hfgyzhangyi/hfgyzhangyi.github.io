@@ -117,6 +117,55 @@ address, caption, th, cite, code, em{
     white-space: nowrap;
     text-align: left;
 }
+.triangle-down{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: inline-block;
+    border-left: 4px solid #fff;
+    border-right: 4px solid #fff;
+    border-top: 4px solid #999;
+    border-bottom: 4px solid #fff;
+    margin: 0px 0 0 5px;
+    vertical-align: text-top;
+}
+.dropdown .list{
+    position: absolute;
+    text-align: left;
+    z-index: 99;
+    line-height: normal;
+    font-weight: normal;
+}
+.user-login .list{
+    width: 135px;
+    margin-left: -8px;
+}
+.dropdown .list ul{
+    border: 1px solid #D6D6D6;
+    background-color: #F7F7F7;
+    border-radius: 0 0 4px 4px;
+    margin: 11px 0 0 0;
+    padding: 0 10px 15px 23px;
+    border-top: 0;
+}
+.dropdown .list li{
+    padding-top: 15px;
+    height: auto;
+    border: 0;
+    font-family: "Microsoft YaHei", "微软雅黑","Hiragino Sans GB", tahoma, arial, simhei;
+}
+.dropdown .list .hr{
+    border-top: 1px solid #CCCCCC;
+    line-height: 0 !important;
+    height: 0;
+    margin-top: 15px;
+    padding-top: 0;
+    margin-left: -15px;
+}
+.dropdown .list a{
+    padding: 0;
+    margin: 0;
+}
 .mid-nav{
     padding: 18px 0;
 }
