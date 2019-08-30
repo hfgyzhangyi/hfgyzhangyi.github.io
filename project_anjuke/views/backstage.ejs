@@ -7,6 +7,53 @@
         <link rel="icon" href="/images/icon.ico">
     </head>
     <body>
+        <div class="table-wrap">
+            <div class="table-head-wrap">
+                <div class="col1">序号</div>
+                <div class="col2">标题</div>
+                <div class="col1">面积</div>
+                <div class="col3">小区名</div>
+                <div class="col4">地址</div>
+                <div class="col1">总价</div>
+                <div class="col5">操作</div>
+            </div>
+            <%items.forEach(function(item,index){%>
+            <div class="table-line-wrap">
+                <div class="col1" title="<%=(pageNow-1)*pageSize+(index+1)%>"><%=(pageNow-1)*pageSize+(index+1)%></div>
+                <div class="col2" title="<%=item.title%>"><%=item.title%></div>
+                <div class="col1" title="<%=item.area%>㎡"><%=item.area%>㎡</div>
+                <div class="col3" title="<%=item.estate_name%>"><%=item.estate_name%></div>
+                <div class="col4" title="<%=item.address%>"><%=item.address%></div>
+                <div class="col1" title="<%=item.total_price%>万"><%=item.total_price%>万</div>
+                <div class="col5">
+                    <a class="btn show">查看</a>
+                    <a class="btn modify">修改</a>
+                    <a class="btn delete">删除</a>
+                </div>
+                <input type="hidden" value="<%=item.id%>" id="item_id"/>
+            </div>
+            <%});%>
+            <a class="addBtn">新增数据</a>
+            <div class="pageDeal-warp clearfix">
+                <%if(pageNow==totalPage){%>
+                    <i class="pageNext">后页</i>
+                <%}else{%>
+                    <a class="pageNext" href="http://localhost:3000/backstage/list?pageNow=<%=pageNow+1%>">后页</a>
+                <%}%>
+                <%if(pageNow==1){%>
+                    <i class="pagePrev">前页</i>
+                <%}else{%>
+                    <a class="pagePrev" href="http://localhost:3000/backstage/list?pageNow=<%=pageNow-1%>">前页</a>
+                <%}%>
+                <div class="pageSelect clearfix">
+                    <form action="/backstage/list" method="POST">
+                        <span>(共有<%=totalPage%>页)</span>
+                        <input type="submit" value="跳转" class="submitBtn"/>
+                        <input type="text" class="page" name="page"/>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script>
             (function(){

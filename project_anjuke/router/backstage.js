@@ -1,5 +1,6 @@
 const pool=require("../pool.js");
 const express=require("express");
+const PAGESIZE=15;
 var router=express.Router();
 router.get("/",(req,res)=>{
     var backUsername=req.session.backUsername;
@@ -23,7 +24,29 @@ router.post("/check",(req,res)=>{
     });
 });
 router.post("/list",(req,res)=>{
-    //数据库取房源信息数据
-    res.render("backstage");
+    var sql1="select * from ershoufang_list limit ?,?";
+    var sql2="select count(*) as count from ershoufang_list";
+    var pageNow=req.body.page==null?1:parseInt(req.body.page);
+    pool.query(sql2,(err,result)=>{
+        var totalPage=Math.ceil(result[0].count/15);
+        pool.query(sql1,[(pageNow-1)*PAGESIZE,PAGESIZE],(err,result)=>{
+            res.render("backstage",{items:result,pageNow:pageNow,pageSize:PAGESIZE,totalPage:totalPage});
+        });
+    });
+});
+router.get("/list",(req,res)=>{
+    if(req.session.backUsername==null){
+        res.render("backstageLogin");
+    }else{
+        var pageNow=req.query.pageNow==null?1:parseInt(req.query.pageNow);
+        var sql1="select * from ershoufang_list limit ?,?";
+        var sql2="select count(*) as count from ershoufang_list";
+        pool.query(sql2,(err,result)=>{
+            var totalPage=Math.ceil(result[0].count/15);
+            pool.query(sql1,[(pageNow-1)*PAGESIZE,PAGESIZE],(err,result)=>{
+                res.render("backstage",{items:result,pageNow:pageNow,pageSize:PAGESIZE,totalPage:totalPage});
+            });
+        });
+    }
 });
 module.exports=router;
