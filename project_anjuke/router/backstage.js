@@ -28,10 +28,17 @@ router.post("/list",(req,res)=>{
     var sql2="select count(*) as count from ershoufang_list";
     var pageNow=req.body.page==null?1:parseInt(req.body.page);
     pool.query(sql2,(err,result)=>{
-        var totalPage=Math.ceil(result[0].count/15);
+        var totalPage=Math.ceil(result[0].count/PAGESIZE);
         pool.query(sql1,[(pageNow-1)*PAGESIZE,PAGESIZE],(err,result)=>{
             res.render("backstage",{items:result,pageNow:pageNow,pageSize:PAGESIZE,totalPage:totalPage});
         });
+    });
+});
+router.post("/select",(req,res)=>{
+    var id=req.body.id;
+    var sql="select * from ershoufang_list where id=?";
+    pool.query(sql,[id],(err,result)=>{
+        res.send(JSON.stringify(result[0]));
     });
 });
 router.get("/list",(req,res)=>{
@@ -42,11 +49,29 @@ router.get("/list",(req,res)=>{
         var sql1="select * from ershoufang_list limit ?,?";
         var sql2="select count(*) as count from ershoufang_list";
         pool.query(sql2,(err,result)=>{
-            var totalPage=Math.ceil(result[0].count/15);
+            var totalPage=Math.ceil(result[0].count/PAGESIZE);
             pool.query(sql1,[(pageNow-1)*PAGESIZE,PAGESIZE],(err,result)=>{
                 res.render("backstage",{items:result,pageNow:pageNow,pageSize:PAGESIZE,totalPage:totalPage});
             });
         });
     }
+});
+router.get("/delete",(req,res)=>{
+    var id=req.query.id;
+    var pageNow=req.query.pageNow;
+    var sql1="select * from ershoufang_list limit ?,?";
+    var sql2="select count(*) as count from ershoufang_list";
+    var sql3="delete from ershoufang_list where id=?";
+    pool.query(sql3,[id],(err,result)=>{
+        pool.query(sql2,(err,result)=>{
+            var totalPage=Math.ceil(result[0].count/PAGESIZE);
+            if(totalPage<pageNow){
+                pageNow=totalPage;
+            }
+            pool.query(sql1,[(pageNow-1)*PAGESIZE,PAGESIZE],(err,result)=>{
+                res.render("backstage",{items:result,pageNow:pageNow,pageSize:PAGESIZE,totalPage:totalPage});
+            });
+        });
+    });
 });
 module.exports=router;

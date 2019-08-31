@@ -28,9 +28,9 @@
                 <div class="col5">
                     <a class="btn show">查看</a>
                     <a class="btn modify">修改</a>
-                    <a class="btn delete">删除</a>
+                    <a class="btn delete" href="http://localhost:3000/backstage/delete?pageNow=<%=pageNow%>&id=<%=item.id%>" onclick="return confirm('确认删除吗?')">删除</a>
                 </div>
-                <input type="hidden" value="<%=item.id%>" id="item_id"/>
+                <input type="hidden" value="<%=item.id%>" name="hidden_id"/>
             </div>
             <%});%>
             <a class="addBtn">新增数据</a>
@@ -54,9 +54,152 @@
                 </div>
             </div>
         </div>
+        <div class="list-wrap" id="list-wrap">
+            <form action="" method="POST">
+                <div class="d-item"><span class="item-title">ID</span><input type="text" name="id" class="input-short" disabled="true"/></div>
+                <br>
+                <div class="d-item mg-top">
+                    <span class="item-title">房型</span>
+                    <select name="layout" class="select">
+                        <option value="1">1室1厅</option>
+                        <option value="2">2室1厅</option>
+                        <option value="3">3室1厅</option>
+                        <option value="4">4室1厅</option>
+                        <option value="5">5室1厅</option>
+                        <option value="6">5室1厅以上</option>
+                    </select>
+                </div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">面积</span><input type="text" name="area" class="input-short" style="margin-right: 5px;" maxlength="10" onmouseover="this.title=this.value"/>㎡<span class="err">面积必须为数字(小数点后最多两位)</span></div>
+                <br>
+                <div class="d-item mg-top">
+                    <span class="item-title">楼层</span>
+                    <select name="floor" class="select">
+                        <option value="1">中层(共6层)</option>
+                        <option value="2">中高层(共12层)</option>
+                        <option value="3">高层(12层以上)</option>
+                    </select>
+                </div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">建造时间</span><input type="text" name="time" class="input-short" style="margin-right: 5px;" maxlength="4"/>年建造<span class="err">建造时间必须为整数</span></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">小区名</span><input type="text" name="estate_name" class="input-middle" maxlength="20" onmouseover="this.title=this.value"/></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">总价</span><input type="text" name="total_price" class="input-short" style="margin-right: 5px;" maxlength="11" onmouseover="this.title=this.value" disabled="true"/>万</div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">单价</span><input type="text" name="univalence" class="input-short" style="margin-right: 5px;" maxlength="11" onmouseover="this.title=this.value"/>元/㎡<span class="err">单价必须为整数</span></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">区域</span><input type="text" name="district" class="input-middle" maxlength="20" onmouseover="this.title=this.value"/></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">商圈</span><input type="text" name="trade_area" class="input-middle" maxlength="10" onmouseover="this.title=this.value"/></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">标题</span><input type="text" name="title" class="input-large" maxlength="200" onmouseover="this.title=this.value"/></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">详细地址</span><input type="text" name="address" class="input-large" maxlength="200" onmouseover="this.title=this.value"/></div>
+                <br>
+                <div class="d-item mg-top"><span class="item-title">简短地址</span><input type="text" name="short_address" class="input-large" maxlength="150" onmouseover="this.title=this.value"/></div>
+                <input type="submit" value="提交" class="listSubmitBtn"/>
+                <input type="button" value="取消" class="listCancelBtn"/>
+            </form>
+        </div>
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script>
             (function(){
+                function scrollToList(){
+                    var targetOffset=$("#list-wrap").offset().top;
+                    $("html").animate({scrollTop:targetOffset},500);
+                }
+                function clearList(){
+                    $("input[name=id]").val("");
+                    $("input[name=area]").val("");
+                    $("input[name=time]").val("");
+                    $("input[name=estate_name]").val("");
+                    $("input[name=total_price]").val("");
+                    $("input[name=univalence]").val("");
+                    $("input[name=district]").val("");
+                    $("input[name=trade_area]").val("");
+                    $("input[name=title]").val("");
+                    $("input[name=address]").val("");
+                    $("input[name=short_address]").val("");
+                    $("select[name=layout]").val(1);
+                    $("select[name=floor]").val(1);
+                    $(".err").hide();
+                }
+                function showListPrepare(){
+                    $("input[name=area]").attr("readonly",true);
+                    $("input[name=time]").attr("readonly",true);
+                    $("input[name=estate_name]").attr("readonly",true);
+                    $("input[name=univalence]").attr("readonly",true);
+                    $("input[name=district]").attr("readonly",true);
+                    $("input[name=trade_area]").attr("readonly",true);
+                    $("input[name=title]").attr("readonly",true);
+                    $("input[name=address]").attr("readonly",true);
+                    $("input[name=short_address]").attr("readonly",true);
+                    $("select[name=layout]").attr("readonly",true);
+                    $("select[name=floor]").attr("readonly",true);
+                    $(".err").hide();
+                }
+                function resumeList(){
+                    $("input[name=area]").attr("readonly",false);
+                    $("input[name=time]").attr("readonly",false);
+                    $("input[name=estate_name]").attr("readonly",false);
+                    $("input[name=univalence]").attr("readonly",false);
+                    $("input[name=district]").attr("readonly",false);
+                    $("input[name=trade_area]").attr("readonly",false);
+                    $("input[name=title]").attr("readonly",false);
+                    $("input[name=address]").attr("readonly",false);
+                    $("input[name=short_address]").attr("readonly",false);
+                    $("select[name=layout]").attr("readonly",false);
+                    $("select[name=floor]").attr("readonly",false);
+                    $(".err").hide();
+                }
+                $(".addBtn").click(function(){
+                    $(".listSubmitBtn").attr("disabled",false);
+                    $(".listSubmitBtn").removeClass("disabled");
+                    clearList();
+                    resumeList();
+                    $("#list-wrap").show();
+                    scrollToList();
+                });
+                $(".show").click(function(){
+                    $(".listSubmitBtn").attr("disabled",true);
+                    $(".listSubmitBtn").addClass("disabled");
+                    showListPrepare();
+                    $.ajax({
+                        url:"/backstage/select",
+                        async:true,
+                        data:"id="+$(this).parent().siblings("input[name=hidden_id]").val(),
+                        type:"post",
+                        success:function(res){
+                            var object=JSON.parse(res);
+                            $("input[name=id]").val(object.id);
+                            $("input[name=area]").val(object.area);
+                            $("input[name=time]").val(parseInt(object.time));
+                            $("input[name=estate_name]").val(object.estate_name);
+                            $("input[name=total_price]").val(object.total_price);
+                            $("input[name=univalence]").val(object.univalence);
+                            $("input[name=district]").val(object.district);
+                            $("input[name=trade_area]").val(object.trade_area);
+                            $("input[name=title]").val(object.title);
+                            $("input[name=address]").val(object.address);
+                            $("input[name=short_address]").val(object.short_address);
+                            $("select[name=layout]").val(object.layout=="1室1厅"?1:object.layout=="2室1厅"?2:object.layout=="3室1厅"?3:object.layout=="4室1厅"?4:object.layout=="5室1厅"?5:6);
+                            $("select[name=floor]").val(object.floor=="中层(共6层)"?1:object.floor=="中高层(共12层)"?2:3);
+                        }
+                    });
+                    $("#list-wrap").show();
+                    scrollToList();
+                });
+                $(".modify").click(function(){
+                    $(".listSubmitBtn").attr("disabled",false);
+                    $(".listSubmitBtn").removeClass("disabled");
+                    resumeList();
+                    $("#list-wrap").show();
+                    scrollToList();
+                });
+                $(".listCancelBtn").click(function(){
+                    $("#list-wrap").hide();
+                });
             })();
         </script>
     </body>

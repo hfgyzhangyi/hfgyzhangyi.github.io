@@ -1,5 +1,6 @@
 body{
     background-color: #4B2E4D;
+    overflow-y: scroll;
 }
 i,em{
     font-style: normal;
@@ -50,7 +51,7 @@ i,em{
     width: 10%;
 }
 .col4{
-    width: calc(25% - 8px);
+    width: calc(25% - 7px);
 }
 .col5{
     width: 20%;
@@ -168,9 +169,96 @@ i,em{
 .show{
     background-color: hotpink;
 }
+.show:hover{
+    background-color: rgb(207, 93, 150);
+}
 .modify{
     background-color: rgb(224, 194, 22);
 }
+.modify:hover{
+    background-color: rgb(199, 174, 31);
+}
 .delete{
     background-color: red;
+}
+.delete:hover{
+    background-color: rgb(201, 18, 18);
+}
+/*list样式*/
+.list-wrap{
+    width: 800px;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    background: white;
+    display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #666;
+    position: relative;
+}
+.mg-top{
+    margin-top: 25px;
+}
+.d-item{
+    display: inline-block;
+}
+.d-item .item-title{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    width: 60px;
+}
+.input-short{
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+}
+.input-middle{
+    width: 100px;
+    font-size: 1rem;
+    text-align: left;
+}
+.input-large{
+    width: 450px;
+    font-size: 1rem;
+    text-align: left; 
+}
+.err{
+    display: none;
+    color: red;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+.select{
+    margin-left: -4px;
+    outline: none;
+}
+.listSubmitBtn,.listCancelBtn{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+.listSubmitBtn{
+    left: 20px;
+    bottom: 20px;
+    background-color: #26A2FF;
+}
+.listSubmitBtn:hover{
+    background-color: #166098;
+}
+.listCancelBtn{
+    left: 140px;
+    bottom: 20px;
+    background-color: #EF4F4F;
+}
+.listCancelBtn:hover{
+    background-color: #8E2F2F;
+}
+.disabled{
+    background-color: #166098;
 }
