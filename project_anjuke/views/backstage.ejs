@@ -55,8 +55,8 @@
             </div>
         </div>
         <div class="list-wrap" id="list-wrap">
-            <form action="" method="POST">
-                <div class="d-item"><span class="item-title">ID</span><input type="text" name="id" class="input-short" disabled="true"/></div>
+            <form action="/backstage/addAndModify" method="POST" id="form">
+                <div class="d-item"><span class="item-title">ID</span><input type="text" name="id" class="input-short" readonly="true"/></div>
                 <br>
                 <div class="d-item mg-top">
                     <span class="item-title">房型</span>
@@ -70,7 +70,7 @@
                     </select>
                 </div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">面积</span><input type="text" name="area" class="input-short" style="margin-right: 5px;" maxlength="10" onmouseover="this.title=this.value"/>㎡<span class="err">面积必须为数字(小数点后最多两位)</span></div>
+                <div class="d-item mg-top"><span class="item-title">面积</span><input type="text" name="area" class="input-short" style="margin-right: 5px;" maxlength="10" onmouseover="this.title=this.value" autocomplete="off"/>㎡<span class="err">面积必须为正数数字(小数点后最多两位)</span></div>
                 <br>
                 <div class="d-item mg-top">
                     <span class="item-title">楼层</span>
@@ -81,25 +81,26 @@
                     </select>
                 </div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">建造时间</span><input type="text" name="time" class="input-short" style="margin-right: 5px;" maxlength="4"/>年建造<span class="err">建造时间必须为整数</span></div>
+                <div class="d-item mg-top"><span class="item-title">建造时间</span><input type="text" name="time" class="input-short" style="margin-right: 5px;" maxlength="4" autocomplete="off"/>年建造<span class="err">建造时间必须为正整数</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">小区名</span><input type="text" name="estate_name" class="input-middle" maxlength="20" onmouseover="this.title=this.value"/></div>
+                <div class="d-item mg-top"><span class="item-title">小区名</span><input type="text" name="estate_name" class="input-middle" maxlength="20" onmouseover="this.title=this.value" autocomplete="off"/><span class="err">小区名不可为空</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">总价</span><input type="text" name="total_price" class="input-short" style="margin-right: 5px;" maxlength="11" onmouseover="this.title=this.value" disabled="true"/>万</div>
+                <div class="d-item mg-top"><span class="item-title">总价</span><input type="text" name="total_price" class="input-short" style="margin-right: 5px;" maxlength="11" onmouseover="this.title=this.value" readonly="true"/>万</div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">单价</span><input type="text" name="univalence" class="input-short" style="margin-right: 5px;" maxlength="11" onmouseover="this.title=this.value"/>元/㎡<span class="err">单价必须为整数</span></div>
+                <div class="d-item mg-top"><span class="item-title">单价</span><input type="text" name="univalence" class="input-short" style="margin-right: 5px;" maxlength="11" onmouseover="this.title=this.value" autocomplete="off"/>元/㎡<span class="err">单价必须为正整数</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">区域</span><input type="text" name="district" class="input-middle" maxlength="20" onmouseover="this.title=this.value"/></div>
+                <div class="d-item mg-top"><span class="item-title">区域</span><input type="text" name="district" class="input-middle" maxlength="20" onmouseover="this.title=this.value" autocomplete="off"/><span class="err">区域不可为空</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">商圈</span><input type="text" name="trade_area" class="input-middle" maxlength="10" onmouseover="this.title=this.value"/></div>
+                <div class="d-item mg-top"><span class="item-title">商圈</span><input type="text" name="trade_area" class="input-middle" maxlength="10" onmouseover="this.title=this.value" autocomplete="off"/><span class="err">商圈不可为空</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">标题</span><input type="text" name="title" class="input-large" maxlength="200" onmouseover="this.title=this.value"/></div>
+                <div class="d-item mg-top"><span class="item-title">标题</span><input type="text" name="title" class="input-large" maxlength="200" onmouseover="this.title=this.value" autocomplete="off"/><span class="err">标题不可为空</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">详细地址</span><input type="text" name="address" class="input-large" maxlength="200" onmouseover="this.title=this.value"/></div>
+                <div class="d-item mg-top"><span class="item-title">详细地址</span><input type="text" name="address" class="input-large" maxlength="200" onmouseover="this.title=this.value" autocomplete="off"/><span class="err">详细地址不可为空</span></div>
                 <br>
-                <div class="d-item mg-top"><span class="item-title">简短地址</span><input type="text" name="short_address" class="input-large" maxlength="150" onmouseover="this.title=this.value"/></div>
-                <input type="submit" value="提交" class="listSubmitBtn"/>
+                <div class="d-item mg-top"><span class="item-title">简短地址</span><input type="text" name="short_address" class="input-large" maxlength="150" onmouseover="this.title=this.value" autocomplete="off"/><span class="err">简短地址不可为空</span></div>
+                <input type="submit" value="提交" class="listSubmitBtn" onclick="return confirm('确认提交?')"/>
                 <input type="button" value="取消" class="listCancelBtn"/>
+                <input type="hidden" value="<%=pageNow%>" name="hidden_pageNow"/>
             </form>
         </div>
         <script src="/js/jquery-1.11.3.min.js"></script>
@@ -135,8 +136,8 @@
                     $("input[name=title]").attr("readonly",true);
                     $("input[name=address]").attr("readonly",true);
                     $("input[name=short_address]").attr("readonly",true);
-                    $("select[name=layout]").attr("readonly",true);
-                    $("select[name=floor]").attr("readonly",true);
+                    $("select[name=layout]").attr("disabled",true);
+                    $("select[name=floor]").attr("disabled",true);
                     $(".err").hide();
                 }
                 function resumeList(){
@@ -149,8 +150,8 @@
                     $("input[name=title]").attr("readonly",false);
                     $("input[name=address]").attr("readonly",false);
                     $("input[name=short_address]").attr("readonly",false);
-                    $("select[name=layout]").attr("readonly",false);
-                    $("select[name=floor]").attr("readonly",false);
+                    $("select[name=layout]").attr("disabled",false);
+                    $("select[name=floor]").attr("disabled",false);
                     $(".err").hide();
                 }
                 $(".addBtn").click(function(){
@@ -194,11 +195,97 @@
                     $(".listSubmitBtn").attr("disabled",false);
                     $(".listSubmitBtn").removeClass("disabled");
                     resumeList();
+                    $.ajax({
+                        url:"/backstage/select",
+                        async:true,
+                        data:"id="+$(this).parent().siblings("input[name=hidden_id]").val(),
+                        type:"post",
+                        success:function(res){
+                            var object=JSON.parse(res);
+                            $("input[name=id]").val(object.id);
+                            $("input[name=area]").val(object.area);
+                            $("input[name=time]").val(parseInt(object.time));
+                            $("input[name=estate_name]").val(object.estate_name);
+                            $("input[name=total_price]").val(object.total_price);
+                            $("input[name=univalence]").val(object.univalence);
+                            $("input[name=district]").val(object.district);
+                            $("input[name=trade_area]").val(object.trade_area);
+                            $("input[name=title]").val(object.title);
+                            $("input[name=address]").val(object.address);
+                            $("input[name=short_address]").val(object.short_address);
+                            $("select[name=layout]").val(object.layout=="1室1厅"?1:object.layout=="2室1厅"?2:object.layout=="3室1厅"?3:object.layout=="4室1厅"?4:object.layout=="5室1厅"?5:6);
+                            $("select[name=floor]").val(object.floor=="中层(共6层)"?1:object.floor=="中高层(共12层)"?2:3);
+                        }
+                    });
                     $("#list-wrap").show();
                     scrollToList();
                 });
                 $(".listCancelBtn").click(function(){
                     $("#list-wrap").hide();
+                });
+                $("#form").submit(function(e){
+                    $(".err").hide();
+                    var area=$("input[name=area]").val();
+                    var univalence=$("input[name=univalence]").val();
+                    var time=$("input[name=time]").val();
+                    var estate_name=$("input[name=estate_name]").val();
+                    var district=$("input[name=district]").val();
+                    var trade_area=$("input[name=trade_area]").val();
+                    var title=$("input[name=title]").val();
+                    var address=$("input[name=address]").val();
+                    var short_address=$("input[name=short_address]").val();
+                    var form_err_count=0;
+                    if(short_address==""){
+                        form_err_count++;
+                        $("input[name=short_address]").siblings(".err").show();
+                    }
+                    if(address==""){
+                        form_err_count++;
+                        $("input[name=address]").siblings(".err").show();
+                    }
+                    if(title==""){
+                        form_err_count++;
+                        $("input[name=title]").siblings(".err").show();
+                    }
+                    if(trade_area==""){
+                        form_err_count++;
+                        $("input[name=trade_area]").siblings(".err").show();
+                    }
+                    if(district==""){
+                        form_err_count++;
+                        $("input[name=district]").siblings(".err").show();
+                    }
+                    if(estate_name==""){
+                        form_err_count++;
+                        $("input[name=estate_name]").siblings(".err").show();
+                    }
+                    if(isNaN(area)){
+                        form_err_count++;
+                        $("input[name=area]").siblings(".err").show();
+                    }else if(area.toString().split(".").length>1&&area.toString().split(".")[1].length>2||area<0||area==""){
+                        form_err_count++;
+                        $("input[name=area]").siblings(".err").show();
+                    }
+                    if(isNaN(univalence)){
+                        form_err_count++;
+                        $("input[name=univalence]").siblings(".err").show();
+                    }else if(univalence<0||univalence.toString().split(".").length>1||univalence==""){
+                        form_err_count++;
+                        $("input[name=univalence]").siblings(".err").show();
+                    }
+                    if(isNaN(time)){
+                        form_err_count++;
+                        $("input[name=time]").siblings(".err").show();
+                    }else if(time<0||time.toString().split(".").length>1||time==""){
+                        form_err_count++;
+                        $("input[name=time]").siblings(".err").show();
+                    }
+                    if(form_err_count>0){
+                        e.preventDefault();
+                    }else{
+                        $("input[name=total_price]").val(Math.ceil($("input[name=univalence]").val()/10000*$("input[name=area]").val()));
+                        $("#form").submit();
+                    }
                 });
             })();
         </script>
