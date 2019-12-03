@@ -178,11 +178,17 @@ a.logo{
     display: inline-block;
     width: 85px;
     height: 25px;
-    background: url("../images/logo.png") 0 0 no-repeat;
-    background-size: 85px 25px;
     overflow: hidden;
     vertical-align: bottom;
     border-right: 1px solid #DDD;
+    font-size: 26px;
+    line-height: 24px;
+    color: #62ab00;
+    font-weight: bold;
+}
+a.logo:hover{
+    color: #62ab00 !important;
+    text-decoration: none;
 }
 span.logo{
     padding: 0 10px 0 15px;

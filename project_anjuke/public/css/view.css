@@ -53,11 +53,17 @@ body, button, input, select, textarea{
     margin: 0 auto;
 }
 .glbListNavigation .logo{
-    background: url("../images/view/1.png") no-repeat;
+    font-size: 24px;
+    color: #fff;
+    line-height: 30px;
     width: 90px;
     height: 30px;
     float: left;
     margin-top: 4px;
+}
+.glbListNavigation .logo:hover{
+    color: #fff !important;
+    text-decoration: none;
 }
 .glbListNavigation .cur_citynew{
     float: left;
